@@ -1,0 +1,36 @@
+# AI Crawler Access Policy & Discovery
+# Site: Preventive Lifestyle Medicine & Health Assessment Platform
+# Last Updated: 2026-09-07
+
+User-agent: *
+Allow: /
+
+# Search Engine & Citation Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Answer Engines & Research Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Discovery Files
+Sitemap: /sitemap.xml
+# LLM context documentation: /llms.txt

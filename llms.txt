@@ -1,0 +1,49 @@
+# Preventive Lifestyle Medicine & Health Assessment Platform
+
+> An interactive evidence-informed preventive cardiology, metabolic health, and lifestyle medicine platform based on circadian biology, Nobel-prize winning autophagy science, and South Asian cardiovascular risk research.
+
+## Core Medical & Lifestyle Principles
+
+1. **Root-Cause Resolution Over Symptom Suppression**: Chronic non-communicable diseases (type-2 diabetes, hypertension, dyslipidemia, coronary artery disease, non-alcoholic fatty liver) are predominantly lifestyle and metabolic disorders driven by chronic hyperinsulinemia, visceral adiposity, and endothelial inflammation rather than inevitable genetic fate.
+2. **Whole Food Anti-Inflammatory Nutrition**: Eliminate added sugars, refined carbohydrates, and chemically processed industrial seed oils (polyunsaturated soybean/canola/palm oils). Prioritize indigenous greens, seasonal fish, cold-pressed mustard oil (Kachi Ghani), whole eggs with yolk, colorful raw salads, and unrefined whole grains.
+3. **Autophagy & Intermittent Fasting (14–16h Window)**: Allow the digestive tract a daily biological rest window of 14 to 16 hours (early dinner completed by 8:00 PM, delayed breakfast at 10:00 AM) to stimulate cellular lysosomal recycling (autophagy), glycogen clearance, and pancreatic beta-cell restoration.
+4. **Circadian Rhythm Restoration & Restful Sleep**: Sleeping before 10:30 PM in a dark environment and waking with natural morning sunlight optimizes melatonin synthesis, downregulates cortisol, and drives deep cellular detox.
+5. **Daily Aerobic Movement & Nitric Oxide Synthesis**: Minimum 40 to 60 minutes of brisk walking outdoors with sunlight exposure enhances GLUT-4 glucose disposal, mitochondrial density, and vascular endothelial nitric oxide generation.
+6. **Neuro-Cardiovascular Modulation & Vagal Stimulation**: Chronic psychological stress surges catecholamines and damages arterial walls. Daily slow rhythmic breathing (4-7-8, box breathing, 5.5s resonance) stimulates the parasympathetic vagus nerve, immediately decelerating heart rate and attenuating arterial hypertension.
+7. **South Asian TOFI (Thin-Outside-Fat-Inside) Phenotype Awareness**: Standard BMI drastically underestimates risk in South Asians. Waist-to-Height Ratio (WHtR ≥ 0.50), Triglyceride-to-HDL ratio (TG/HDL > 2.0), and Triglyceride-Glucose index (TyG > 8.5) serve as vital clinical surrogates for visceral adipose accumulation and occult insulin resistance.
+
+## Interactive Clinical & Lifestyle Modules
+
+1. **6-Pillar Risk & Resilience Calculator**: Interactive scoring algorithm assessing cellular resilience against chronic disease vulnerability.
+2. **Autophagy & Fasting Stage Live Tracker**: Real-time circular gauge tracking the 5 distinct biological phases of fasting (0-12h glycogen depletion, 12-14h ketosis, 14-16h peak autophagy, 16-24h insulin sensitivity & HGH surge, 24h+ stem cell renewal).
+3. **Clinical Lab Decoder & TOFI Indices**: Evaluates Waist-to-Height Ratio, TG/HDL ratio, and TyG index alongside a 7-biomarker traffic-light evaluator (FBS, HbA1c, Fasting Insulin, hs-CRP, SGPT/ALT, Vitamin D3, Uric Acid).
+4. **Bangladeshi Anti-Inflammatory Plate Builder & 7-Day Reset**: Interactive 50/25/25 plate visualizer, scientific 3-step local produce pesticide detox protocol (water, baking soda + salt soak, final rinse), and 3-tier budget meal plans (Village, Family, Executive).
+5. **Vagus Nerve Stimulator & HRV Breathing Bubble**: Interactive breathing bubble with Web Audio API chime synthesis supporting 4-7-8, Box Breathing, and 5.5s Heart Coherence modes.
+6. **6-Pillar Daily Habit Loop & Consistency Streak Tracker**: Offline-first daily checklist, streak counter, progress completion bar, and 7-day consistency dot matrix.
+7. **Doctor Discussion Sheet & Health Passport**: Consolidated metabolic summary sheet with 5 targeted evidence-based clinical de-prescribing questions for consultation with personal physicians.
+
+## WebMCP Interactive Agent Actions
+
+This platform exposes machine-readable WebMCP actions accessible via standard DOM bindings (`data-mcp-action`):
+
+- `calculate_health_risk`: Calculates metabolic risk tier and resilience score.
+- `reset_assessment`: Resets the primary risk evaluation form.
+- `toggle_language`: Toggles between Bengali (`bn`) and English (`en`).
+- `toggle_theme`: Toggles between Light and Dark mode.
+- `set_fast_start_now`: Sets fasting start timestamp to current time and initializes timer.
+- `toggle_fasting_timer`: Toggles active timer execution for intermittent fasting.
+- `reset_fasting_timer`: Resets the fasting timer to initial state.
+- `calculate_insulin_resistance`: Calculates WHtR, TG/HDL ratio, and TyG index with clinical verdict.
+- `decode_biomarkers`: Analyzes the 7 critical blood biomarkers with green/yellow/red traffic light advice.
+- `trigger_breathing_session`: Starts or pauses the vagus pacer breathing session.
+- `toggle_breathing_chime`: Toggles Web Audio API chime sound on phase transitions.
+- `log_daily_habits`: Saves daily 6-pillar habit completion and increments unbroken streak.
+- `export_doctor_discussion_sheet`: Triggers print dialog formatted for single-page clinical review.
+- `open_doctor_passport`: Smoothly scrolls to the Health Passport section.
+
+## Clinical Authority & Authorship
+
+- **Author**: Preventive Cardiology & Lifestyle Medicine Research Initiative
+- **Focus**: Metabolic Cardiology, Cellular Autophagy, Insulin Resistance Reversal, Endothelial Protection
+- **Evidence Base**: Nobel Prize in Physiology or Medicine (Autophagy, 2016), ACC/AHA Prevention Guidelines, South Asian Cardiovascular Epidemiology
+- **Last Updated**: September 2026
