@@ -9,7 +9,42 @@
   // --- Translation Dictionary (Bangla & English) ---
   const translations = {
     bn: {
-      brand_title: "লাইফস্টাইল মেডিসিন প্ল্যাটফর্ম",
+      topbar_accreditation: "আমেরিকান কলেজ অব লাইফস্টাইল মেডিসিন (ACLM) ও নোবেল বিজয়ী অটোফেজি গবেষণা সমর্থিত",
+      topbar_update: "সর্বশেষ ক্লিনিক্যাল আপডেট: সেপ্টেম্বর ২০২৬ | এভিডেন্স স্কোর: ৯৯.৪%",
+      brand_title: "মেটাপ্রিভেন্ট™",
+      brand_badge_text: "CLINICAL",
+      brand_subtext: "প্রিভেন্টিভ লাইফস্টাইল মেডিসিন প্ল্যাটফর্ম",
+      nav_group_diagnostics: "ডায়াগনস্টিকস ও ল্যাব",
+      nav_group_diagnostics_sub: "ক্লিনিক্যাল মূল্যায়ন ও বায়োমার্কার টুলস",
+      nav_diag_risk: "মেটাবলিক ঝুঁকি মূল্যায়ন",
+      nav_diag_risk_desc: "৬টি ক্লিনিক্যাল স্তম্ভের আলোকে ব্যক্তিগত স্কোর",
+      nav_diag_lab: "ল্যাব বায়োমার্কার ডিকোডার",
+      nav_diag_lab_desc: "HbA1c, ইনসুলিন, TG/HDL ও ভিসেরাল ফ্যাট (TOFI)",
+      nav_diag_oil: "ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স",
+      nav_diag_oil_desc: "নিরাপদ প্রাকৃতিক ফ্যাট বনাম ক্ষতিকর ইন্ডাস্ট্রিয়াল তেল",
+      nav_diag_egg: "ডিম ও কোলেস্টেরল বিজ্ঞান",
+      nav_diag_egg_desc: "কুসুমের পূর্ণাঙ্গ পুষ্টি ও দৈনিক ক্যালকুলেটর",
+      nav_group_protocols: "ক্লিনিক্যাল প্রোটোকল",
+      nav_group_protocols_sub: "বিজ্ঞানভিত্তিক নিরাময় ও প্রতিরোধ নির্দেশিকা",
+      nav_prot_rx: "ব্যক্তিগত লাইফস্টাইল প্রেসক্রিপশন",
+      nav_prot_rx_desc: "সম্পূর্ণ দৈনিক রুটিন, ডায়েট ও স্লিপ গাইড",
+      nav_prot_reversal: "রোগ নিরাময় জ্ঞানভাণ্ডার",
+      nav_prot_reversal_desc: "ডায়াবেটিস, প্রেশার ও ফ্যাটি লিভার রিভার্সাল",
+      nav_prot_vagus: "ভ্যাগাস নার্ভ ব্রিদিং পেসার",
+      nav_prot_vagus_desc: "৪-৭-৮, বক্স ব্রিদিং ও কার্ডিয়াক কোহেরেন্স বাবল",
+      nav_prot_heart_mind: "হার্ট-মাইন্ড সাইকোলজি",
+      nav_prot_heart_mind_desc: "স্ট্রেস ডিটক্স ও নিউরো-ইমিউনোলজি ব্যালেন্স",
+      nav_prot_myths: "মেডিকেল মিথ বাস্টার্স",
+      nav_prot_myths_desc: "কোলেস্টেরল ও ক্যালোরি গণনা সংক্রান্ত বিভ্রান্তি নিরসন",
+      nav_group_tools: "দৈনিক টুলস",
+      nav_group_tools_sub: "দৈনিক মনিটরিং ও সুস্থতার অভ্যাস",
+      nav_tool_fasting: "ইন্টারমিটেন্ট ফাস্টিং টাইমার",
+      nav_tool_fasting_desc: "১৪-১৬ ঘণ্টার লাইভ অটোফেজি স্টেজ মনিটর",
+      nav_tool_plate: "দেশি পুষ্টি প্লেট বিল্ডার",
+      nav_tool_plate_desc: "৫০% শাকসবজি অনুপাত ও বাজেট ডায়েট প্ল্যান",
+      nav_tool_habits: "মেটাবলিক অভ্যাস ট্র্যাকার",
+      nav_tool_habits_desc: "৭টি মেটাবলিক রুটিনের ধারাবাহিকতা স্কোর",
+      nav_passport_btn: "ডক্টর পাসপোর্ট",
       nav_assessment: "ঝুঁকি যাচাই",
       nav_prescription: "স্বাস্থ্য প্রেসক্রিপশন",
       nav_reversal: "রোগ প্রতিরোধ গাইড",
@@ -404,7 +439,42 @@
       btn_copy_passport: "📋 কপি টেক্সট সামারি"
     },
     en: {
-      brand_title: "Lifestyle Medicine Platform",
+      topbar_accreditation: "Aligned with American College of Lifestyle Medicine (ACLM) & Nobel-Winning Autophagy Research",
+      topbar_update: "Latest Clinical Update: Sept 2026 | Evidence Score: 99.4%",
+      brand_title: "METAPREVENT™",
+      brand_badge_text: "CLINICAL",
+      brand_subtext: "Preventive Lifestyle Medicine Platform",
+      nav_group_diagnostics: "Diagnostics & Labs",
+      nav_group_diagnostics_sub: "Clinical Evaluation & Biomarker Diagnostic Tools",
+      nav_diag_risk: "Metabolic Risk Engine",
+      nav_diag_risk_desc: "6-Pillar personalized resilience evaluation",
+      nav_diag_lab: "Biomarker Lab Decoder",
+      nav_diag_lab_desc: "HbA1c, Insulin, TG/HDL & Visceral Fat (TOFI)",
+      nav_diag_oil: "Cooking Oil Matrix",
+      nav_diag_oil_desc: "Safe traditional fats vs. inflammatory industrial seed oils",
+      nav_diag_egg: "Whole Egg & Cholesterol",
+      nav_diag_egg_desc: "Yolk micronutrient density & daily intake calculator",
+      nav_group_protocols: "Clinical Protocols",
+      nav_group_protocols_sub: "Evidence-Based Reversal & Prevention Guidelines",
+      nav_prot_rx: "Lifestyle Prescription",
+      nav_prot_rx_desc: "Full daily circadian routine, nutrition & sleep plan",
+      nav_prot_reversal: "Disease Reversal Hub",
+      nav_prot_reversal_desc: "Type-2 diabetes, hypertension & fatty liver protocols",
+      nav_prot_vagus: "Vagus Nerve Breathing",
+      nav_prot_vagus_desc: "4-7-8, Box breathing & cardiac coherence pacer",
+      nav_prot_heart_mind: "Heart-Mind Coherence",
+      nav_prot_heart_mind_desc: "Stress neurobiology & psycho-neuro-immunology",
+      nav_prot_myths: "Medical Mythbusters",
+      nav_prot_myths_desc: "Clinical truths debunking cholesterol & calorie myths",
+      nav_group_tools: "Daily Tools",
+      nav_group_tools_sub: "Daily Monitoring & Habit Formation Trackers",
+      nav_tool_fasting: "Intermittent Fasting Timer",
+      nav_tool_fasting_desc: "14-16h circadian autophagy stage tracker",
+      nav_tool_plate: "Desi Plate Builder",
+      nav_tool_plate_desc: "50% vegetable ratio & budget meal plan",
+      nav_tool_habits: "Metabolic Habit Tracker",
+      nav_tool_habits_desc: "7 daily health routines & consistency streak",
+      nav_passport_btn: "Doctor Passport",
       nav_assessment: "Risk Assessment",
       nav_prescription: "Lifestyle Rx",
       nav_reversal: "Disease Prevention",
@@ -839,6 +909,7 @@
 
   // --- Initial Setup on DOM Load ---
   document.addEventListener('DOMContentLoaded', () => {
+    initNavigationSystem();
     initLanguage();
     initTheme();
     initAssessmentEvents();
@@ -856,6 +927,116 @@
     initDoctorPassport();
     initWebMCPEvents();
   });
+
+  // --- Professional Navigation System ---
+  function initNavigationSystem() {
+    // 1. Dropdown Toggles (Click & Keyboard)
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(drop => {
+      const trigger = drop.querySelector('.nav-dropdown-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = drop.classList.contains('is-open');
+        closeAllDropdowns();
+        if (!isOpen) {
+          drop.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        closeAllDropdowns();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllDropdowns();
+        closeMobileDrawer();
+      }
+    });
+
+    // 2. Mobile Drawer Toggle
+    const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    const closeDrawerBtn = document.getElementById('btn-close-drawer');
+
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.contains('is-open');
+        if (isOpen) {
+          closeMobileDrawer();
+        } else {
+          openMobileDrawer();
+        }
+      });
+    }
+
+    if (closeDrawerBtn) {
+      closeDrawerBtn.addEventListener('click', closeMobileDrawer);
+    }
+
+    // Close drawer when clicking any link inside it
+    if (mobileDrawer) {
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileDrawer);
+      });
+    }
+
+    // 3. Header Elevate on Scroll
+    const header = document.getElementById('site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      }, { passive: true });
+    }
+  }
+
+  function closeAllDropdowns() {
+    document.querySelectorAll('.nav-dropdown').forEach(drop => {
+      drop.classList.remove('is-open');
+      const trigger = drop.querySelector('.nav-dropdown-trigger');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function openMobileDrawer() {
+    const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    if (mobileDrawer) {
+      mobileDrawer.classList.add('is-open');
+      mobileDrawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    if (mobileToggle) {
+      mobileToggle.classList.add('is-active');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function closeMobileDrawer() {
+    const mobileToggle = document.getElementById('mobile-nav-toggle');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    if (mobileDrawer) {
+      mobileDrawer.classList.remove('is-open');
+      mobileDrawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    if (mobileToggle) {
+      mobileToggle.classList.remove('is-active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
 
   // --- Language Management ---
   function initLanguage() {

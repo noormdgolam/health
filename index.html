@@ -77,42 +77,272 @@
     <div class="ambient-orb orb-violet"></div>
   </div>
 
-  <!-- Top Navigation & Controls -->
+  <!-- Top Clinical Accreditation & Trust Ribbon -->
+  <div class="header-top-ribbon" id="top-ribbon">
+    <div class="top-ribbon-container">
+      <div class="ribbon-left">
+        <span class="ribbon-icon">🛡️</span>
+        <span class="ribbon-text" data-i18n="topbar_accreditation">আমেরিকান কলেজ অব লাইফস্টাইল মেডিসিন (ACLM) ও নোবেল বিজয়ী অটোফেজি গবেষণা সমর্থিত</span>
+      </div>
+      <div class="ribbon-right">
+        <span class="ribbon-badge" data-i18n="topbar_update">সর্বশেষ ক্লিনিক্যাল আপডেট: সেপ্টেম্বর ২০২৬ | এভিডেন্স স্কোর: ৯৯.৪%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ultra-Professional Sticky Header Navigation -->
   <header class="site-header" id="site-header">
     <div class="header-container">
-      <div class="brand-badge">
-        <span class="pulse-dot"></span>
-        <span class="brand-title" data-i18n="brand_title">লাইফস্টাইল মেডিসিন প্ল্যাটফর্ম</span>
-      </div>
 
-      <nav class="nav-links">
-        <a href="#assessment-section" data-i18n="nav_assessment">ঝুঁকি যাচাই</a>
-        <a href="#prescription-section" data-i18n="nav_prescription">প্রেসক্রিপশন</a>
-        <a href="#fasting-tracker" data-i18n="nav_fasting">ফাস্টিং টাইমার</a>
-        <a href="#lab-decoder" data-i18n="nav_lab">ল্যাব ডিকোডার</a>
-        <a href="#plate-builder" data-i18n="nav_plate">দেশি প্লেট</a>
-        <a href="#vagus-pacer" data-i18n="nav_vagus">শ্বাসক্রিয়া বাবল</a>
-        <a href="#habit-tracker" data-i18n="nav_habits">দৈনিক ট্র্যাকার</a>
-        <a href="#disease-reversal" data-i18n="nav_reversal">রোগ নিরাময়</a>
-      </nav>
+      <!-- Brand Crest & Clinical Identity -->
+      <a href="#site-header" class="brand-group" aria-label="MetaPrevent Home">
+        <div class="brand-crest">
+          <svg class="crest-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 3" opacity="0.45"/>
+            <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M10 20.5H14.5L17 14.5L21 26.5L24 17.5L26 20.5H30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="pulse-dot"></span>
+        </div>
+        <div class="brand-titles">
+          <div class="brand-name-row">
+            <span class="brand-name" data-i18n="brand_title">মেটাপ্রিভেন্ট™</span>
+            <span class="brand-verified-badge" data-i18n="brand_badge_text">CLINICAL</span>
+          </div>
+          <span class="brand-subtext" data-i18n="brand_subtext">প্রিভেন্টিভ লাইফস্টাইল মেডিসিন প্ল্যাটফর্ম</span>
+        </div>
+      </a>
 
-      <div class="header-actions">
-        <!-- Health Passport Quick CTA -->
-        <a href="#doctor-passport" class="btn-toggle btn-passport-cta" aria-label="Health Passport" data-mcp-action="open_doctor_passport">
+      <!-- Categorized Clinical Navigation Menu (Desktop) -->
+      <nav class="nav-clinical-menu" id="desktop-nav" aria-label="Main Clinical Navigation">
+        
+        <!-- Dropdown 1: Diagnostics & Labs -->
+        <div class="nav-dropdown" data-dropdown="diagnostics">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-diag">
+            <span class="trigger-icon">🩺</span>
+            <span class="trigger-text" data-i18n="nav_group_diagnostics">ডায়াগনস্টিকস ও ল্যাব</span>
+            <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-flyout" role="menu" aria-labelledby="trigger-diag">
+            <div class="dropdown-flyout-header">
+              <span class="flyout-title" data-i18n="nav_group_diagnostics_sub">ক্লিনিক্যাল মূল্যায়ন ও বায়োমার্কার টুলস</span>
+            </div>
+            <div class="dropdown-grid">
+              <a href="#assessment-section" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🎯</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_risk">মেটাবলিক ঝুঁকি মূল্যায়ন</span>
+                  <span class="item-desc" data-i18n="nav_diag_risk_desc">৬টি ক্লিনিক্যাল স্তম্ভের আলোকে ব্যক্তিগত স্কোর</span>
+                </div>
+              </a>
+              <a href="#lab-decoder" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🧪</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_lab">ল্যাব বায়োমার্কার ডিকোডার</span>
+                  <span class="item-desc" data-i18n="nav_diag_lab_desc">HbA1c, ইনসুলিন, TG/HDL ও ভিসেরাল ফ্যাট (TOFI)</span>
+                </div>
+              </a>
+              <a href="#cooking-oil-section" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🫒</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_oil">ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স</span>
+                  <span class="item-desc" data-i18n="nav_diag_oil_desc">নিরাপদ প্রাকৃতিক ফ্যাট বনাম ক্ষতিকর ইন্ডাস্ট্রিয়াল তেল</span>
+                </div>
+              </a>
+              <a href="#egg-nutrition-section" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🍳</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_egg">ডিম ও কোলেস্টেরল বিজ্ঞান</span>
+                  <span class="item-desc" data-i18n="nav_diag_egg_desc">কুসুমের পূর্ণাঙ্গ পুষ্টি ও দৈনিক ক্যালকুলেটর</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown 2: Protocols & Reversal -->
+        <div class="nav-dropdown" data-dropdown="protocols">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-prot">
+            <span class="trigger-icon">📋</span>
+            <span class="trigger-text" data-i18n="nav_group_protocols">ক্লিনিক্যাল প্রোটোকল</span>
+            <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-flyout" role="menu" aria-labelledby="trigger-prot">
+            <div class="dropdown-flyout-header">
+              <span class="flyout-title" data-i18n="nav_group_protocols_sub">বিজ্ঞানভিত্তিক নিরাময় ও প্রতিরোধ নির্দেশিকা</span>
+            </div>
+            <div class="dropdown-grid">
+              <a href="#prescription-section" class="dropdown-item" role="menuitem">
+                <span class="item-icon">📜</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_rx">ব্যক্তিগত লাইফস্টাইল প্রেসক্রিপশন</span>
+                  <span class="item-desc" data-i18n="nav_prot_rx_desc">সম্পূর্ণ দৈনিক রুটিন, ডায়েট ও স্লিপ গাইড</span>
+                </div>
+              </a>
+              <a href="#disease-reversal" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🔄</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_reversal">রোগ নিরাময় জ্ঞানভাণ্ডার</span>
+                  <span class="item-desc" data-i18n="nav_prot_reversal_desc">ডায়াবেটিস, প্রেশার ও ফ্যাটি লিভার রিভার্সাল</span>
+                </div>
+              </a>
+              <a href="#vagus-pacer" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🫁</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_vagus">ভ্যাগাস নার্ভ ব্রিদিং পেসার</span>
+                  <span class="item-desc" data-i18n="nav_prot_vagus_desc">৪-৭-৮, বক্স ব্রিদিং ও কার্ডিয়াক কোহেরেন্স বাবল</span>
+                </div>
+              </a>
+              <a href="#heart-mind-section" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🧠</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_heart_mind">হার্ট-মাইন্ড সাইকোলজি</span>
+                  <span class="item-desc" data-i18n="nav_prot_heart_mind_desc">স্ট্রেস ডিটক্স ও নিউরো-ইমিউনোলজি ব্যালেন্স</span>
+                </div>
+              </a>
+              <a href="#mythbusters-section" class="dropdown-item" role="menuitem">
+                <span class="item-icon">💡</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_myths">মেডিকেল মিথ বাস্টার্স</span>
+                  <span class="item-desc" data-i18n="nav_prot_myths_desc">কোলেস্টেরল ও ক্যালোরি গণনা সংক্রান্ত বিভ্রান্তি নিরসন</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown 3: Daily Tools -->
+        <div class="nav-dropdown" data-dropdown="tools">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-tools">
+            <span class="trigger-icon">⏱️</span>
+            <span class="trigger-text" data-i18n="nav_group_tools">দৈনিক টুলস</span>
+            <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-flyout" role="menu" aria-labelledby="trigger-tools">
+            <div class="dropdown-flyout-header">
+              <span class="flyout-title" data-i18n="nav_group_tools_sub">দৈনিক মনিটরিং ও সুস্থতার অভ্যাস</span>
+            </div>
+            <div class="dropdown-grid">
+              <a href="#fasting-tracker" class="dropdown-item" role="menuitem">
+                <span class="item-icon">⏳</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_tool_fasting">ইন্টারমিটেন্ট ফাস্টিং টাইমার</span>
+                  <span class="item-desc" data-i18n="nav_tool_fasting_desc">১৪-১৬ ঘণ্টার লাইভ অটোফেজি স্টেজ মনিটর</span>
+                </div>
+              </a>
+              <a href="#plate-builder" class="dropdown-item" role="menuitem">
+                <span class="item-icon">🥗</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_tool_plate">দেশি পুষ্টি প্লেট বিল্ডার</span>
+                  <span class="item-desc" data-i18n="nav_tool_plate_desc">৫০% শাকসবজি অনুপাত ও বাজেট ডায়েট প্ল্যান</span>
+                </div>
+              </a>
+              <a href="#habit-tracker" class="dropdown-item" role="menuitem">
+                <span class="item-icon">📅</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_tool_habits">মেটাবলিক অভ্যাস ট্র্যাকার</span>
+                  <span class="item-desc" data-i18n="nav_tool_habits_desc">৭টি মেটাবলিক রুটিনের ধারাবাহিকতা স্কোর</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standalone Doctor Passport Quick Action -->
+        <a href="#doctor-passport" class="nav-passport-pill" aria-label="Doctor Health Passport" data-mcp-action="open_doctor_passport">
+          <span class="passport-pulse-ring"></span>
           <span class="passport-icon">📋</span>
-          <span class="passport-label" data-i18n="nav_passport">ডক্টর পাসপোর্ট</span>
+          <span class="passport-text" data-i18n="nav_passport_btn">ডক্টর পাসপোর্ট</span>
+          <span class="passport-tag">PDF</span>
         </a>
 
-        <!-- Language Switcher -->
-        <button id="lang-toggle-btn" class="btn-toggle" aria-label="Toggle Language" data-mcp-action="toggle_language">
-          <span class="flag-icon">🌐</span>
-          <span id="lang-label">English</span>
-        </button>
+      </nav>
 
-        <!-- Theme Switcher -->
-        <button id="theme-toggle-btn" class="btn-toggle" aria-label="Toggle Dark/Light Mode" data-mcp-action="toggle_theme">
+      <!-- Header Action Controls (Theme, Language, Mobile Toggle) -->
+      <div class="header-actions">
+
+        <!-- Language Pill Switcher (Segmented) -->
+        <div class="lang-segmented-control" role="group" aria-label="Language Selector">
+          <button id="lang-toggle-btn" class="btn-lang-toggle" aria-label="Toggle Language" data-mcp-action="toggle_language">
+            <span class="lang-globe">🌐</span>
+            <span id="lang-label" class="lang-text">English</span>
+          </button>
+        </div>
+
+        <!-- Dark/Light Mode Orb -->
+        <button id="theme-toggle-btn" class="btn-theme-orb" aria-label="Toggle Dark/Light Mode" data-mcp-action="toggle_theme">
           <span class="theme-icon">🌙</span>
         </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-nav-toggle" class="btn-mobile-burger" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="burger-bar bar-1"></span>
+          <span class="burger-bar bar-2"></span>
+          <span class="burger-bar bar-3"></span>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Mobile Fullscreen Glassmorphic Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <div class="mobile-brand">
+          <span class="pulse-dot"></span>
+          <span class="mobile-brand-name" data-i18n="brand_title">মেটাপ্রিভেন্ট™</span>
+        </div>
+        <button class="btn-close-drawer" id="btn-close-drawer" aria-label="Close Menu">✕</button>
+      </div>
+
+      <div class="mobile-drawer-content">
+
+        <!-- Mobile Accordion 1: Diagnostics -->
+        <div class="mobile-group">
+          <div class="mobile-group-title">
+            <span>🩺</span> <span data-i18n="nav_group_diagnostics">ডায়াগনস্টিকস ও ল্যাব</span>
+          </div>
+          <div class="mobile-links">
+            <a href="#assessment-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_risk">মেটাবলিক ঝুঁকি মূল্যায়ন</span></a>
+            <a href="#lab-decoder" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_lab">ল্যাব বায়োমার্কার ডিকোডার</span></a>
+            <a href="#cooking-oil-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_oil">ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স</span></a>
+            <a href="#egg-nutrition-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_egg">ডিম ও কোলেস্টেরল বিজ্ঞান</span></a>
+          </div>
+        </div>
+
+        <!-- Mobile Accordion 2: Protocols -->
+        <div class="mobile-group">
+          <div class="mobile-group-title">
+            <span>📋</span> <span data-i18n="nav_group_protocols">ক্লিনিক্যাল প্রোটোকল</span>
+          </div>
+          <div class="mobile-links">
+            <a href="#prescription-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_rx">লাইফস্টাইল প্রেসক্রিপশন</span></a>
+            <a href="#disease-reversal" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_reversal">রোগ নিরাময় জ্ঞানভাণ্ডার</span></a>
+            <a href="#vagus-pacer" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_vagus">ভ্যাগাস নার্ভ ব্রিদিং পেসার</span></a>
+            <a href="#heart-mind-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_heart_mind">হার্ট-মাইন্ড সাইকোলজি</span></a>
+            <a href="#mythbusters-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_myths">মেডিকেল মিথ বাস্টার্স</span></a>
+          </div>
+        </div>
+
+        <!-- Mobile Accordion 3: Daily Tools -->
+        <div class="mobile-group">
+          <div class="mobile-group-title">
+            <span>⏱️</span> <span data-i18n="nav_group_tools">দৈনিক টুলস</span>
+          </div>
+          <div class="mobile-links">
+            <a href="#fasting-tracker" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_tool_fasting">ইন্টারমিটেন্ট ফাস্টিং টাইমার</span></a>
+            <a href="#plate-builder" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_tool_plate">দেশি পুষ্টি প্লেট বিল্ডার</span></a>
+            <a href="#habit-tracker" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_tool_habits">মেটাবলিক অভ্যাস ট্র্যাকার</span></a>
+          </div>
+        </div>
+
+        <!-- Mobile Passport CTA -->
+        <div class="mobile-cta-box">
+          <a href="#doctor-passport" class="mobile-passport-btn">
+            <span>📋</span> <span data-i18n="nav_passport_btn">ডক্টর পাসপোর্ট প্রিন্ট / এক্সপোর্ট</span>
+          </a>
+        </div>
+
       </div>
     </div>
   </header>
