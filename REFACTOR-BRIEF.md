@@ -36,34 +36,23 @@ Paste everything below into Antigravity as the task. It is written to be read co
 
 ---
 
-## PART 1 — Cache hardening (the "broken layout" screenshot)
+## PART 1 — Cache hardening — ALREADY DONE (2026-09-08), for context only
 
-**This is almost certainly not a code bug.** In a clean browser at 1271px the live site renders
-correctly with no horizontal scrollbar (`document.documentElement.scrollWidth === innerWidth`) and
-loads `style.css?v=20260908` / `app.js?v=20260908`. The unstyled-nav / clipped-header / green
-left-edge line symptom is a **stale asset cache** from before the `?v=` fix (7-day
-`max-age`). A hard refresh clears it for one user; the goal here is to make it structurally
-impossible to recur.
+The "broken layout" screenshot was **stale asset cache**, not a code bug. Verified: in a clean
+browser at 1271px the live site renders correctly, no horizontal scrollbar, header fits cleanly
+across 1081–1360px. These fixes are already deployed and committed:
 
-Do all of the following:
+- **`.htaccess`** (now in the repo): HTML → `Cache-Control: no-cache, must-revalidate`; static
+  assets → `max-age=2592000`; `AddType application/manifest+json .webmanifest` (was served as
+  `application/octet-stream`).
+- **`?v=` is now content-derived** — `sha1(file)[:8]`. `bump-cache.mjs` (dependency-free Node)
+  rewrites the `?v=` on `style.css` / `app.js` in the page(s); run `node bump-cache.mjs` before
+  every deploy. **When you add the multi-page build, fold `bump-cache.mjs` into `build.mjs` and
+  add every generated page to its `pages` array** (or switch to hashed filenames, which is
+  cleaner — then `.htaccess` can use `immutable`).
+- **`overflow-x: clip` on `body`** as a defensive guard (sticky header still works).
 
-1. **`.htaccess` cache policy.** Add rules (the current `.htaccess` only has cPanel PHP
-   directives — append, don't replace):
-   - `text/html` → `Cache-Control: no-cache` (always revalidate) or `max-age=300`.
-   - versioned/static assets (`css`, `js`, `svg`, `png`, `webmanifest`, `woff2`) →
-     `Cache-Control: public, max-age=31536000, immutable`.
-   - `AddType application/manifest+json .webmanifest` (it is currently served as
-     `application/octet-stream`).
-2. **Content-hash the CSS/JS filenames** so a stale cache is impossible, not just unlikely. The
-   build script from Part 2 should emit `style.<hash>.css` / `app.<hash>.js` and rewrite the
-   `<link>`/`<script>` references in every generated page. If you keep the `?v=` scheme instead,
-   the version string must be derived from the file content hash, not a hand-typed date.
-3. **Defensive overflow guard:** add `overflow-x: clip` to `body` in `style.css` (keep `html`
-   untouched so `position: sticky` still works). Then audit the header/nav between **1024px and
-   1360px** — the desktop nav (`.nav-clinical-menu`) shows at ≥1081px; confirm brand + 3
-   dropdowns + passport pill + language + theme fit without the language control clipping. Tighten
-   gaps/padding or drop the passport pill to icon-only in that band if needed.
-4. Re-run the clean-browser check at 1271px and 1024px and confirm no horizontal scrollbar.
+Nothing to do in Part 1 — just don't regress it.
 
 ---
 
