@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Set the colour theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('site_theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  
+
+  <title>৬ স্তম্ভের মেটাবলিক অভ্যাস ও স্ট্রিক ট্র্যাকার | MetaPrevent</title>
+  <meta name="description" content="ফাস্টিং, হাঁটা, পুষ্টিকর খাবার, হাইড্রেশন, শ্বাসের ব্যায়াম ও গভীর ঘুম — ৬টি মেটাবলিক নিয়মের দৈনিক প্রোগ্রেস ও ৭ দিনের স্ট্রিক মনিটর।">
+  <meta name="author" content="Preventive Cardiology & Lifestyle Medicine Research Initiative">
+  <meta name="keywords" content="Lifestyle Medicine, Metabolic Health, Diabetes Reversal, Hypertension, Autophagy, Intermittent Fasting, স্বাস্থ্যঝুঁকি">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://health.bongshai.com/habit-tracker/">
+
+  <!-- Colour of the browser UI -->
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#060c14" media="(prefers-color-scheme: dark)">
+
+  <!-- Icons & PWA -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23059669'/%3E%3Cpath d='M7 21h5l3-7 5 13 3-9 2 3h5' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23059669'/%3E%3Cpath d='M7 21h5l3-7 5 13 3-9 2 3h5' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MetaPrevent">
+  <meta property="og:locale" content="bn_BD">
+  <meta property="og:title" content="৬ স্তম্ভের মেটাবলিক অভ্যাস ও স্ট্রিক ট্র্যাকার | MetaPrevent">
+  <meta property="og:description" content="ফাস্টিং, হাঁটা, পুষ্টিকর খাবার, হাইড্রেশন, শ্বাসের ব্যায়াম ও গভীর ঘুম — ৬টি মেটাবলিক নিয়মের দৈনিক প্রোগ্রেস ও ৭ দিনের স্ট্রিক মনিটর।">
+  <meta property="og:url" content="https://health.bongshai.com/habit-tracker/">
+  <meta property="og:image" content="https://health.bongshai.com/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="৬ স্তম্ভের মেটাবলিক অভ্যাস ও স্ট্রিক ট্র্যাকার | MetaPrevent">
+  <meta name="twitter:description" content="ফাস্টিং, হাঁটা, পুষ্টিকর খাবার, হাইড্রেশন, শ্বাসের ব্যায়াম ও গভীর ঘুম — ৬টি মেটাবলিক নিয়মের দৈনিক প্রোগ্রেস ও ৭ দিনের স্ট্রিক মনিটর।">
+  <meta name="twitter:image" content="https://health.bongshai.com/og-cover.png">
+
+  <!-- Fonts: Hind Siliguri (Bengali) + Outfit (Latin display); Latin body uses the system stack -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Outfit:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="/style.css?v=581d790f">
+  <script src="/app.js?v=d43af29a" defer></script>
+
+  <script>
+    window.__PAGE_META = {"bn":{"title":"৬ স্তম্ভের মেটাবলিক অভ্যাস ও স্ট্রিক ট্র্যাকার | MetaPrevent","desc":"ফাস্টিং, হাঁটা, পুষ্টিকর খাবার, হাইড্রেশন, শ্বাসের ব্যায়াম ও গভীর ঘুম — ৬টি মেটাবলিক নিয়মের দৈনিক প্রোগ্রেস ও ৭ দিনের স্ট্রিক মনিটর।"},"en":{"title":"6-Pillar Metabolic Habit & Streak Tracker | MetaPrevent","desc":"Daily checklist tracking 6 foundational metabolic pillars: fasting, exercise, clean nutrition, hydration, vagal breathing, and circadian sleep."}};
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://health.bongshai.com/#org",
+      "name": "MetaPrevent — Preventive Lifestyle Medicine Platform",
+      "url": "https://health.bongshai.com/",
+      "logo": "https://health.bongshai.com/icon.svg",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://health.bongshai.com/#website",
+      "url": "https://health.bongshai.com/",
+      "name": "MetaPrevent",
+      "inLanguage": "bn",
+      "publisher": {
+        "@id": "https://health.bongshai.com/#org"
+      }
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://health.bongshai.com/habit-tracker/#webpage",
+      "url": "https://health.bongshai.com/habit-tracker/",
+      "name": "৬ স্তম্ভের মেটাবলিক অভ্যাস ও স্ট্রিক ট্র্যাকার | MetaPrevent",
+      "description": "ফাস্টিং, হাঁটা, পুষ্টিকর খাবার, হাইড্রেশন, শ্বাসের ব্যায়াম ও গভীর ঘুম — ৬টি মেটাবলিক নিয়মের দৈনিক প্রোগ্রেস ও ৭ দিনের স্ট্রিক মনিটর।",
+      "inLanguage": "bn",
+      "isPartOf": {
+        "@id": "https://health.bongshai.com/#website"
+      },
+      "about": [
+        {
+          "@type": "MedicalCondition",
+          "name": "Lifestyle Risk Factors"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "Metabolic Syndrome"
+        }
+      ],
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Patient"
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Preventive Cardiology & Lifestyle Medicine Research Initiative"
+      },
+      "lastReviewed": "2026-09-08",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-08",
+      "author": {
+        "@type": "Organization",
+        "name": "Preventive Cardiology & Lifestyle Medicine Research Initiative",
+        "url": "https://health.bongshai.com/"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://health.bongshai.com/og-cover.png"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://health.bongshai.com/habit-tracker/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "হোম",
+          "item": "https://health.bongshai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "দৈনিক টুলস",
+          "item": "https://health.bongshai.com/#tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "মেটাবলিক অভ্যাস ট্র্যাকার",
+          "item": "https://health.bongshai.com/habit-tracker/"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://health.bongshai.com/habit-tracker/#daily-protocol",
+      "inLanguage": "bn",
+      "name": "৬ স্তম্ভের দৈনিক মেটাবলিক সুস্থতা প্রোটোকল",
+      "description": "হ্যাঁ, লাইফস্টাইল মেডিসিনের মূল ভিত্তি হলো রোগের মূল কারণ দূর করা। খাদ্যাভ্যাস থেকে বিষাক্ত উপাদান বর্জন, ১৪-১৬ ঘণ্টার অটোফেজি এবং নিয়মিত হাঁটার মাধ্যমে হাজার হাজার মানুষ প্রেশার ও সুগারের ওষুধ থেকে মুক্ত হয়েছেন।",
+      "totalTime": "P1D",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "১. ১৪–১৬ ঘণ্টার ইন্টারমিটেন্ট ফাস্টিং সম্পন্ন",
+          "text": "রাত ৮টার মধ্যে রাতের খাবার শেষ করে সকাল ১০টা পর্যন্ত পরিপাক বিরতি।",
+          "url": "https://health.bongshai.com/habit-tracker/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "২. ৪৫ মিনিট রোদে দ্রুত হাঁটা ও শারীরিক ঘাম ঝরানো",
+          "text": "সকালের প্রাকৃতিক রোদে দ্রুত হাঁটা ও ইনসুলিন সংবেদনশীলতা বৃদ্ধি।",
+          "url": "https://health.bongshai.com/habit-tracker/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "৩. চিনি, মিষ্টি ও সয়াবিন/পাম তেল সম্পূর্ণ বর্জন",
+          "text": "শুধুমাত্র সবুজ শাকসবজি, খাঁটি সরিষার তেল ও পুষ্টিকর প্রাকৃতিক খাবার গ্রহণ।",
+          "url": "https://health.bongshai.com/habit-tracker/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "৪. ২.৫ থেকে ৩ লিটার বিশুদ্ধ পানি ও লেবুপানি",
+          "text": "পর্যাপ্ত সেলুলার হাইড্রেশন ও লিভার-কিডনির বিষাক্ত বর্জ্য নিষ্কাশন।",
+          "url": "https://health.bongshai.com/habit-tracker/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "৫. ১০–১৫ মিনিট শ্বাসক্রিয়া বা ধ্যান (মেডিটেশন)",
+          "text": "ভ্যাগাস নার্ভ সক্রিয়করণ, মানসিক চাপ ও কর্টিসোল হরমোন হ্রাস।",
+          "url": "https://health.bongshai.com/habit-tracker/"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "৬. রাত ১১:০০ টার পূর্বেই শান্ত পরিবেশে বিছানায় ঘুমানো",
+          "text": "সার্কাডিয়ান ছন্দে মেলাটোনিন বৃদ্ধি ও ৭-৮ ঘণ্টার গভীর আরামদায়ক ঘুম।",
+          "url": "https://health.bongshai.com/habit-tracker/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content" data-i18n="skip_to_content">মূল বিষয়বস্তুতে যান</a>
+
+  <!-- Polite live region for milestone announcements (score ready, fasting stage change, etc.) -->
+  <div id="sr-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Ambient Glassmorphism Glow Engine -->
+  <div class="ambient-glow-container" aria-hidden="true">
+    <div class="ambient-orb orb-emerald"></div>
+    <div class="ambient-orb orb-sky"></div>
+    <div class="ambient-orb orb-amber"></div>
+  </div>
+
+  <div class="header-top-ribbon" id="top-ribbon">
+    <div class="top-ribbon-container">
+      <div class="ribbon-left">
+        <span class="ribbon-icon" aria-hidden="true">🛡️</span>
+        <span class="ribbon-text" data-i18n="topbar_accreditation">আমেরিকান কলেজ অব লাইফস্টাইল মেডিসিন (ACLM) ও নোবেল বিজয়ী অটোফেজি গবেষণা সমর্থিত</span>
+      </div>
+      <div class="ribbon-right">
+        <span class="ribbon-badge" data-i18n="topbar_update">সর্বশেষ ক্লিনিক্যাল আপডেট: সেপ্টেম্বর ২০২৬ | এভিডেন্স স্কোর: ৯৯.৪%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ultra-Professional Sticky Header Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+
+      <!-- Brand Crest & Clinical Identity -->
+      <a href="/" class="brand-group" aria-label="MetaPrevent Home">
+        <div class="brand-crest">
+          <svg class="crest-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 3" opacity="0.45"/>
+            <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M10 20.5H14.5L17 14.5L21 26.5L24 17.5L26 20.5H30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="pulse-dot" aria-hidden="true"></span>
+        </div>
+        <div class="brand-titles">
+          <div class="brand-name-row">
+            <span class="brand-name" data-i18n="brand_title">মেটাপ্রিভেন্ট™</span>
+            <span class="brand-verified-badge" data-i18n="brand_badge_text">CLINICAL</span>
+          </div>
+          <span class="brand-subtext" data-i18n="brand_subtext">প্রিভেন্টিভ লাইফস্টাইল মেডিসিন প্ল্যাটফর্ম</span>
+        </div>
+      </a>
+
+      <!-- Categorized Clinical Navigation Menu (Desktop) -->
+      <nav class="nav-clinical-menu" id="desktop-nav" aria-label="Main Clinical Navigation">
+        
+        <!-- Dropdown 1: Diagnostics & Labs -->
+        <div class="nav-dropdown" data-dropdown="diagnostics">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="flyout-diag" id="trigger-diag">
+            <span class="trigger-icon" aria-hidden="true">🩺</span>
+            <span class="trigger-text" data-i18n="nav_group_diagnostics">ডায়াগনস্টিকস ও ল্যাব</span>
+            <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-flyout" id="flyout-diag" aria-labelledby="trigger-diag">
+            <div class="dropdown-flyout-header">
+              <span class="flyout-title" data-i18n="nav_group_diagnostics_sub">ক্লিনিক্যাল মূল্যায়ন ও বায়োমার্কার টুলস</span>
+            </div>
+            <div class="dropdown-grid">
+              <a href="/#assessment-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🎯</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_risk">মেটাবলিক ঝুঁকি মূল্যায়ন</span>
+                  <span class="item-desc" data-i18n="nav_diag_risk_desc">৬টি ক্লিনিক্যাল স্তম্ভের আলোকে ব্যক্তিগত স্কোর</span>
+                </div>
+              </a>
+              <a href="/lab-decoder/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🧪</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_lab">ল্যাব বায়োমার্কার ডিকোডার</span>
+                  <span class="item-desc" data-i18n="nav_diag_lab_desc">HbA1c, ইনসুলিন, TG/HDL ও ভিসেরাল ফ্যাট (TOFI)</span>
+                </div>
+              </a>
+              <a href="/cooking-oils/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🫒</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_oil">ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স</span>
+                  <span class="item-desc" data-i18n="nav_diag_oil_desc">নিরাপদ প্রাকৃতিক ফ্যাট বনাম ক্ষতিকর ইন্ডাস্ট্রিয়াল তেল</span>
+                </div>
+              </a>
+              <a href="/eggs/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🍳</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_diag_egg">ডিম ও কোলেস্টেরল বিজ্ঞান</span>
+                  <span class="item-desc" data-i18n="nav_diag_egg_desc">কুসুমের পূর্ণাঙ্গ পুষ্টি ও দৈনিক ক্যালকুলেটর</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown 2: Protocols & Reversal -->
+        <div class="nav-dropdown" data-dropdown="protocols">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="flyout-prot" id="trigger-prot">
+            <span class="trigger-icon" aria-hidden="true">📋</span>
+            <span class="trigger-text" data-i18n="nav_group_protocols">ক্লিনিক্যাল প্রোটোকল</span>
+            <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-flyout" id="flyout-prot" aria-labelledby="trigger-prot">
+            <div class="dropdown-flyout-header">
+              <span class="flyout-title" data-i18n="nav_group_protocols_sub">বিজ্ঞানভিত্তিক নিরাময় ও প্রতিরোধ নির্দেশিকা</span>
+            </div>
+            <div class="dropdown-grid">
+              <a href="/#prescription-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">📜</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_rx">ব্যক্তিগত লাইফস্টাইল প্রেসক্রিপশন</span>
+                  <span class="item-desc" data-i18n="nav_prot_rx_desc">সম্পূর্ণ দৈনিক রুটিন, ডায়েট ও স্লিপ গাইড</span>
+                </div>
+              </a>
+              <a href="/disease-reversal/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🔄</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_reversal">রোগ নিরাময় জ্ঞানভাণ্ডার</span>
+                  <span class="item-desc" data-i18n="nav_prot_reversal_desc">ডায়াবেটিস, প্রেশার ও ফ্যাটি লিভার রিভার্সাল</span>
+                </div>
+              </a>
+              <a href="/breathing/#vagus-pacer" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🫁</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_vagus">ভ্যাগাস নার্ভ ব্রিদিং পেসার</span>
+                  <span class="item-desc" data-i18n="nav_prot_vagus_desc">৪-৭-৮, বক্স ব্রিদিং ও কার্ডিয়াক কোহেরেন্স বাবল</span>
+                </div>
+              </a>
+              <a href="/breathing/#heart-mind-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🧠</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_heart_mind">হার্ট-মাইন্ড সাইকোলজি</span>
+                  <span class="item-desc" data-i18n="nav_prot_heart_mind_desc">স্ট্রেস ডিটক্স ও নিউরো-ইমিউনোলজি ব্যালেন্স</span>
+                </div>
+              </a>
+              <a href="/mythbusters/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">💡</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_prot_myths">মেডিকেল মিথ বাস্টার্স</span>
+                  <span class="item-desc" data-i18n="nav_prot_myths_desc">কোলেস্টেরল ও ক্যালোরি গণনা সংক্রান্ত বিভ্রান্তি নিরসন</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown 3: Daily Tools -->
+        <div class="nav-dropdown" data-dropdown="tools">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="flyout-tools" id="trigger-tools">
+            <span class="trigger-icon" aria-hidden="true">⏱️</span>
+            <span class="trigger-text" data-i18n="nav_group_tools">দৈনিক টুলস</span>
+            <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-flyout" id="flyout-tools" aria-labelledby="trigger-tools">
+            <div class="dropdown-flyout-header">
+              <span class="flyout-title" data-i18n="nav_group_tools_sub">দৈনিক মনিটরিং ও সুস্থতার অভ্যাস</span>
+            </div>
+            <div class="dropdown-grid">
+              <a href="/fasting/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">⏳</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_tool_fasting">ইন্টারমিটেন্ট ফাস্টিং টাইমার</span>
+                  <span class="item-desc" data-i18n="nav_tool_fasting_desc">১৪-১৬ ঘণ্টার লাইভ অটোফেজি স্টেজ মনিটর</span>
+                </div>
+              </a>
+              <a href="/plate-builder/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🥗</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_tool_plate">দেশি পুষ্টি প্লেট বিল্ডার</span>
+                  <span class="item-desc" data-i18n="nav_tool_plate_desc">৫০% শাকসবজি অনুপাত ও বাজেট ডায়েট প্ল্যান</span>
+                </div>
+              </a>
+              <a href="/habit-tracker/" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">📅</span>
+                <div class="item-info">
+                  <span class="item-title" data-i18n="nav_tool_habits">মেটাবলিক অভ্যাস ট্র্যাকার</span>
+                  <span class="item-desc" data-i18n="nav_tool_habits_desc">৭টি মেটাবলিক রুটিনের ধারাবাহিকতা স্কোর</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standalone Doctor Passport Quick Action -->
+        <a href="/doctor-passport/" class="nav-passport-pill" aria-label="Doctor Health Passport" data-mcp-action="open_doctor_passport">
+          <span class="passport-pulse-ring"></span>
+          <span class="passport-icon" aria-hidden="true">📋</span>
+          <span class="passport-text" data-i18n="nav_passport_btn">ডক্টর পাসপোর্ট</span>
+          <span class="passport-tag">PDF</span>
+        </a>
+
+      </nav>
+
+      <!-- Header Action Controls (Theme, Language, Mobile Toggle) -->
+      <div class="header-actions">
+
+        <!-- Language Pill Switcher (Segmented) -->
+        <div class="lang-segmented-control" role="group" aria-label="Language Selector">
+          <button id="lang-toggle-btn" class="btn-lang-toggle" aria-label="Toggle Language" data-mcp-action="toggle_language">
+            <span class="lang-globe">🌐</span>
+            <span id="lang-label" class="lang-text">English</span>
+          </button>
+        </div>
+
+        <!-- Dark/Light Mode Orb -->
+        <button id="theme-toggle-btn" class="btn-theme-orb" aria-label="Toggle Dark/Light Mode" data-mcp-action="toggle_theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-nav-toggle" class="btn-mobile-burger" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="burger-bar bar-1"></span>
+          <span class="burger-bar bar-2"></span>
+          <span class="burger-bar bar-3"></span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+    <!-- Mobile Fullscreen Glassmorphic Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <div class="mobile-brand">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="mobile-brand-name" data-i18n="brand_title">মেটাপ্রিভেন্ট™</span>
+        </div>
+        <button class="btn-close-drawer" id="btn-close-drawer" aria-label="Close Menu">✕</button>
+      </div>
+
+      <div class="mobile-drawer-content">
+
+        <!-- Mobile Accordion 1: Diagnostics -->
+        <div class="mobile-group">
+          <div class="mobile-group-title">
+            <span>🩺</span> <span data-i18n="nav_group_diagnostics">ডায়াগনস্টিকস ও ল্যাব</span>
+          </div>
+          <div class="mobile-links">
+            <a href="/#assessment-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_risk">মেটাবলিক ঝুঁকি মূল্যায়ন</span></a>
+            <a href="/lab-decoder/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_lab">ল্যাব বায়োমার্কার ডিকোডার</span></a>
+            <a href="/cooking-oils/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_oil">ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স</span></a>
+            <a href="/eggs/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_egg">ডিম ও কোলেস্টেরল বিজ্ঞান</span></a>
+          </div>
+        </div>
+
+        <!-- Mobile Accordion 2: Protocols -->
+        <div class="mobile-group">
+          <div class="mobile-group-title">
+            <span>📋</span> <span data-i18n="nav_group_protocols">ক্লিনিক্যাল প্রোটোকল</span>
+          </div>
+          <div class="mobile-links">
+            <a href="/#prescription-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_rx">লাইফস্টাইল প্রেসক্রিপশন</span></a>
+            <a href="/disease-reversal/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_reversal">রোগ নিরাময় জ্ঞানভাণ্ডার</span></a>
+            <a href="/breathing/#vagus-pacer" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_vagus">ভ্যাগাস নার্ভ ব্রিদিং পেসার</span></a>
+            <a href="/breathing/#heart-mind-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_heart_mind">হার্ট-মাইন্ড সাইকোলজি</span></a>
+            <a href="/mythbusters/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_myths">মেডিকেল মিথ বাস্টার্স</span></a>
+          </div>
+        </div>
+
+        <!-- Mobile Accordion 3: Daily Tools -->
+        <div class="mobile-group">
+          <div class="mobile-group-title">
+            <span>⏱️</span> <span data-i18n="nav_group_tools">দৈনিক টুলস</span>
+          </div>
+          <div class="mobile-links">
+            <a href="/fasting/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_tool_fasting">ইন্টারমিটেন্ট ফাস্টিং টাইমার</span></a>
+            <a href="/plate-builder/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_tool_plate">দেশি পুষ্টি প্লেট বিল্ডার</span></a>
+            <a href="/habit-tracker/" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_tool_habits">মেটাবলিক অভ্যাস ট্র্যাকার</span></a>
+          </div>
+        </div>
+
+        <!-- Mobile Passport CTA -->
+        <div class="mobile-cta-box">
+          <a href="/doctor-passport/" class="mobile-passport-btn">
+            <span aria-hidden="true">📋</span> <span data-i18n="nav_passport_btn">ডক্টর পাসপোর্ট প্রিন্ট / এক্সপোর্ট</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  <main class="main-content" id="main-content" tabindex="-1">
+    <section class="habit-tracker-wrapper" id="habit-tracker">
+      <div class="section-headline">
+        <span class="section-tag" data-i18n="tag_habits">দৈনিক ধারাবাহিকতা ও নিউরোপ্লাস্টিসিটি</span>
+        <h2 class="section-title" data-i18n="title_habits">৬টি স্তম্ভের সুস্থতা অভ্যাস ও ধারাবাহিকতা ট্র্যাকার</h2>
+        <p class="section-desc" data-i18n="desc_habits">রোগ নিরাময় কোনো একদিনের ম্যাজিক নয়—এটি প্রতিদিনের ধারাবাহিক অভ্যাসের ফল। আপনার প্রতিদিনের ৬টি স্তম্ভ টিক দিন এবং ধারাবাহিকতা রক্ষা করুন।</p>
+      </div>
+
+      <div class="habit-card glass-card">
+        <div class="habit-header-row">
+          <div class="today-date-info">
+            <span class="date-badge" id="habit-today-date">আজকের তারিখ</span>
+            <h3 class="habit-subtitle" data-i18n="title_daily_check">দৈনিক স্বাস্থ্য চেকলিস্ট</h3>
+          </div>
+          <div class="streak-badge-wrap">
+            <div class="streak-chip">
+              <span class="streak-flame" aria-hidden="true">🔥</span>
+              <span class="streak-count" id="habit-streak-count">০</span>
+              <span class="streak-text" data-i18n="lbl_streak_days">দিনের অবিচ্ছিন্ন স্ট্রিক</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Habit Progress Bar -->
+        <div class="habit-progress-container">
+          <div class="progress-info-row">
+            <span class="progress-label" data-i18n="lbl_today_progress">আজকের সম্পন্ন হার:</span>
+            <span class="progress-pct" id="habit-progress-pct">০% (০/৬)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="habit-progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- 6 Checkbox Items -->
+        <div class="habit-checklist-grid" id="habit-checklist">
+          <label class="habit-checkbox-item" for="chk-fasting">
+            <input type="checkbox" id="chk-fasting" data-habit="fasting">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h1_title">১. ১৪–১৬ ঘণ্টার ইন্টারমিটেন্ট ফাস্টিং সম্পন্ন</strong>
+              <p data-i18n="h1_desc">রাত ৮টার মধ্যে রাতের খাবার শেষ করে সকাল ১০টা পর্যন্ত পরিপাক বিরতি।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-walk">
+            <input type="checkbox" id="chk-walk" data-habit="walk">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h2_title">২. ৪৫ মিনিট রোদে দ্রুত হাঁটা ও শারীরিক ঘাম ঝরানো</strong>
+              <p data-i18n="h2_desc">সকালের প্রাকৃতিক রোদে দ্রুত হাঁটা ও ইনসুলিন সংবেদনশীলতা বৃদ্ধি।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-diet">
+            <input type="checkbox" id="chk-diet" data-habit="diet">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h3_title">৩. চিনি, মিষ্টি ও সয়াবিন/পাম তেল সম্পূর্ণ বর্জন</strong>
+              <p data-i18n="h3_desc">শুধুমাত্র সবুজ শাকসবজি, খাঁটি সরিষার তেল ও পুষ্টিকর প্রাকৃতিক খাবার গ্রহণ।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-water">
+            <input type="checkbox" id="chk-water" data-habit="water">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h4_title">৪. ২.৫ থেকে ৩ লিটার বিশুদ্ধ পানি ও লেবুপানি</strong>
+              <p data-i18n="h4_desc">পর্যাপ্ত সেলুলার হাইড্রেশন ও লিভার-কিডনির বিষাক্ত বর্জ্য নিষ্কাশন।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-mind">
+            <input type="checkbox" id="chk-mind" data-habit="mind">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h5_title">৫. ১০–১৫ মিনিট শ্বাসক্রিয়া বা ধ্যান (মেডিটেশন)</strong>
+              <p data-i18n="h5_desc">ভ্যাগাস নার্ভ সক্রিয়করণ, মানসিক চাপ ও কর্টিসোল হরমোন হ্রাস।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-sleep">
+            <input type="checkbox" id="chk-sleep" data-habit="sleep">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h6_title">৬. রাত ১১:০০ টার পূর্বেই শান্ত পরিবেশে বিছানায় ঘুমানো</strong>
+              <p data-i18n="h6_desc">সার্কাডিয়ান ছন্দে মেলাটোনিন বৃদ্ধি ও ৭-৮ ঘণ্টার গভীর আরামদায়ক ঘুম।</p>
+            </div>
+          </label>
+        </div>
+
+        <!-- 7-Day Consistency Dot Matrix -->
+        <div class="habit-footer-row">
+          <div class="past-days-matrix">
+            <span class="matrix-label" data-i18n="lbl_last_7_days">বিগত ৭ দিনের ধারাবাহিকতা:</span>
+            <div class="dot-days" id="dot-days-container">
+              <!-- Injected by JS: 7 dots showing active status -->
+            </div>
+          </div>
+          <button type="button" id="btn-save-habits" class="btn btn-primary" data-mcp-action="log_daily_habits" data-i18n="btn_save_habits">অভ্যাস সংরক্ষণ করুন</button>
+        </div>
+
+        <!-- Celebration banner -->
+        <div id="habit-celebration-banner" class="celebration-banner" style="display: none;">
+          🎉 <strong data-i18n="msg_celebrate">অভিনন্দন! আজকের ৬টি স্তম্ভের সবকটি আপনি সফলভাবে পূরণ করেছেন! আপনার কোষীয় স্ব-নিরাময় আজ সর্বোচ্চ পর্যায়ে।</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clinical Doctor Discussion Sheet & Health Passport -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>প্রিভেন্টিভ লাইফস্টাইল মেডিসিন নির্দেশিকা</h4>
+        <p data-i18n="footer_credits">প্রিভেন্টিভ কার্ডিওলজি ও আধুনিক লাইফস্টাইল মেডিসিনের বৈজ্ঞানিক প্রটোকল ভিত্তিক একটি জনসচেতনতামূলক ডিজিটাল স্বাস্থ্য উদ্যোগ।</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lifestyle Medicine Assessment Platform. Evidence-Informed Preventive Protocol.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

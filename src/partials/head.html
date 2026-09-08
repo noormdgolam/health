@@ -1,0 +1,66 @@
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Set the colour theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('site_theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  {{LEGACY_REDIRECT_SCRIPT}}
+
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="author" content="Preventive Cardiology & Lifestyle Medicine Research Initiative">
+  <meta name="keywords" content="Lifestyle Medicine, Metabolic Health, Diabetes Reversal, Hypertension, Autophagy, Intermittent Fasting, স্বাস্থ্যঝুঁকি">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="{{CANONICAL_URL}}">
+
+  <!-- Colour of the browser UI -->
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#060c14" media="(prefers-color-scheme: dark)">
+
+  <!-- Icons & PWA -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23059669'/%3E%3Cpath d='M7 21h5l3-7 5 13 3-9 2 3h5' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23059669'/%3E%3Cpath d='M7 21h5l3-7 5 13 3-9 2 3h5' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MetaPrevent">
+  <meta property="og:locale" content="bn_BD">
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{OG_DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL_URL}}">
+  <meta property="og:image" content="https://health.bongshai.com/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{OG_TITLE}}">
+  <meta name="twitter:description" content="{{OG_DESCRIPTION}}">
+  <meta name="twitter:image" content="https://health.bongshai.com/og-cover.png">
+
+  <!-- Fonts: Hind Siliguri (Bengali) + Outfit (Latin display); Latin body uses the system stack -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Outfit:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="/style.css?v={{STYLE_HASH}}">
+  <script src="/app.js?v={{APP_HASH}}" defer></script>
+
+  <script>
+    window.__PAGE_META = {{PAGE_META_JSON}};
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{{JSON_LD}}
+  </script>

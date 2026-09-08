@@ -2,6 +2,33 @@
 
 > An interactive evidence-informed preventive cardiology, metabolic health, and lifestyle medicine platform based on circadian biology, Nobel-prize winning autophagy science, and South Asian cardiovascular risk research.
 
+## Multi-Page Architecture & Clean Endpoints
+
+The platform is structured into clean static endpoints:
+
+1. **Home (`/`)**: `https://health.bongshai.com/`
+   - Executive answer-first summary, clinical authority credentials, 6-pillar risk assessment, personalized lifestyle prescription, and core metabolic FAQ.
+2. **Clinical Lab Decoder & TOFI Indices (`/lab-decoder/`)**: `https://health.bongshai.com/lab-decoder/`
+   - Waist-to-Height Ratio (WHtR), Triglyceride-to-HDL ratio (TG/HDL), and TyG index alongside 7-biomarker traffic-light clinical evaluator.
+3. **Cooking Oil Health Matrix (`/cooking-oils/`)**: `https://health.bongshai.com/cooking-oils/`
+   - Cold-pressed unrefined oils (Mustard, Coconut, Ghee, Olive) vs industrial seed oils (Soybean, Palm) — smoke points and oxidative stability.
+4. **Egg & Cholesterol Science (`/eggs/`)**: `https://health.bongshai.com/eggs/`
+   - Whole-egg dietary cholesterol evidence, choline & lutein benefits, and daily egg nutrition calculator.
+5. **Chronic Disease Reversal Protocols (`/disease-reversal/`)**: `https://health.bongshai.com/disease-reversal/`
+   - 4-tab clinical reversal protocols for Type 2 Diabetes, Hypertension, NAFLD / Fatty Liver, and Chronic Stress.
+6. **Breathing & HRV Pacer (`/breathing/`)**: `https://health.bongshai.com/breathing/`
+   - Heart-mind neurocardiology guidance merged with interactive Vagus Nerve Breathing Pacer (4-7-8, Box Breathing, 5.5s resonance bubble).
+7. **Medical Mythbusters (`/mythbusters/`)**: `https://health.bongshai.com/mythbusters/`
+   - Evidence-based debunking of 5 critical metabolic myths (egg yolks, vegetable oils, dietary fat, chronic medication, breakfast timing).
+8. **Intermittent Fasting & Autophagy Tracker (`/fasting/`)**: `https://health.bongshai.com/fasting/`
+   - Real-time biological phase tracker (glycogen depletion, ketosis, peak autophagy, insulin sensitivity, stem cell renewal).
+9. **Desi Nutrition Plate Builder (`/plate-builder/`)**: `https://health.bongshai.com/plate-builder/`
+   - Interactive 50% vegetables, 25% protein, 25% complex carbs plate designer and localized 7-day budget meal plans.
+10. **Metabolic Habit Tracker (`/habit-tracker/`)**: `https://health.bongshai.com/habit-tracker/`
+    - Daily 6-pillar compliance checklist, streak counter, progress bar, and 7-day consistency dot matrix.
+11. **Doctor Health Passport (`/doctor-passport/`)**: `https://health.bongshai.com/doctor-passport/`
+    - Consolidated clinical discussion summary, cross-page metabolic metrics, and 5 targeted physician discussion questions for deprescribing.
+
 ## Core Medical & Lifestyle Principles
 
 1. **Root-Cause Resolution Over Symptom Suppression**: Chronic non-communicable diseases (type-2 diabetes, hypertension, dyslipidemia, coronary artery disease, non-alcoholic fatty liver) are predominantly lifestyle and metabolic disorders driven by chronic hyperinsulinemia, visceral adiposity, and endothelial inflammation rather than inevitable genetic fate.
@@ -12,41 +39,44 @@
 6. **Neuro-Cardiovascular Modulation & Vagal Stimulation**: Chronic psychological stress surges catecholamines and damages arterial walls. Daily slow rhythmic breathing (4-7-8, box breathing, 5.5s resonance) stimulates the parasympathetic vagus nerve, immediately decelerating heart rate and attenuating arterial hypertension.
 7. **South Asian TOFI (Thin-Outside-Fat-Inside) Phenotype Awareness**: Standard BMI drastically underestimates risk in South Asians. Waist-to-Height Ratio (WHtR ≥ 0.50), Triglyceride-to-HDL ratio (TG/HDL > 2.0), and Triglyceride-Glucose index (TyG > 8.5) serve as vital clinical surrogates for visceral adipose accumulation and occult insulin resistance.
 
-## Interactive Clinical & Lifestyle Modules
-
-1. **6-Pillar Risk & Resilience Calculator**: Interactive scoring algorithm assessing cellular resilience against chronic disease vulnerability.
-2. **Autophagy & Fasting Stage Live Tracker**: Real-time circular gauge tracking the 5 distinct biological phases of fasting (0-12h glycogen depletion, 12-14h ketosis, 14-16h peak autophagy, 16-24h insulin sensitivity & HGH surge, 24h+ stem cell renewal).
-3. **Clinical Lab Decoder & TOFI Indices**: Evaluates Waist-to-Height Ratio, TG/HDL ratio, and TyG index alongside a 7-biomarker traffic-light evaluator (FBS, HbA1c, Fasting Insulin, hs-CRP, SGPT/ALT, Vitamin D3, Uric Acid).
-4. **Bangladeshi Anti-Inflammatory Plate Builder & 7-Day Reset**: Interactive 50/25/25 plate visualizer, scientific 3-step local produce pesticide detox protocol (water, baking soda + salt soak, final rinse), and 3-tier budget meal plans (Village, Family, Executive).
-5. **Vagus Nerve Stimulator & HRV Breathing Bubble**: Interactive breathing bubble with Web Audio API chime synthesis supporting 4-7-8, Box Breathing, and 5.5s Heart Coherence modes.
-6. **6-Pillar Daily Habit Loop & Consistency Streak Tracker**: Offline-first daily checklist, streak counter, progress completion bar, and 7-day consistency dot matrix.
-7. **Doctor Discussion Sheet & Health Passport**: Consolidated metabolic summary sheet with 5 targeted evidence-based clinical de-prescribing questions for consultation with personal physicians.
-
 ## WebMCP Interactive Agent Actions
 
 This platform exposes machine-readable WebMCP actions accessible via standard DOM bindings (`data-mcp-action`):
 
-- `calculate_health_risk`: Calculates metabolic risk tier and resilience score.
-- `reset_assessment`: Resets the primary risk evaluation form.
-- `export_health_report`: Opens the print dialog scoped to the personalized lifestyle prescription card.
+### Global Actions (Available on all pages)
 - `toggle_language`: Toggles between Bengali (`bn`) and English (`en`).
 - `toggle_theme`: Toggles between Light and Dark mode.
-- `filter_health_topics`: Switches the disease-reversal explorer tab (`diabetes`, `hypertension`, `fattyliver`, `stress`).
-- `filter_oil_type`: Filters the cooking-oil matrix (`all`, `safe`, `danger`).
-- `calculate_egg_protein`: Recomputes the whole-egg nutrition calculator for the selected egg count.
-- `toggle_myth_item`: Expands or collapses a health-mythbuster accordion entry.
-- `set_fast_start_now`: Sets fasting start timestamp to current time and initializes timer.
-- `toggle_fasting_timer`: Toggles active timer execution for intermittent fasting.
-- `reset_fasting_timer`: Resets the fasting timer to initial state.
-- `calculate_insulin_resistance`: Calculates WHtR, TG/HDL ratio, and TyG index with clinical verdict.
-- `decode_biomarkers`: Analyzes the 7 critical blood biomarkers with green/yellow/red traffic light advice.
-- `start_breathing_exercise`: Starts the 2-minute cardiac-coherence breathing timer in the Heart-Mind module.
-- `reset_breathing_exercise`: Resets that 2-minute breathing timer.
-- `trigger_breathing_session`: Starts or pauses the vagus pacer breathing session.
-- `toggle_breathing_chime`: Toggles Web Audio API chime sound on phase transitions.
-- `log_daily_habits`: Saves daily 6-pillar habit completion and increments unbroken streak.
-- `export_doctor_discussion_sheet`: Triggers print dialog scoped to the single-page doctor discussion sheet.
-- `open_doctor_passport`: Smoothly scrolls to the Health Passport section.
+- `open_doctor_passport`: Navigates / scrolls to the Doctor Health Passport.
+
+### Page-Specific Actions
+- **On `/` (Home)**:
+  - `calculate_health_risk`: Calculates metabolic risk tier and resilience score.
+  - `reset_assessment`: Resets the primary risk evaluation form.
+  - `export_health_report`: Opens the print dialog scoped to the personalized lifestyle prescription card.
+- **On `/lab-decoder/`**:
+  - `calculate_insulin_resistance`: Calculates WHtR, TG/HDL ratio, and TyG index with clinical verdict.
+  - `decode_biomarkers`: Analyzes the 7 critical blood biomarkers with green/yellow/red traffic light advice.
+- **On `/cooking-oils/`**:
+  - `filter_oil_type`: Filters the cooking-oil matrix (`all`, `safe`, `danger`).
+- **On `/eggs/`**:
+  - `calculate_egg_protein`: Recomputes the whole-egg nutrition calculator for the selected egg count.
+- **On `/disease-reversal/`**:
+  - `filter_health_topics`: Switches the disease-reversal explorer tab (`diabetes`, `hypertension`, `fattyliver`, `stress`).
+- **On `/breathing/`**:
+  - `start_breathing_exercise`: Starts the 2-minute cardiac-coherence breathing timer.
+  - `reset_breathing_exercise`: Resets that 2-minute breathing timer.
+  - `trigger_breathing_session`: Starts or pauses the vagus pacer breathing session.
+  - `toggle_breathing_chime`: Toggles Web Audio API chime sound on phase transitions.
+- **On `/mythbusters/`**:
+  - `toggle_myth_item`: Expands or collapses a health-mythbuster accordion entry.
+- **On `/fasting/`**:
+  - `set_fast_start_now`: Sets fasting start timestamp to current time and initializes timer.
+  - `toggle_fasting_timer`: Toggles active timer execution for intermittent fasting.
+  - `reset_fasting_timer`: Resets the fasting timer to initial state.
+- **On `/habit-tracker/`**:
+  - `log_daily_habits`: Saves daily 6-pillar habit completion and increments unbroken streak.
+- **On `/doctor-passport/`**:
+  - `export_doctor_discussion_sheet`: Triggers print dialog scoped to the single-page doctor discussion sheet.
 
 ## Clinical Authority & Authorship
 

@@ -1,0 +1,96 @@
+    <section class="fasting-wrapper" id="fasting-tracker">
+      <div class="section-headline">
+        <span class="section-tag" data-i18n="tag_fasting">নোবেলজয়ী কোষীয় বিজ্ঞান</span>
+        <h2 class="section-title" data-i18n="title_fasting">অটোফেজি ও ফাস্টিং স্টেজ লাইভ ট্র্যাকার</h2>
+        <p class="section-desc" data-i18n="desc_fasting">১৪–১৬ ঘণ্টার উপবাসে শরীর ক্ষতিগ্রস্ত কোষ ও অ্যামাইলয়েড প্রোটিন ধ্বংস করে সুস্থ কোষ তৈরি করে। আপনার ফাস্টিং সময় সেট করে বর্তমান কোষীয় অবস্থা দেখুন।</p>
+      </div>
+
+      <div class="fasting-card glass-card">
+        <div class="fasting-grid">
+          <!-- Left: Timer & Controls -->
+          <div class="fasting-timer-pane">
+            <div class="timer-controls">
+              <label for="last-meal-time" class="input-label" data-i18n="lbl_last_meal">সর্বশেষ খাবার গ্রহণের সময়:</label>
+              <div class="time-input-group">
+                <input type="datetime-local" id="last-meal-time" class="datetime-input" aria-label="Last meal time">
+                <button id="btn-fast-now" class="btn-preset" data-mcp-action="set_fast_start_now" data-i18n="btn_fast_now">এখন শুরু করুন</button>
+              </div>
+              <div class="preset-chips">
+                <span class="preset-label" data-i18n="lbl_presets">প্রিসেট:</span>
+                <button type="button" class="chip-btn" data-preset-hours="12" data-i18n="preset_12h">১২ ঘণ্টা আগে</button>
+                <button type="button" class="chip-btn" data-preset-hours="14" data-i18n="preset_14h">১৪ ঘণ্টা আগে</button>
+                <button type="button" class="chip-btn" data-preset-hours="16" data-i18n="preset_16h">১৬ ঘণ্টা আগে</button>
+              </div>
+            </div>
+
+            <!-- Circular Gauge -->
+            <div class="circular-progress-wrap">
+              <svg class="progress-ring" width="220" height="220" viewBox="0 0 220 220">
+                <circle class="progress-ring-circle-bg" stroke="currentColor" stroke-width="14" fill="transparent" r="90" cx="110" cy="110"/>
+                <circle id="fasting-progress-bar" class="progress-ring-circle" stroke="var(--primary)" stroke-width="14" stroke-linecap="round" fill="transparent" r="90" cx="110" cy="110"/>
+              </svg>
+              <div class="timer-center-text">
+                <span class="timer-hours" id="fasting-elapsed-display">00:00:00</span>
+                <span class="timer-sub" data-i18n="lbl_fasting_elapsed">উপবাস অতিবাহিত</span>
+                <span class="stage-pill" id="fasting-stage-pill" data-i18n="stage_1_badge">গ্লাইকোজেন ক্ষয় পর্ব</span>
+              </div>
+            </div>
+
+            <div class="timer-action-row">
+              <button id="btn-toggle-fasting" class="btn btn-primary" data-mcp-action="toggle_fasting_timer" data-i18n="btn_start_fast_timer">টাইমার চালু করুন</button>
+              <button id="btn-reset-fasting" class="btn btn-outline" data-mcp-action="reset_fasting_timer" data-i18n="btn_reset_fast_timer">রিসেট</button>
+            </div>
+          </div>
+
+          <!-- Right: Biological Stages Timeline -->
+          <div class="fasting-stages-pane">
+            <h3 class="pane-title" data-i18n="title_fasting_stages">মানবদেহের ৫টি পর্যায়ক্রমিক জৈবরাসায়নিক পরিবর্তন</h3>
+            <div class="stages-timeline" id="stages-timeline">
+              <!-- Stage 1 -->
+              <div class="stage-step active" data-stage="1">
+                <div class="stage-time">০ – ১২ ঘণ্টা</div>
+                <div class="stage-info">
+                  <h4 data-i18n="st1_title">রক্তে শর্করা হ্রাস ও গ্লাইকোজেন নিঃশেষ</h4>
+                  <p data-i18n="st1_desc">ইনসুলিন ক্ষরণ নেমে যায়, রক্তে থাকা অতিরিক্ত গ্লুকোজ খরচ হয় এবং লিভারের সংরক্ষিত গ্লাইকোজেন শক্তিতে রূপান্তরিত হয়।</p>
+                </div>
+              </div>
+              <!-- Stage 2 -->
+              <div class="stage-step" data-stage="2">
+                <div class="stage-time">১২ – ১৪ ঘণ্টা</div>
+                <div class="stage-info">
+                  <h4 data-i18n="st2_title">কিটোন উৎপাদন ও চর্বি গলানোর সুইচ অন</h4>
+                  <p data-i18n="st2_desc">শরীর গ্লুকোজ বিপাক থেকে চর্বি বিপাকে প্রবেশ করে। রক্তে কিটোন বডি তৈরি শুরু হয়, যা মস্তিষ্কের নিউরনকে সতেজ করে।</p>
+                </div>
+              </div>
+              <!-- Stage 3 -->
+              <div class="stage-step highlight-stage" data-stage="3">
+                <div class="stage-time">১৪ – ১৬ ঘণ্টা</div>
+                <div class="stage-info">
+                  <div class="badge-row"><span class="badge-nobel" data-i18n="badge_autophagy_peak">অটোফেজি পিক (নোবেল পুরস্কার প্রাপ্ত মেকানিজম)</span></div>
+                  <h4 data-i18n="st3_title">কোষের আবর্জনা ও জীর্ণ প্রোটিন পুনর্ব্যবহার</h4>
+                  <p data-i18n="st3_desc">লাইসোজোম সক্রিয় হয়ে ক্ষতিগ্রস্ত কোষ, ব্যাকটেরিয়াল বর্জ্য এবং রক্তনালীর প্রদাহজনক উপাদান হজম করে নতুন সুস্থ কোষে রূপান্তর করে।</p>
+                </div>
+              </div>
+              <!-- Stage 4 -->
+              <div class="stage-step" data-stage="4">
+                <div class="stage-time">১৬ – ২৪ ঘণ্টা</div>
+                <div class="stage-info">
+                  <h4 data-i18n="st4_title">গভীর ইনসুলিন সংবেদনশীলতা ও গ্রোথ হরমোন</h4>
+                  <p data-i18n="st4_desc">ইনসুলিন রেজিস্ট্যান্স উল্লেখযোগ্যভাবে হ্রাস পায়। মানব গ্রোথ হরমোন (HGH) বহুগুণ বৃদ্ধি পেয়ে পেশি রক্ষা করে এবং চর্বি পোড়ায়।</p>
+                </div>
+              </div>
+              <!-- Stage 5 -->
+              <div class="stage-step" data-stage="5">
+                <div class="stage-time">২৪+ ঘণ্টা</div>
+                <div class="stage-info">
+                  <h4 data-i18n="st5_title">স্টেম সেল পুনরুজ্জীবন ও পূর্ণ রোগ প্রতিরোধ</h4>
+                  <p data-i18n="st5_desc">অন্ত্রের মিউকোসাল আস্তরণ মেরামত হয় এবং রোগ প্রতিরোধক শ্বেতকণিকাগুলোর সম্পূর্ণ নবায়ন ঘটে।</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clinical Lab Report Decoder & South Asian Insulin Resistance Calculator -->

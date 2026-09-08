@@ -1,0 +1,124 @@
+    <section class="lab-decoder-wrapper" id="lab-decoder">
+      <div class="section-headline">
+        <span class="section-tag" data-i18n="tag_lab_decoder">মেটাবলিক বায়োমার্কার ডিকোডার</span>
+        <h2 class="section-title" data-i18n="title_lab_decoder">ক্লিনিক্যাল রক্ত পরীক্ষা ও দক্ষিণ এশীয় ইনসুলিন রেজিস্ট্যান্স বিশ্লেষণ</h2>
+        <p class="section-desc" data-i18n="desc_lab_decoder">কেবল বিএমআই (BMI) দিয়ে দক্ষিণ এশীয়দের ঝুঁকি বোঝা যায় না। পেটের চর্বি (TOFI), ট্রাইগ্লিসারাইড-এইচডিএল অনুপাত ও রক্ত পরীক্ষার মান বিশ্লেষণ করে প্রকৃত ঝুঁকি জানুন।</p>
+      </div>
+
+      <div class="lab-decoder-grid">
+        <!-- Panel A: TOFI & South Asian Physical Indices -->
+        <div class="card glass-card tofi-card">
+          <div class="card-header-icon">
+            <span class="panel-icon">📏</span>
+            <h3 data-i18n="title_tofi">১. দক্ষিণ এশীয় "থিন-ফ্যাট" (TOFI) ও ভিসেরাল ফ্যাট সূচক</h3>
+          </div>
+          <p class="panel-intro" data-i18n="desc_tofi">বাইরে থেকে চিকন দেখালেও দক্ষিণ এশীয়দের লিভার ও পেটের ভেতর বিষাক্ত চর্বি থাকে। কোমর ও উচ্চতার অনুপাত (WHtR) দিয়ে এটি নির্ণয় করা যায়।</p>
+
+          <div class="tofi-form">
+            <div class="form-row-2">
+              <div class="input-group">
+                <label for="input-waist" data-i18n="lbl_waist">কোমরের মাপ (নাভির সমান দিয়ে ইঞ্চি):</label>
+                <input type="number" id="input-waist" placeholder="যেমন: 34" min="20" max="60" step="0.5">
+              </div>
+              <div class="input-group">
+                <label for="input-height" data-i18n="lbl_height">উচ্চতা (ইঞ্চি):</label>
+                <input type="number" id="input-height" placeholder="যেমন: 66 (৫ ফুট ৬ ইঞ্চি)" min="40" max="90" step="0.5">
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="input-group">
+                <label for="input-tg" data-i18n="lbl_tg">ট্রাইগ্লিসারাইড (TG mg/dL):</label>
+                <input type="number" id="input-tg" placeholder="যেমন: 180" min="40" max="1000">
+              </div>
+              <div class="input-group">
+                <label for="input-hdl" data-i18n="lbl_hdl">এইচডিএল (HDL mg/dL):</label>
+                <input type="number" id="input-hdl" placeholder="যেমন: 38" min="15" max="120">
+              </div>
+            </div>
+
+            <button id="btn-calc-tofi" class="btn btn-primary btn-block" data-mcp-action="calculate_insulin_resistance" data-i18n="btn_calc_tofi">ভিসেরাল ফ্যাট ও ইনসুলিন রেজিস্ট্যান্স গণনা করুন</button>
+            <p class="form-error" id="tofi-error" role="alert" tabindex="-1" hidden></p>
+
+            <!-- TOFI Output display -->
+            <div id="tofi-result-box" class="tofi-result-box" style="display: none;">
+              <div class="tofi-metric-row">
+                <div class="tofi-metric-item">
+                  <span class="metric-title" data-i18n="lbl_whtr">কোমর-উচ্চতা অনুপাত (WHtR):</span>
+                  <span class="metric-value" id="val-whtr">--</span>
+                  <span class="metric-status" id="status-whtr">--</span>
+                </div>
+                <div class="tofi-metric-item">
+                  <span class="metric-title" data-i18n="lbl_tg_hdl">TG / HDL অনুপাত:</span>
+                  <span class="metric-value" id="val-tg-hdl">--</span>
+                  <span class="metric-status" id="status-tg-hdl">--</span>
+                </div>
+                <div class="tofi-metric-item">
+                  <span class="metric-title" data-i18n="lbl_tyg">TyG ইনসুলিন সূচক:</span>
+                  <span class="metric-value" id="val-tyg">--</span>
+                  <span class="metric-status" id="status-tyg">--</span>
+                </div>
+              </div>
+              <div class="tofi-clinical-verdict" id="tofi-verdict-text">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel B: Blood Biomarker Traffic Light Evaluator -->
+        <div class="card glass-card biomarker-card">
+          <div class="card-header-icon">
+            <span class="panel-icon">🩸</span>
+            <h3 data-i18n="title_biomarkers">২. রক্ত পরীক্ষা বায়োমার্কার ডিকোডার (Lab Evaluator)</h3>
+          </div>
+          <p class="panel-intro" data-i18n="desc_biomarkers">আপনার সাম্প্রতিক রক্ত পরীক্ষার মানগুলো বসিয়ে ট্র্যাফিক-লাইট বিশ্লেষণ ও লাইফস্টাইল প্রতিকার জেনে নিন।</p>
+
+          <div class="biomarker-inputs-grid">
+            <div class="input-item">
+              <label for="bm-fbs" data-i18n="lbl_bm_fbs">ফাস্টিং সুগার (FBS mg/dL):</label>
+              <input type="number" id="bm-fbs" placeholder="১০০">
+            </div>
+            <div class="input-item">
+              <label for="bm-hba1c" data-i18n="lbl_bm_hba1c">এইচবিএওয়ানসি (HbA1c %):</label>
+              <input type="number" id="bm-hba1c" step="0.1" placeholder="৫.৭">
+            </div>
+            <div class="input-item">
+              <label for="bm-insulin" data-i18n="lbl_bm_insulin">ফাস্টিং ইনসুলিন (Fasting Insulin µIU/mL):</label>
+              <input type="number" id="bm-insulin" step="0.1" placeholder="৬.০">
+            </div>
+            <div class="input-item">
+              <label for="bm-hscrp" data-i18n="lbl_bm_hscrp">এইচএস-সিআরপি প্রদাহ (hs-CRP mg/L):</label>
+              <input type="number" id="bm-hscrp" step="0.1" placeholder="০.৮">
+            </div>
+            <div class="input-item">
+              <label for="bm-sgpt" data-i18n="lbl_bm_sgpt">এসজিপিটি/লিভার এনজাইম (SGPT/ALT U/L):</label>
+              <input type="number" id="bm-sgpt" placeholder="২৫">
+            </div>
+            <div class="input-item">
+              <label for="bm-vitd" data-i18n="lbl_bm_vitd">ভিটামিন ডি৩ (Serum Vitamin D3 ng/mL):</label>
+              <input type="number" id="bm-vitd" placeholder="৩৫">
+            </div>
+            <div class="input-item">
+              <label for="bm-uric" data-i18n="lbl_bm_uric">ইউরিক এসিড (Uric Acid mg/dL):</label>
+              <input type="number" id="bm-uric" step="0.1" placeholder="৫.২">
+            </div>
+          </div>
+
+          <div class="biomarker-actions">
+            <button id="btn-decode-biomarkers" class="btn btn-secondary btn-block" data-mcp-action="decode_biomarkers" data-i18n="btn_decode_biomarkers">ল্যাব রিপোর্ট বিশ্লেষণ ও প্রতিকার দেখুন</button>
+            <p class="form-error" id="biomarker-error" role="alert" tabindex="-1" hidden></p>
+          </div>
+
+          <!-- Biomarker Results Output -->
+          <div id="biomarker-results-box" class="biomarker-results-box" style="display: none;">
+            <h4 class="results-heading" data-i18n="title_biomarker_analysis">ক্লিনিক্যাল বিশ্লেষণ ও লাইফস্টাইল অ্যাকশন প্ল্যান</h4>
+            <div class="biomarker-cards-list" id="biomarker-cards-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disease Prevention & Reversal Guide Explorer -->

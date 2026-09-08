@@ -1,0 +1,109 @@
+    <section class="habit-tracker-wrapper" id="habit-tracker">
+      <div class="section-headline">
+        <span class="section-tag" data-i18n="tag_habits">দৈনিক ধারাবাহিকতা ও নিউরোপ্লাস্টিসিটি</span>
+        <h2 class="section-title" data-i18n="title_habits">৬টি স্তম্ভের সুস্থতা অভ্যাস ও ধারাবাহিকতা ট্র্যাকার</h2>
+        <p class="section-desc" data-i18n="desc_habits">রোগ নিরাময় কোনো একদিনের ম্যাজিক নয়—এটি প্রতিদিনের ধারাবাহিক অভ্যাসের ফল। আপনার প্রতিদিনের ৬টি স্তম্ভ টিক দিন এবং ধারাবাহিকতা রক্ষা করুন।</p>
+      </div>
+
+      <div class="habit-card glass-card">
+        <div class="habit-header-row">
+          <div class="today-date-info">
+            <span class="date-badge" id="habit-today-date">আজকের তারিখ</span>
+            <h3 class="habit-subtitle" data-i18n="title_daily_check">দৈনিক স্বাস্থ্য চেকলিস্ট</h3>
+          </div>
+          <div class="streak-badge-wrap">
+            <div class="streak-chip">
+              <span class="streak-flame" aria-hidden="true">🔥</span>
+              <span class="streak-count" id="habit-streak-count">০</span>
+              <span class="streak-text" data-i18n="lbl_streak_days">দিনের অবিচ্ছিন্ন স্ট্রিক</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Habit Progress Bar -->
+        <div class="habit-progress-container">
+          <div class="progress-info-row">
+            <span class="progress-label" data-i18n="lbl_today_progress">আজকের সম্পন্ন হার:</span>
+            <span class="progress-pct" id="habit-progress-pct">০% (০/৬)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="habit-progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- 6 Checkbox Items -->
+        <div class="habit-checklist-grid" id="habit-checklist">
+          <label class="habit-checkbox-item" for="chk-fasting">
+            <input type="checkbox" id="chk-fasting" data-habit="fasting">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h1_title">১. ১৪–১৬ ঘণ্টার ইন্টারমিটেন্ট ফাস্টিং সম্পন্ন</strong>
+              <p data-i18n="h1_desc">রাত ৮টার মধ্যে রাতের খাবার শেষ করে সকাল ১০টা পর্যন্ত পরিপাক বিরতি।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-walk">
+            <input type="checkbox" id="chk-walk" data-habit="walk">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h2_title">২. ৪৫ মিনিট রোদে দ্রুত হাঁটা ও শারীরিক ঘাম ঝরানো</strong>
+              <p data-i18n="h2_desc">সকালের প্রাকৃতিক রোদে দ্রুত হাঁটা ও ইনসুলিন সংবেদনশীলতা বৃদ্ধি।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-diet">
+            <input type="checkbox" id="chk-diet" data-habit="diet">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h3_title">৩. চিনি, মিষ্টি ও সয়াবিন/পাম তেল সম্পূর্ণ বর্জন</strong>
+              <p data-i18n="h3_desc">শুধুমাত্র সবুজ শাকসবজি, খাঁটি সরিষার তেল ও পুষ্টিকর প্রাকৃতিক খাবার গ্রহণ।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-water">
+            <input type="checkbox" id="chk-water" data-habit="water">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h4_title">৪. ২.৫ থেকে ৩ লিটার বিশুদ্ধ পানি ও লেবুপানি</strong>
+              <p data-i18n="h4_desc">পর্যাপ্ত সেলুলার হাইড্রেশন ও লিভার-কিডনির বিষাক্ত বর্জ্য নিষ্কাশন।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-mind">
+            <input type="checkbox" id="chk-mind" data-habit="mind">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h5_title">৫. ১০–১৫ মিনিট শ্বাসক্রিয়া বা ধ্যান (মেডিটেশন)</strong>
+              <p data-i18n="h5_desc">ভ্যাগাস নার্ভ সক্রিয়করণ, মানসিক চাপ ও কর্টিসোল হরমোন হ্রাস।</p>
+            </div>
+          </label>
+
+          <label class="habit-checkbox-item" for="chk-sleep">
+            <input type="checkbox" id="chk-sleep" data-habit="sleep">
+            <span class="custom-chk"></span>
+            <div class="chk-details">
+              <strong data-i18n="h6_title">৬. রাত ১১:০০ টার পূর্বেই শান্ত পরিবেশে বিছানায় ঘুমানো</strong>
+              <p data-i18n="h6_desc">সার্কাডিয়ান ছন্দে মেলাটোনিন বৃদ্ধি ও ৭-৮ ঘণ্টার গভীর আরামদায়ক ঘুম।</p>
+            </div>
+          </label>
+        </div>
+
+        <!-- 7-Day Consistency Dot Matrix -->
+        <div class="habit-footer-row">
+          <div class="past-days-matrix">
+            <span class="matrix-label" data-i18n="lbl_last_7_days">বিগত ৭ দিনের ধারাবাহিকতা:</span>
+            <div class="dot-days" id="dot-days-container">
+              <!-- Injected by JS: 7 dots showing active status -->
+            </div>
+          </div>
+          <button type="button" id="btn-save-habits" class="btn btn-primary" data-mcp-action="log_daily_habits" data-i18n="btn_save_habits">অভ্যাস সংরক্ষণ করুন</button>
+        </div>
+
+        <!-- Celebration banner -->
+        <div id="habit-celebration-banner" class="celebration-banner" style="display: none;">
+          🎉 <strong data-i18n="msg_celebrate">অভিনন্দন! আজকের ৬টি স্তম্ভের সবকটি আপনি সফলভাবে পূরণ করেছেন! আপনার কোষীয় স্ব-নিরাময় আজ সর্বোচ্চ পর্যায়ে।</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clinical Doctor Discussion Sheet & Health Passport -->

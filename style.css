@@ -782,11 +782,13 @@ summary:focus-visible,
   color: var(--primary);
 }
 
-.dropdown-item[aria-current="true"] {
+.dropdown-item[aria-current="true"],
+.dropdown-item[aria-current="page"] {
   background: rgba(5, 150, 105, 0.10);
   border-color: rgba(5, 150, 105, 0.25);
 }
-.dropdown-item[aria-current="true"] .item-title {
+.dropdown-item[aria-current="true"] .item-title,
+.dropdown-item[aria-current="page"] .item-title {
   color: var(--primary);
 }
 
@@ -852,6 +854,23 @@ summary:focus-visible,
   background: rgba(5, 150, 105, 0.18);
   color: var(--primary);
   transition: all var(--transition-fast);
+}
+
+.nav-passport-pill[aria-current="page"],
+.nav-passport-pill[aria-current="true"] {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px var(--primary-glow);
+}
+.nav-passport-pill[aria-current="page"] .passport-tag,
+.nav-passport-pill[aria-current="true"] .passport-tag {
+  background: #fff;
+  color: var(--primary);
+}
+.nav-passport-pill[aria-current="page"] .passport-pulse-ring,
+.nav-passport-pill[aria-current="true"] .passport-pulse-ring {
+  background: #fff;
 }
 
 /* Header Action Controls */
@@ -1061,11 +1080,13 @@ summary:focus-visible,
 }
 
 .mobile-link:hover,
-.mobile-link[aria-current="true"] {
+.mobile-link[aria-current="true"],
+.mobile-link[aria-current="page"] {
   background: var(--bg-surface-elevated);
   color: var(--primary);
 }
-.mobile-link[aria-current="true"] {
+.mobile-link[aria-current="true"],
+.mobile-link[aria-current="page"] {
   box-shadow: inset 3px 0 0 var(--primary);
 }
 

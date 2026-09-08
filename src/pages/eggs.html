@@ -1,0 +1,76 @@
+    <section class="egg-guide-wrapper" id="egg-nutrition-section">
+      <div class="section-headline">
+        <span class="section-tag" data-i18n="tag_egg">সুপারফুড পুষ্টি বিজ্ঞান</span>
+        <h2 class="section-title" data-i18n="title_egg">সম্পূর্ণ ডিমের সুপারফুড ক্ষমতা ও কোলেস্টেরলের বিজ্ঞান</h2>
+        <p class="section-desc" data-i18n="desc_egg">খাদ্যের কোলেস্টেরল রক্তনালীতে চর্বি জমায় না। ডিমের কুসুম বর্জন না করে সম্পূর্ণ ডিম কেন মানবদেহের সেরা জৈবপ্রোটিন?</p>
+      </div>
+
+      <div class="egg-content-grid">
+        <div class="card glass-card egg-info-card">
+          <h3 class="card-inner-title" data-i18n="egg_truth_title">ডিম সম্পর্কিত ৩টি বৈজ্ঞানিক সত্য</h3>
+          <div class="fact-list">
+            <div class="fact-item">
+              <div class="fact-icon">🥚</div>
+              <div class="fact-text">
+                <strong data-i18n="egg_fact1_t">কুসুমে ৯০% মাইক্রোনিউট্রিয়েন্ট:</strong>
+                <span data-i18n="egg_fact1_d">ভিটামিন এ, ডি, ই, কে, বি১২ এবং মস্তিষ্কের জন্য অতি-প্রয়োজনীয় কোলিন ও চোখের সুরক্ষায় লিউটিন সবই থাকে ডিমের কুসুমে।</span>
+              </div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-icon">🔬</div>
+              <div class="fact-text">
+                <strong data-i18n="egg_fact2_t">খাবারের কোলেস্টেরল হার্ট ব্লকের কারণ নয়:</strong>
+                <span data-i18n="egg_fact2_d">শরীরের ৮০% কোলেস্টেরল লিভার নিজে তৈরি করে। অতিরিক্ত শর্করা ও প্রদাহজনিত কারণে খারাপ এলডিএল জারিত হয়, ডিম খাওয়ার কারণে নয়।</span>
+              </div>
+            </div>
+            <div class="fact-item">
+              <div class="fact-icon">💪</div>
+              <div class="fact-text">
+                <strong data-i18n="egg_fact3_t">দৈনিক ২-৪টি ডিম খাওয়া নিরাপদ:</strong>
+                <span data-i18n="egg_fact3_d">সুস্থ প্রাপ্তবয়স্ক ব্যক্তিরা প্রতিদিন কুসুমসহ ডিম অনায়াসে খেতে পারেন। এটি পেশি ক্ষয় রোধ করে এবং দীর্ঘক্ষণ ক্ষুধা নিবারণ করে।</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Egg Nutrition Calculator -->
+        <div class="card glass-card egg-calc-card">
+          <h3 class="card-inner-title" data-i18n="egg_calc_title">দৈনিক ডিম ও পুষ্টি ক্যালকুলেটর</h3>
+          <p class="calc-subtitle" data-i18n="egg_calc_desc">আপনার দৈনিক ডিমের সংখ্যা নির্বাচন করে পুষ্টির মাত্রা হিসাব করুন:</p>
+
+          <div class="calc-slider-box">
+            <div class="slider-header">
+              <span data-i18n="label_egg_count">ডিমের সংখ্যা:</span>
+              <strong id="egg-count-display" class="highlight-count">২ টি ডিম</strong>
+            </div>
+            <input type="range" id="egg-range-slider" min="1" max="6" value="2" step="1" data-mcp-action="calculate_egg_protein">
+          </div>
+
+          <div class="egg-metrics-grid">
+            <div class="egg-metric-box">
+              <span class="m-label" data-i18n="m_protein">উচ্চমানের প্রোটিন</span>
+              <span class="m-val" id="egg-val-protein">১২.৬ গ্রাম</span>
+            </div>
+            <div class="egg-metric-box">
+              <span class="m-label" data-i18n="m_choline">কোলিন (মস্তিষ্ক পুষ্টি)</span>
+              <span class="m-val" id="egg-val-choline">২৯০ মিলিগ্রাম</span>
+            </div>
+            <div class="egg-metric-box">
+              <span class="m-label" data-i18n="m_vitd">ভিটামিন ডি ও বি১২</span>
+              <span class="m-val" id="egg-val-vit">৮২ আইইউ</span>
+            </div>
+            <div class="egg-metric-box">
+              <span class="m-label" data-i18n="m_satiety">তৃপ্তি ও মেটাবলিক স্কোর</span>
+              <span class="m-val text-success" id="egg-val-satiety">৯৫% উচ্চ</span>
+            </div>
+          </div>
+
+          <div class="egg-cooking-tip">
+            <span class="tip-icon" aria-hidden="true">💡</span>
+            <span data-i18n="egg_cooking_tip">পরামর্শ: ডিম পোচ বা হাফ-বয়েল করে খান। ভাজতে চাইলে অবশ্যই খাঁটি সরিষার তেল বা নারকেল তেল ব্যবহার করুন, কখনোই সয়াবিন তেল নয়।</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bangladeshi Anti-Inflammatory Plate Builder & 7-Day Reset Plan -->

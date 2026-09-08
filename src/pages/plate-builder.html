@@ -1,0 +1,114 @@
+    <section class="plate-builder-wrapper" id="plate-builder">
+      <div class="section-headline">
+        <span class="section-tag" data-i18n="tag_plate">দেশি পুষ্টি ও অ্যান্টি-ইনফ্ল্যামেটরি বিজ্ঞান</span>
+        <h2 class="section-title" data-i18n="title_plate">বাংলাদেশি অ্যান্টি-ইনফ্ল্যামেটরি প্লেট বিল্ডার ও বাজেট ডায়েট</h2>
+        <p class="section-desc" data-i18n="desc_plate">অতিরিক্ত দামি বিদেশি খাবার নয়—স্থানীয় দেশি শাকসবজি, দেশি মাছ ও ঘানিভাঙ্গা সরিষার তেল দিয়েই রক্তনালীর প্রদাহ ও ক্রনিক রোগ নিরাময় সম্ভব।</p>
+      </div>
+
+      <div class="plate-builder-grid">
+        <!-- Interactive Plate Visualizer -->
+        <div class="card glass-card plate-visual-card">
+          <h3 class="card-inner-title" data-i18n="title_plate_visual">আদর্শ নিরাময়কারী ভাতের থালা (৫০% শাকসবজি + ২৫% প্রোটিন + ২৫% জটিল কার্ব)</h3>
+          
+          <div class="interactive-plate-display">
+            <div class="plate-circle" id="plate-circle">
+              <div class="plate-half veg-half" id="plate-veg-zone">
+                <span class="plate-zone-tag" data-i18n="zone_veg">৫০% সবুজ শাকসবজি ও সালাদ</span>
+                <span class="selected-items" id="selected-veg-text">লাল শাক, করলা, শসা, কাঁচা মরিচ</span>
+              </div>
+              <div class="plate-quarter protein-quarter" id="plate-protein-zone">
+                <span class="plate-zone-tag" data-i18n="zone_protein">২৫% দেশি প্রোটিন</span>
+                <span class="selected-items" id="selected-protein-text">দেশি ডিম / কাচকি মাছ</span>
+              </div>
+              <div class="plate-quarter carb-quarter" id="plate-carb-zone">
+                <span class="plate-zone-tag" data-i18n="zone_carb">২৫% লাল চাল / ডাল</span>
+                <span class="selected-items" id="selected-carb-text">১ কাপ লাল চালের ভাত</span>
+              </div>
+              <div class="plate-center-fat">
+                <span class="fat-icon" aria-hidden="true">🫒</span>
+                <span class="fat-label" data-i18n="zone_fat">ঘানিভাঙ্গা সরিষা / খাঁটি ঘি</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Anti-Inflammatory & Glycemic Metrics -->
+          <div class="plate-metrics-row">
+            <div class="p-metric">
+              <span class="pm-label" data-i18n="lbl_ai_score">প্রদাহরোধী স্কোর:</span>
+              <span class="pm-val text-success" id="plate-ai-score">৯৬ / ১০০</span>
+            </div>
+            <div class="p-metric">
+              <span class="pm-label" data-i18n="lbl_gi_load">গ্লাইসেমিক লোড:</span>
+              <span class="pm-val text-primary" id="plate-gi-load">নিম্ন (সুরক্ষিত)</span>
+            </div>
+            <div class="p-metric">
+              <span class="pm-label" data-i18n="lbl_fiber_content">আঁশ বা ফাইবার:</span>
+              <span class="pm-val text-success" id="plate-fiber-val">উচ্চ (১৬ গ্রাম)</span>
+            </div>
+          </div>
+
+          <!-- Interactive Food Selectors -->
+          <div class="food-selector-groups">
+            <div class="f-group">
+              <span class="f-group-title" data-i18n="f_group_veg">শাকসবজি নির্বাচন করুন (৫০%):</span>
+              <div class="chip-toggle-row" id="veg-chips">
+                <button type="button" class="chip-toggle active" data-type="veg" data-name="লাল শাক ও পুঁই শাক" data-score="25">লাল শাক / পুঁই শাক</button>
+                <button type="button" class="chip-toggle active" data-type="veg" data-name="করলা ও পটোল" data-score="20">তিতা করলা / পটোল ভাজি</button>
+                <button type="button" class="chip-toggle active" data-type="veg" data-name="শসা ও কাঁচা সালাদ" data-score="25">শসা, ধনেপাতা ও লেবু সালাদ</button>
+                <button type="button" class="chip-toggle" data-type="veg" data-name="বাঁধাকপি ও বরবটি" data-score="20">বাঁধাকপি ও বরবটি</button>
+              </div>
+            </div>
+
+            <div class="f-group">
+              <span class="f-group-title" data-i18n="f_group_protein">প্রোটিন নির্বাচন করুন (২৫%):</span>
+              <div class="chip-toggle-row" id="protein-chips">
+                <button type="button" class="chip-toggle active" data-type="protein" data-name="দেশি মুরগির ডিম (কুসুমসহ)" data-score="15">দেশি মুরগির ডিম (কুসুমসহ)</button>
+                <button type="button" class="chip-toggle" data-type="protein" data-name="ছোট দেশি মাছ (কাচকি/মলা)" data-score="15">ছোট দেশি মাছ (কাচকি/মলা)</button>
+                <button type="button" class="chip-toggle" data-type="protein" data-name="নদীর রুই / কাতলা" data-score="12">নদীর রুই / কাতলা / পাবদা</button>
+                <button type="button" class="chip-toggle" data-type="protein" data-name="ইলিশ মাছ (ওমেগা-৩)" data-score="15">ইলিশ মাছ (ওমেগা-৩)</button>
+              </div>
+            </div>
+
+            <div class="f-group">
+              <span class="f-group-title" data-i18n="f_group_carb">কার্বোহাইড্রেট নির্বাচন করুন (২৫%):</span>
+              <div class="chip-toggle-row" id="carb-chips">
+                <button type="button" class="chip-toggle active" data-type="carb" data-name="১ কাপ দেশি লাল চালের ভাত" data-score="10">১ কাপ লাল চালের ভাত</button>
+                <button type="button" class="chip-toggle" data-type="carb" data-name="১টি লাল আটার রুটি" data-score="10">১টি লাল আটার রুটি</button>
+                <button type="button" class="chip-toggle" data-type="carb" data-name="ছোট সেদ্ধ মিষ্টি আলু" data-score="12">ছোট সেদ্ধ মিষ্টি আলু</button>
+                <button type="button" class="chip-toggle danger-chip" data-type="carb" data-name="সাদা চালের ভাত (ঝুঁকিপূর্ণ)" data-score="-20">সাদা চালের ভাত (উচ্চ সুগার)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Market Detox Protocol & 7-Day Reset -->
+        <div class="card glass-card reset-plan-card">
+          <!-- Produce Detox Protocol -->
+          <div class="detox-protocol-box">
+            <h4 class="box-title" data-i18n="title_detox">🧪 স্থানীয় বাজারের শাকসবজি বিষমুক্তকরণ পদ্ধতি (Detox Protocol)</h4>
+            <p class="detox-desc" data-i18n="desc_detox">ফরমালিন, পেস্টিসাইড ও কীটনাশকের অবশিষ্টাংশ দূর করতে বিজ্ঞানসম্মত ৩ ধাপ:</p>
+            <ol class="detox-steps">
+              <li><strong data-i18n="d_st1">১. সাধারণ পরিষ্কার পানিতে ধোয়া:</strong> দৃশ্যমান ধূলিবালি দূর করতে ৩ মিনিট পরিষ্কার পানিতে ভালো করে ধুয়ে নিন।</li>
+              <li><strong data-i18n="d_st2">২. লবণ ও বেকিং সোডার দ্রবণ (১৫ মিনিট):</strong> ১ লিটার পানিতে ১ চা-চামচ খাঁটি লবণ ও ১ চা-চামচ বেকিং সোডা (সোডিয়াম বাইকার্বোনেট) গুলিয়ে সবজি ১৫ মিনিট ভিজিয়ে রাখুন। এটি ক্ষতিকর রাসায়নিক ভেঙে ফেলে।</li>
+              <li><strong data-i18n="d_st3">৩. চূড়ান্ত বিশুদ্ধ ধৌতকরণ:</strong> তুলে আবার স্বাভাবিক প্রবাহমান পানিতে ধুয়ে রান্নায় ব্যবহার করুন।</li>
+            </ol>
+          </div>
+
+          <!-- 7-Day Budget-Tiered Meal Plan -->
+          <div class="meal-plan-tabs-wrap">
+            <h4 class="box-title" data-i18n="title_7day">📅 ৭ দিনের বাজেট মেটাবলিক রিসেট ডায়েট চার্ট</h4>
+            <div class="meal-tabs" role="tablist" aria-label="7-day meal plan budget tier">
+              <button type="button" class="m-tab active" role="tab" id="mtab-village" aria-controls="meal-plan-content" aria-selected="true" data-plan="village" data-i18n="tab_plan_village">১. স্বল্পবাজেট / গ্রামীন স্তর</button>
+              <button type="button" class="m-tab" role="tab" id="mtab-family" aria-controls="meal-plan-content" aria-selected="false" tabindex="-1" data-plan="family" data-i18n="tab_plan_family">২. পারিবারিক স্ট্যান্ডার্ড</button>
+              <button type="button" class="m-tab" role="tab" id="mtab-executive" aria-controls="meal-plan-content" aria-selected="false" tabindex="-1" data-plan="executive" data-i18n="tab_plan_executive">৩. এক্সিকিউটিভ স্তর</button>
+            </div>
+
+            <div class="meal-plan-content" id="meal-plan-content" role="tabpanel" tabindex="0">
+              <!-- Dynamically populated based on active tab -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 3: Heart Protection & Meditation Protocol -->

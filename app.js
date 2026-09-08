@@ -905,6 +905,37 @@
   const LS_LAB = 'health_lab_inputs';
   const LS_PLATE = 'health_plate_chips';
 
+  let lastScoreData = null;
+  let lastTofiData = null;
+
+  function computeScoreFromAnswers(answers) {
+    if (!answers || typeof answers !== 'object') return null;
+    const fields = ['sugar_intake', 'oil_type', 'fasting_window', 'physical_movement', 'sleep_quality', 'stress_symptoms'];
+    let totalRisk = 0;
+    let answeredCount = 0;
+    const values = {};
+
+    fields.forEach(field => {
+      if (answers[field] !== undefined && answers[field] !== null) {
+        const val = parseInt(answers[field], 10);
+        values[field] = val;
+        totalRisk += val;
+        answeredCount++;
+      } else {
+        values[field] = null;
+      }
+    });
+
+    if (answeredCount === 0) return null;
+    const resilienceScore = Math.max(5, Math.round(100 - (totalRisk / 120) * 100));
+    return {
+      resilienceScore,
+      totalRisk,
+      values,
+      answeredCount
+    };
+  }
+
   function persistAssessmentAnswers() {
     const form = document.getElementById('health-assessment-form');
     if (!form) return;
@@ -917,6 +948,12 @@
     if (!raw) return;
     let data;
     try { data = JSON.parse(raw); } catch (e) { return; }
+
+    const computed = computeScoreFromAnswers(data);
+    if (computed) {
+      lastScoreData = computed;
+    }
+
     const form = document.getElementById('health-assessment-form');
     if (!form) return;
     let any = false;
@@ -943,6 +980,39 @@
       const el = document.getElementById(id);
       if (el) el.value = val;
     });
+
+    const waistIn = parseFloat(data['input-waist']);
+    const heightIn = parseFloat(data['input-height']);
+    const tgVal = parseFloat(data['input-tg']);
+    const hdlVal = parseFloat(data['input-hdl']);
+    const isBn = currentLang === 'bn';
+
+    if (waistIn > 0 && heightIn > 0) {
+      const whtr = parseFloat((waistIn / heightIn).toFixed(2));
+      let whtrStatus = '';
+      if (whtr < 0.50) {
+        whtrStatus = isBn ? 'সর্বোত্তম (ঝুঁকিমুক্ত)' : 'Optimal (< 0.50)';
+      } else if (whtr <= 0.59) {
+        whtrStatus = isBn ? 'মাঝারি ঝুঁকি (TOFI প্রবণতা)' : 'Increased Risk (0.50 - 0.59)';
+      } else {
+        whtrStatus = isBn ? 'উচ্চ ভিসেরাল ফ্যাট ও তীব্র ঝুঁকি' : 'High Cardiovascular Risk (≥ 0.60)';
+      }
+
+      let tgHdlRatio = null;
+      let tgHdlStatus = isBn ? 'ল্যাব মান অনুপস্থিত' : 'Metrics not provided';
+      if (tgVal > 0 && hdlVal > 0) {
+        tgHdlRatio = parseFloat((tgVal / hdlVal).toFixed(2));
+        if (tgHdlRatio < 2.0) {
+          tgHdlStatus = isBn ? 'ইনসুলিন সংবেদনশীল (আদর্শ < ২.০)' : 'Insulin Sensitive (< 2.0)';
+        } else if (tgHdlRatio <= 3.0) {
+          tgHdlStatus = isBn ? 'বর্ডারলাইন রেজিস্ট্যান্স (২.০-৩.০)' : 'Borderline Resistance (2.0 - 3.0)';
+        } else {
+          tgHdlStatus = isBn ? 'তীব্র ইনসুলিন রেজিস্ট্যান্স (> ৩.০)' : 'High Insulin Resistance (> 3.0)';
+        }
+      }
+
+      lastTofiData = { whtr, whtrStatus, tgHdlRatio, tgHdlStatus };
+    }
   }
 
   function persistPlateChips() {
@@ -966,6 +1036,9 @@
     restoreAssessmentAnswers();
     restoreLabInputs();
     restorePlateChips();
+    // restore* populated lastScoreData / lastTofiData after initDoctorPassport() ran —
+    // re-render the passport (and anything else that reflects cross-page state)
+    if (typeof updatePassportState === 'function') updatePassportState();
   }
 
   // --- WebMCP Global Action Registry ---
@@ -1175,55 +1248,69 @@
     initScrollSpy();
   }
 
-  // --- Scroll-spy — reflects the active section on desktop triggers + mobile links ---
+  // --- Multi-page Active Nav & Scroll-spy ---
   function initScrollSpy() {
-    const sectionIds = [
-      'assessment-section', 'prescription-section', 'fasting-tracker', 'lab-decoder',
-      'disease-reversal', 'cooking-oil-section', 'egg-nutrition-section', 'plate-builder',
-      'heart-mind-section', 'vagus-pacer', 'mythbusters-section', 'habit-tracker', 'doctor-passport'
-    ];
-    const sections = sectionIds
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-    if (!sections.length || !('IntersectionObserver' in window)) return;
+    // 1. Mark current page based on pathname
+    let path = window.location.pathname;
+    if (!path.endsWith('/') && !path.includes('.')) path += '/';
+    if (path === '/index.html') path = '/';
 
-    let activeId = null;
-    const setActive = id => {
-      if (id === activeId) return;
-      activeId = id;
-      document.querySelectorAll('[aria-current="true"]').forEach(a => a.removeAttribute('aria-current'));
-      document.querySelectorAll('.nav-dropdown-trigger[data-section-active]')
-        .forEach(t => t.removeAttribute('data-section-active'));
-      document.querySelectorAll(
-        `.nav-clinical-menu a[href="#${id}"], .mobile-nav-drawer a[href="#${id}"], .nav-passport-pill[href="#${id}"]`
-      ).forEach(a => a.setAttribute('aria-current', 'true'));
-      document.querySelector(`.nav-dropdown a[href="#${id}"]`)
-        ?.closest('.nav-dropdown')
-        ?.querySelector('.nav-dropdown-trigger')
-        ?.setAttribute('data-section-active', 'true');
-    };
+    document.querySelectorAll('[aria-current="page"], [aria-current="true"]').forEach(a => a.removeAttribute('aria-current'));
+    document.querySelectorAll('.nav-dropdown-trigger[data-section-active]').forEach(t => t.removeAttribute('data-section-active'));
 
-    // "Active" = the last section whose top has scrolled above a line just below
-    // the sticky header. Recomputed on a rAF-throttled scroll (robust for tall
-    // sections where intersectionRatio is misleading).
-    let ticking = false;
-    const sync = () => {
-      ticking = false;
-      const line = 120; // just under the sticky header
-      let current = sections[0];
-      for (const s of sections) {
-        if (s.getBoundingClientRect().top - line <= 0) current = s;
+    // match the page link exactly, or a link into this page (/breathing/#vagus-pacer etc.)
+    const navLinks = document.querySelectorAll(
+      '.nav-clinical-menu a[href], .mobile-nav-drawer a[href], .nav-passport-pill[href]'
+    );
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === path || href.startsWith(path + '#')) {
+        a.setAttribute('aria-current', 'page');
+        a.closest('.nav-dropdown')
+          ?.querySelector('.nav-dropdown-trigger')
+          ?.setAttribute('data-section-active', 'true');
       }
-      // near the very bottom, force the last section active
-      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
-        current = sections[sections.length - 1];
-      }
-      if (current) setActive(current.id);
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(sync); }
-    }, { passive: true });
-    sync();
+    });
+
+    // 2. In-page scroll spy for home page sections
+    if (path === '/') {
+      const sectionIds = ['assessment-section', 'prescription-section', 'faq-section'];
+      const sections = sectionIds
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+      if (!sections.length) return;
+
+      let activeId = null;
+      const setActive = id => {
+        if (id === activeId) return;
+        activeId = id;
+        document.querySelectorAll(
+          `.nav-clinical-menu a[href="/#${id}"], .mobile-nav-drawer a[href="/#${id}"]`
+        ).forEach(a => a.setAttribute('aria-current', 'true'));
+        document.querySelector(`.nav-dropdown a[href="/#${id}"]`)
+          ?.closest('.nav-dropdown')
+          ?.querySelector('.nav-dropdown-trigger')
+          ?.setAttribute('data-section-active', 'true');
+      };
+
+      let ticking = false;
+      const sync = () => {
+        ticking = false;
+        const line = 120;
+        let current = null;
+        for (const s of sections) {
+          if (s.getBoundingClientRect().top - line <= 0) current = s;
+        }
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+          current = sections[sections.length - 1];
+        }
+        if (current) setActive(current.id);
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(sync); }
+      }, { passive: true });
+      sync();
+    }
   }
 
   function closeAllDropdowns() {
@@ -1314,9 +1401,9 @@
     localStorage.setItem('site_lang', lang);
     document.documentElement.lang = lang;
 
-    const meta = PAGE_META[lang] || PAGE_META.bn;
-    document.title = meta.title;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', meta.desc);
+    const meta = (window.__PAGE_META && window.__PAGE_META[lang]) || PAGE_META[lang] || PAGE_META.bn;
+    if (meta && meta.title) document.title = meta.title;
+    if (meta && meta.desc) document.querySelector('meta[name="description"]')?.setAttribute('content', meta.desc);
 
     const langLabel = document.getElementById('lang-label');
     if (langLabel) {
@@ -1370,7 +1457,6 @@
   }
 
   // --- Assessment Form & Scoring Engine ---
-  let lastScoreData = null;
 
   function initAssessmentEvents() {
     const form = document.getElementById('health-assessment-form');
@@ -2138,7 +2224,6 @@
   // =========================================================================
   // MODULE 6: Clinical Lab Report Decoder & South Asian TOFI Indices
   // =========================================================================
-  let lastTofiData = null;
 
   function initLabDecoder() {
     const calcTofiBtn = document.getElementById('btn-calc-tofi');
@@ -3285,6 +3370,8 @@
     const passportEl = document.getElementById('doctor-passport');
     if (passportEl) {
       passportEl.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/doctor-passport/';
     }
   }
 
