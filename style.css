@@ -16,7 +16,6 @@
   --glass-orb-1: rgba(16, 185, 129, 0.22);
   --glass-orb-2: rgba(2, 132, 199, 0.20);
   --glass-orb-3: rgba(245, 158, 11, 0.16);
-  --glass-orb-4: rgba(139, 92, 246, 0.16);
 
   /* Frosted Glass Surface Tokens (Light Theme) */
   --bg-main: rgba(248, 250, 252, 0.65);
@@ -34,7 +33,7 @@
 
   --text-main: #0f172a;
   --text-muted: #475569;
-  --text-dim: #64748b;
+  --text-dim: #5a6b7f;
 
   --glass-blur-sm: 8px;
   --glass-blur: 16px;
@@ -45,9 +44,9 @@
   --card-shadow-hover: 0 20px 40px -10px rgba(15, 23, 42, 0.14), inset 0 1px 1.5px 0 #ffffff;
 
   /* Fonts */
-  --font-en-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-en-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-bn: 'Hind Siliguri', sans-serif;
+  --font-en-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-en-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-bn: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
   
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -56,6 +55,79 @@
   
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Sticky-header offset for anchor jumps (see html scroll-padding + section scroll-margin) */
+  --anchor-offset: 92px;
+
+  /* Consolidated frosted-glass filter recipe */
+  --glass: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  --glass-lg: blur(var(--glass-blur-lg)) saturate(var(--glass-saturate));
+
+  /* Keyboard focus indicator */
+  --focus-ring: 0 0 0 3px var(--primary-glow);
+  --focus-outline: 2px solid var(--primary);
+
+  /* Fluid type scale (~1.2 ratio, 360 -> 1280px viewport band) */
+  --text-xs: clamp(0.72rem, 0.69rem + 0.13vw, 0.8rem);
+  --text-sm: clamp(0.83rem, 0.8rem + 0.15vw, 0.92rem);
+  --text-base: clamp(0.95rem, 0.92rem + 0.18vw, 1.05rem);
+  --text-md: clamp(1.05rem, 0.99rem + 0.3vw, 1.2rem);
+  --text-lg: clamp(1.2rem, 1.08rem + 0.55vw, 1.45rem);
+  --text-xl: clamp(1.4rem, 1.2rem + 0.9vw, 1.9rem);
+  --text-2xl: clamp(1.7rem, 1.4rem + 1.4vw, 2.5rem);
+  --text-3xl: clamp(2rem, 1.55rem + 2vw, 3rem);
+
+  /* Spacing scale (0.25rem base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-12: 4.5rem;
+  --space-16: 6rem;
+
+  /* One consistent vertical rhythm between page sections */
+  --section-gap: clamp(3rem, 2rem + 5vw, 5.5rem);
+
+  color-scheme: light;
+}
+
+/* Dark palette.
+   Two selectors below carry identical token values on purpose:
+   - the @media block themes users whose OS is dark BEFORE app.js sets data-theme
+     (removes the white flash on load; initTheme() then writes the attribute)
+   - the [data-theme="dark"] block lets the in-page toggle win in either direction
+   Keep the two lists in sync. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --glass-orb-1: rgba(16, 185, 129, 0.22);
+    --glass-orb-2: rgba(2, 132, 199, 0.22);
+    --glass-orb-3: rgba(168, 85, 247, 0.18);
+
+    --bg-main: rgba(11, 19, 30, 0.60);
+    --bg-surface: rgba(17, 27, 43, 0.72);
+    --bg-surface-glass: rgba(15, 23, 42, 0.70);
+    --bg-surface-elevated: rgba(30, 41, 59, 0.82);
+    --bg-surface-subtle: rgba(15, 23, 42, 0.48);
+    --bg-interactive: rgba(30, 41, 59, 0.80);
+    --bg-interactive-hover: rgba(51, 65, 85, 0.95);
+
+    --border-color: rgba(255, 255, 255, 0.10);
+    --border-glass: rgba(255, 255, 255, 0.14);
+    --border-highlight: rgba(255, 255, 255, 0.26);
+    --border-specular: rgba(255, 255, 255, 0.20);
+
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+    --text-dim: #9fb0c4;
+
+    --card-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), 0 4px 14px -2px rgba(0, 0, 0, 0.45), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.15);
+    --card-shadow-hover: 0 24px 50px -10px rgba(0, 0, 0, 0.85), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.28);
+
+    color-scheme: dark;
+  }
 }
 
 [data-theme="dark"] {
@@ -63,7 +135,6 @@
   --glass-orb-1: rgba(16, 185, 129, 0.22);
   --glass-orb-2: rgba(2, 132, 199, 0.22);
   --glass-orb-3: rgba(168, 85, 247, 0.18);
-  --glass-orb-4: rgba(236, 72, 153, 0.14);
 
   /* Frosted Glass Surface Tokens (Dark Theme - Smoked Crystal) */
   --bg-main: rgba(11, 19, 30, 0.60);
@@ -81,10 +152,12 @@
 
   --text-main: #f8fafc;
   --text-muted: #cbd5e1;
-  --text-dim: #94a3b8;
+  --text-dim: #9fb0c4;
 
   --card-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), 0 4px 14px -2px rgba(0, 0, 0, 0.45), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.15);
   --card-shadow-hover: 0 24px 50px -10px rgba(0, 0, 0, 0.85), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.28);
+
+  color-scheme: dark;
 }
 
 /* ==========================================================================
@@ -101,11 +174,10 @@
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.68;
+  filter: blur(64px);
+  opacity: 0.6;
   animation: floatAmbient 24s infinite alternate ease-in-out;
   transform: translateZ(0);
-  will-change: transform;
 }
 
 .orb-emerald {
@@ -137,16 +209,6 @@
   animation-duration: 28s;
 }
 
-.orb-violet {
-  width: 590px;
-  height: 590px;
-  background: var(--glass-orb-4);
-  top: 68%;
-  right: 12%;
-  animation-delay: -18s;
-  animation-duration: 25s;
-}
-
 @keyframes floatAmbient {
   0% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(45px, -35px) scale(1.08); }
@@ -154,11 +216,15 @@
   100% { transform: translate(25px, 20px) scale(1.04); }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* On small screens the animated blur is the single biggest scroll cost — freeze it */
+@media (max-width: 640px) {
   .ambient-orb {
     animation: none;
+    filter: blur(80px);
+    opacity: 0.4;
   }
 }
+/* Reduced-motion handling is consolidated in the Accessibility section below. */
 
 /* ==========================================================================
    Base Styles & Reset
@@ -171,13 +237,18 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 100%; /* respect the user's browser font-size preference */
+  /* single source of truth for the sticky-header offset on every scroll-into-view
+     (anchor jumps, Tab focus, find-in-page) — do NOT also set scroll-margin on
+     the targets or the two offsets stack */
+  scroll-padding-top: var(--anchor-offset);
 }
 
 body {
   font-family: var(--font-bn), var(--font-en-body);
+  font-size: var(--text-base);
   background-color: #f8fafc;
-  background-image: 
+  background-image:
     radial-gradient(at 0% 0%, rgba(5, 150, 105, 0.08) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.09) 0px, transparent 50%),
     radial-gradient(at 50% 50%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
@@ -188,15 +259,151 @@ body {
   min-height: 100vh;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* Drop the fixed attachment on small screens — it forces full-page repaints on scroll */
+@media (max-width: 640px) {
+  body { background-attachment: scroll; }
+}
+
+/* Dark body background — explicit opt-in, plus system-dark before JS sets the attribute */
 [data-theme="dark"] body {
   background-color: #060c14;
-  background-image: 
+  background-image:
     radial-gradient(at 0% 0%, rgba(5, 150, 105, 0.16) 0px, transparent 50%),
     radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.16) 0px, transparent 50%),
     radial-gradient(at 50% 50%, rgba(139, 92, 246, 0.09) 0px, transparent 50%),
     radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body {
+    background-color: #060c14;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(5, 150, 105, 0.16) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.16) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(139, 92, 246, 0.09) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 50%);
+  }
+}
+
+/* ==========================================================================
+   Accessibility — skip link, keyboard focus, reduced motion
+   ========================================================================== */
+
+/* Skip to content — visible only when focused */
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  z-index: 2000;
+  padding: 0.7rem 1.4rem;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transition-fast);
+}
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* One consistent keyboard focus indicator for every interactive control.
+   Explicit selectors (not :where) so this beats component box-shadows. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+.chip-toggle:focus-visible,
+.tab-btn:focus-visible,
+.filter-chip:focus-visible,
+.breath-mode-btn:focus-visible,
+.m-tab:focus-visible,
+.chip-btn:focus-visible,
+.myth-header:focus-visible {
+  outline: var(--focus-outline) !important;
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Never remove focus visibility without replacing it */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+#main-content:focus { outline: none; }
+
+/* Inline form validation message */
+.form-error {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: var(--danger);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+[data-theme="dark"] .form-error { color: #fca5a5; }
+
+/* Transient status toast */
+.app-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translate(-50%, 200%);
+  z-index: 1800;
+  max-width: min(92vw, 26rem);
+  padding: 0.85rem 1.3rem;
+  border-radius: var(--radius-md);
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-align: center;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45);
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+  opacity: 0;
+  pointer-events: none;
+}
+.app-toast.is-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+/* Tab panels driven by [hidden] for AT, .active for styling/animation */
+.reversal-tab-content[hidden] { display: none; }
+
+/* Screen-reader-only content (skip-link stays separate — it becomes visible on focus) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ambient-orb { animation: none !important; }
 }
 
 /* ==========================================================================
@@ -262,12 +469,25 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(24px) saturate(190%);
-  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: var(--glass-lg);
+  -webkit-backdrop-filter: var(--glass-lg);
   background: var(--bg-surface-glass);
   border-bottom: 1px solid var(--border-glass);
   box-shadow: 0 8px 32px -4px rgba(15, 23, 42, 0.06);
-  transition: all var(--transition-normal);
+  transition: box-shadow var(--transition-normal), background-color var(--transition-normal);
+}
+
+/* Elevate once the page has scrolled past the top */
+.site-header.is-scrolled {
+  box-shadow: 0 10px 34px -6px rgba(15, 23, 42, 0.16);
+  border-bottom-color: var(--border-color);
+}
+[data-theme="dark"] .site-header.is-scrolled {
+  box-shadow: 0 12px 38px -6px rgba(0, 0, 0, 0.6);
+}
+.site-header.is-scrolled .header-container {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
 }
 
 .site-header::before {
@@ -440,6 +660,22 @@ body {
   opacity: 1;
 }
 
+/* Scroll-spy: dropdown whose section is currently in view */
+.nav-dropdown-trigger[data-section-active] {
+  color: var(--primary);
+}
+.nav-dropdown-trigger[data-section-active]::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.15rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary);
+}
+.nav-dropdown-trigger { position: relative; }
+
 /* Flyout Mega Dropdown */
 .dropdown-flyout {
   position: absolute;
@@ -542,6 +778,14 @@ body {
 }
 
 .dropdown-item:hover .item-title {
+  color: var(--primary);
+}
+
+.dropdown-item[aria-current="true"] {
+  background: rgba(5, 150, 105, 0.10);
+  border-color: rgba(5, 150, 105, 0.25);
+}
+.dropdown-item[aria-current="true"] .item-title {
   color: var(--primary);
 }
 
@@ -815,9 +1059,13 @@ body {
   transition: all var(--transition-fast);
 }
 
-.mobile-link:hover {
+.mobile-link:hover,
+.mobile-link[aria-current="true"] {
   background: var(--bg-surface-elevated);
   color: var(--primary);
+}
+.mobile-link[aria-current="true"] {
+  box-shadow: inset 3px 0 0 var(--primary);
 }
 
 .link-bullet {
@@ -868,13 +1116,25 @@ body {
 
 @media (max-width: 640px) {
   .header-top-ribbon {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
   .top-ribbon-container {
-    padding: 0.25rem 1rem;
+    padding: 0.3rem 1rem;
     justify-content: center;
     text-align: center;
+  }
+
+  /* keep the accreditation line to one clean row */
+  .ribbon-left {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .ribbon-text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .brand-subtext {
@@ -909,15 +1169,27 @@ body {
   padding: 2rem 1.5rem 4rem;
 }
 
-/* Answer-First Card (AEO Rule: <45 words opening - Frosted Emerald Glass) */
-.answer-first-container {
-  margin-bottom: 2.2rem;
+/* One consistent vertical rhythm between top-level page sections */
+.main-content > section {
+  margin-bottom: var(--section-gap);
 }
+.main-content > section:last-child {
+  margin-bottom: 0;
+}
+/* The intro band (answer + authority) sits tighter than the section rhythm */
+.main-content > .answer-first-container {
+  margin-bottom: var(--space-5);
+}
+.main-content > .authority-banner {
+  margin-bottom: var(--space-8);
+}
+
+/* Answer-First Card (AEO Rule: <45 words opening - Frosted Emerald Glass) */
 
 .answer-first-card {
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid rgba(5, 150, 105, 0.35);
   border-left: 6px solid var(--primary);
   border-radius: var(--radius-md);
@@ -964,21 +1236,21 @@ body {
 }
 
 .direct-answer {
-  font-size: 1.15rem;
+  font-size: var(--text-md);
   font-weight: 600;
   line-height: 1.75;
   color: var(--text-main);
+  text-wrap: pretty;
 }
 
 /* Authority Banner & Trust Signals (Frosted Layered Glass) */
 .authority-banner {
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
   padding: 1.8rem 2.2rem;
-  margin-bottom: 3.5rem;
   box-shadow: var(--card-shadow);
   position: relative;
   overflow: hidden;
@@ -1020,12 +1292,13 @@ body {
 
 .hero-heading {
   font-family: var(--font-en-display), var(--font-bn);
-  font-size: 1.85rem;
+  font-size: var(--text-xl);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-main);
   margin-bottom: 0.45rem;
-  line-height: 1.3;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .trust-meta {
@@ -1054,12 +1327,12 @@ body {
 .section-headline {
   text-align: center;
   max-width: 750px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto var(--space-6);
 }
 
 .section-tag {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1073,23 +1346,25 @@ body {
 
 .section-title {
   font-family: var(--font-en-display), var(--font-bn);
-  font-size: 2.1rem;
+  font-size: var(--text-2xl);
   font-weight: 800;
   color: var(--text-main);
-  line-height: 1.3;
+  line-height: 1.25;
   margin-bottom: 0.6rem;
+  text-wrap: balance;
 }
 
 .section-desc {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: var(--text-base);
+  text-wrap: pretty;
 }
 
 /* Base Card & Frosted Glass Panel Styles */
 .card {
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -1118,18 +1393,14 @@ body {
 
 .glass-card {
   background: var(--bg-surface-glass);
-  backdrop-filter: blur(var(--glass-blur-lg)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur-lg)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass-lg);
+  -webkit-backdrop-filter: var(--glass-lg);
   border: 1px solid var(--border-glass);
 }
 
 /* ==========================================================================
    Assessment Grid & Forms
    ========================================================================== */
-.assessment-wrapper {
-  margin-bottom: 4rem;
-}
-
 .assessment-grid {
   display: grid;
   grid-template-columns: 1fr 380px;
@@ -1249,11 +1520,17 @@ body {
   gap: 0.5rem;
   padding: 0.8rem 1.6rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  background: none;
+  color: inherit;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+              filter var(--transition-fast), background-color var(--transition-fast),
+              border-color var(--transition-fast), color var(--transition-fast);
   text-decoration: none;
 }
 
@@ -1464,10 +1741,6 @@ body {
 /* ==========================================================================
    Prescription Section
    ========================================================================== */
-.prescription-wrapper {
-  margin-bottom: 4rem;
-}
-
 .presc-header {
   display: flex;
   align-items: center;
@@ -1563,8 +1836,8 @@ body {
 /* Routine Table Box (Frosted Glass Table) */
 .routine-table-box {
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   padding: 1.6rem;
@@ -1608,10 +1881,6 @@ body {
 /* ==========================================================================
    Disease Reversal Explorer (Tabs)
    ========================================================================== */
-.disease-reversal-wrapper {
-  margin-bottom: 4rem;
-}
-
 .reversal-tabs {
   display: flex;
   gap: 0.75rem;
@@ -1737,10 +2006,6 @@ blockquote {
 /* ==========================================================================
    FAQ Section
    ========================================================================== */
-.faq-wrapper {
-  margin-bottom: 4rem;
-}
-
 .faq-container {
   display: flex;
   flex-direction: column;
@@ -1751,8 +2016,8 @@ blockquote {
 
 .faq-item {
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   box-shadow: var(--card-shadow);
@@ -1842,59 +2107,11 @@ blockquote {
   font-size: 0.85rem;
 }
 
-/* ==========================================================================
-   Print Stylesheet (Rx Card Export)
-   ========================================================================== */
-@media print {
-  .site-header,
-  .answer-first-container,
-  .assessment-wrapper,
-  .disease-reversal-wrapper,
-  .faq-wrapper,
-  .site-footer,
-  .presc-actions {
-    display: none !important;
-  }
-
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-    font-size: 12pt;
-  }
-
-  .main-content {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  .prescription-wrapper {
-    margin: 0 !important;
-  }
-
-  .card {
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-  }
-
-  .presc-card, .routine-table-box {
-    border: 1px solid #ccc !important;
-    background: #ffffff !important;
-  }
-
-  .routine-table th {
-    background: #eeeeee !important;
-    color: #000000 !important;
-  }
-}
+/* Print rules live in one consolidated @media print block near the end of this file. */
 
 /* ==========================================================================
    Module 1: Oil Matrix Styles
    ========================================================================== */
-.oil-matrix-wrapper {
-  margin-bottom: 4rem;
-}
-
 .filter-controls-bar {
   display: flex;
   justify-content: center;
@@ -1945,8 +2162,8 @@ blockquote {
   padding: 1.7rem;
   position: relative;
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
   box-shadow: var(--card-shadow);
@@ -2046,10 +2263,6 @@ blockquote {
 /* ==========================================================================
    Module 2: Egg Science & Nutrition Calculator Styles
    ========================================================================== */
-.egg-guide-wrapper {
-  margin-bottom: 4rem;
-}
-
 .egg-content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2058,10 +2271,12 @@ blockquote {
 }
 
 .card-inner-title {
-  font-size: 1.35rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--text-main);
+  line-height: 1.3;
   margin-bottom: 1.2rem;
+  text-wrap: balance;
 }
 
 .fact-list {
@@ -2200,10 +2415,6 @@ blockquote {
 /* ==========================================================================
    Module 3: Heart & Meditation Protocol Styles
    ========================================================================== */
-.heart-mind-wrapper {
-  margin-bottom: 4rem;
-}
-
 .heart-mind-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2340,10 +2551,6 @@ blockquote {
 /* ==========================================================================
    Module 4: Health Mythbusters Styles
    ========================================================================== */
-.mythbusters-wrapper {
-  margin-bottom: 4rem;
-}
-
 .myths-accordion-container {
   display: flex;
   flex-direction: column;
@@ -2357,13 +2564,24 @@ blockquote {
   transition: all var(--transition-fast);
 }
 
+.myth-question-heading {
+  margin: 0;
+  font: inherit;
+}
+
 .myth-header {
+  width: 100%;
   padding: 1.3rem 1.6rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  background: none;
+  border: 0;
+  text-align: start;
+  color: inherit;
+  font: inherit;
 }
 
 .myth-header:hover {
@@ -2385,7 +2603,7 @@ blockquote {
 }
 
 .myth-question {
-  font-size: 1.15rem;
+  font-size: var(--text-md);
   font-weight: 600;
   color: var(--text-main);
 }
@@ -2411,7 +2629,7 @@ blockquote {
 }
 
 .myth-item.active .myth-answer {
-  max-height: 400px;
+  max-height: 40rem;
   padding: 1.2rem 1.6rem 1.5rem;
   border-top-color: var(--border-color);
 }
@@ -2502,8 +2720,23 @@ blockquote {
 .habit-tracker-wrapper,
 .doctor-passport-wrapper {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin-inline: auto;
   padding: 0 1.5rem;
+}
+
+/* Note: content-visibility:auto was trialled on the lower sections but it shifts
+   anchor-jump targets (mid-page sections never render, so their size estimate
+   error persists) — and this page's entire nav model is in-page anchor jumps.
+   The paint cost is instead reduced via the font trim and the ambient-orb changes. */
+
+/* Isolate each interactive module so a re-render in one doesn't reflow the rest */
+.assessment-grid,
+.lab-decoder-grid,
+.fasting-card,
+.plate-builder-grid,
+.vagus-card,
+.habit-card {
+  contain: layout;
 }
 
 .fasting-grid {
@@ -2701,8 +2934,8 @@ blockquote {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-glass);
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   box-shadow: var(--card-shadow);
   position: relative;
   z-index: 2;
@@ -3199,6 +3432,7 @@ blockquote {
 
 .meal-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0.75rem 0 1rem 0;
   border-bottom: 1px solid var(--border-color);
@@ -3263,8 +3497,8 @@ blockquote {
   position: relative;
   overflow: hidden;
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--border-glass);
   box-shadow: var(--card-shadow);
 }
@@ -3452,8 +3686,8 @@ blockquote {
 .habit-card {
   padding: 2.2rem;
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
   border: 1px solid var(--border-glass);
   box-shadow: var(--card-shadow);
 }
@@ -3671,8 +3905,8 @@ blockquote {
 .passport-card {
   padding: 2.8rem;
   background: var(--bg-surface);
-  backdrop-filter: blur(var(--glass-blur-lg)) saturate(var(--glass-saturate));
-  -webkit-backdrop-filter: blur(var(--glass-blur-lg)) saturate(var(--glass-saturate));
+  backdrop-filter: var(--glass-lg);
+  -webkit-backdrop-filter: var(--glass-lg);
   border: 1.5px solid var(--border-glass);
   box-shadow: var(--card-shadow);
   border-radius: var(--radius-lg);
@@ -3819,48 +4053,63 @@ blockquote {
 }
 
 /* ==========================================================================
-   Print Stylesheet (@media print)
+   Print Stylesheet — one block, scoped by a body class set in printScoped()
+   body.printing-rx       -> only the lifestyle prescription card
+   body.printing-passport -> only the doctor discussion sheet
+   (no class)             -> print the page roughly as shown, minus chrome
    ========================================================================== */
 @media print {
+  :root { --anchor-offset: 0px; }
+
   body {
     background: #fff !important;
     color: #000 !important;
+    font-size: 12pt;
   }
 
   .site-header,
   .site-footer,
-  .nav-links,
-  .header-actions,
-  .answer-first-container,
-  .authority-banner,
-  .assessment-wrapper,
-  .prescription-wrapper,
-  .fasting-wrapper,
-  .lab-decoder-wrapper,
-  .plate-builder-wrapper,
-  .vagus-pacer-wrapper,
-  .habit-tracker-wrapper,
-  .disease-reversal-wrapper,
-  .oil-matrix-wrapper,
-  .egg-guide-wrapper,
-  .heart-mind-wrapper,
-  .mythbusters-wrapper,
-  .faq-wrapper,
-  .passport-actions-bar {
+  .ambient-glow-container,
+  .header-top-ribbon,
+  .skip-link {
     display: none !important;
   }
 
-  .doctor-passport-wrapper {
+  .main-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .card,
+  .glass-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .routine-table th {
+    background: #eee !important;
+    color: #000 !important;
+  }
+
+  /* --- Scoped: print only the prescription --- */
+  body.printing-rx .main-content > section:not(.prescription-wrapper),
+  body.printing-rx .presc-actions {
+    display: none !important;
+  }
+  body.printing-rx .prescription-wrapper { margin: 0 !important; }
+
+  /* --- Scoped: print only the doctor passport --- */
+  body.printing-passport .main-content > section:not(.doctor-passport-wrapper),
+  body.printing-passport .passport-actions-bar {
+    display: none !important;
+  }
+  body.printing-passport .doctor-passport-wrapper {
     margin: 0 !important;
     padding: 0 !important;
     max-width: 100% !important;
-  }
-
-  .passport-card {
-    border: 1px solid #ccc !important;
-    box-shadow: none !important;
-    padding: 1.5rem !important;
-    background: #fff !important;
   }
 }
 

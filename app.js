@@ -9,6 +9,7 @@
   // --- Translation Dictionary (Bangla & English) ---
   const translations = {
     bn: {
+      skip_to_content: "মূল বিষয়বস্তুতে যান",
       topbar_accreditation: "আমেরিকান কলেজ অব লাইফস্টাইল মেডিসিন (ACLM) ও নোবেল বিজয়ী অটোফেজি গবেষণা সমর্থিত",
       topbar_update: "সর্বশেষ ক্লিনিক্যাল আপডেট: সেপ্টেম্বর ২০২৬ | এভিডেন্স স্কোর: ৯৯.৪%",
       brand_title: "মেটাপ্রিভেন্ট™",
@@ -45,10 +46,6 @@
       nav_tool_habits: "মেটাবলিক অভ্যাস ট্র্যাকার",
       nav_tool_habits_desc: "৭টি মেটাবলিক রুটিনের ধারাবাহিকতা স্কোর",
       nav_passport_btn: "ডক্টর পাসপোর্ট",
-      nav_assessment: "ঝুঁকি যাচাই",
-      nav_prescription: "স্বাস্থ্য প্রেসক্রিপশন",
-      nav_reversal: "রোগ প্রতিরোধ গাইড",
-      nav_authority: "তত্ত্বাবধায়ক পরিচিতি",
       aeo_badge: "বিজ্ঞানসম্মত ক্লিনিক্যাল নির্যাস",
       aeo_time: "৩০ সেকেন্ড সংক্ষিপ্ত উত্তর",
       direct_answer_content: "আধুনিক ক্রনিক রোগসমূহ যেমন ডায়াবেটিস, উচ্চ রক্তচাপ ও হৃদরোগ মূলত ভুল খাদ্যাভ্যাস, রিফাইন্ড তেল, শারীরিক নিষ্ক্রিয়তা এবং দীর্ঘস্থায়ী মানসিক চাপের কারণে সৃষ্ট। প্রাকৃতিক পুষ্টিকর খাবার, দৈনিক ১৪–১৬ ঘণ্টা উপবাস (অটোফেজি), ৪৫ মিনিট হাঁটা ও মেডিটেশন এই মেটাবলিক ক্ষতি সম্পূর্ণ দূর করতে সক্ষম।",
@@ -191,10 +188,6 @@
       faq_q3: "ইন্টারমিটেন্ট ফাস্টিংয়ের সময় কী খাওয়া যাবে",
       faq_a3: "উপবাস বা পরিপাক বিরতির সময়ে পর্যাপ্ত সাধারণ পানি, হালকা লেবু-পানি বা চিনি ছাড়া গ্রিন টি পান করা যাবে। তবে কোনো ক্যালরিবহুল খাবার বা পানীয় গ্রহণ করা যাবে না।",
       footer_credits: "প্রিভেন্টিভ কার্ডিওলজি ও আধুনিক লাইফস্টাইল মেডিসিনের বৈজ্ঞানিক প্রটোকল ভিত্তিক একটি জনসচেতনতামূলক ডিজিটাল স্বাস্থ্য উদ্যোগ।",
-      nav_oil: "ভোজ্যতেল বিশ্লেষণ",
-      nav_egg: "সুপারফুড ডিম",
-      nav_heart_mind: "হার্ট ও মেডিটেশন",
-      nav_myths: "ভ্রান্তি নিরসন",
       tag_oil: "ভোজ্যতেল বিজ্ঞান ও বিশ্লেষণ",
       title_oil: "কোন তেল স্বাস্থ্যসম্মত? ভোজ্যতেলের তুলনামূলক বিজ্ঞান",
       desc_oil: "রান্নায় ব্যবহৃত তেলের ধরণই নির্ধারণ করে আপনার রক্তনালীর বয়স ও প্রদাহের মাত্রা। জেনে নিন নিরাপদ ও বর্জনীয় তেলের বৈজ্ঞানিক তথ্য।",
@@ -276,13 +269,6 @@
       m5_q: "সকালের নাস্তা বাদ দিলে কি গ্যাস্ট্রিক ও মেটাবলিজম নষ্ট হয়?",
       m5_a: "সকাল ৯টা-১০টা পর্যন্ত নাস্তা বিলম্বিত করা প্রকৃতপক্ষে ইন্টারমিটেন্ট ফাস্টিং বা অটোফেজি তৈরি করে। এতে পরিপাকতন্ত্র পূর্ণ বিশ্রাম পায়, ইনসুলিন লেভেল সর্বনিম্ন থাকে এবং শরীর সঞ্চিত চর্বি বার্ন করে মেটাবলিক নমনীয়তা অর্জন করে। গ্যাস্ট্রিক দূর করতে প্রয়োজন প্রক্রিয়াজাত খাবার বন্ধ করা।",
 
-      // New Modules Bengali Translations
-      nav_fasting: "ফাস্টিং টাইমার",
-      nav_lab: "ল্যাব ডিকোডার",
-      nav_plate: "দেশি প্লেট",
-      nav_vagus: "শ্বাসক্রিয়া বাবল",
-      nav_habits: "দৈনিক ট্র্যাকার",
-      nav_passport: "ডক্টর পাসপোর্ট",
 
       // Fasting Tracker
       tag_fasting: "নোবেলজয়ী কোষীয় বিজ্ঞান",
@@ -439,6 +425,7 @@
       btn_copy_passport: "📋 কপি টেক্সট সামারি"
     },
     en: {
+      skip_to_content: "Skip to main content",
       topbar_accreditation: "Aligned with American College of Lifestyle Medicine (ACLM) & Nobel-Winning Autophagy Research",
       topbar_update: "Latest Clinical Update: Sept 2026 | Evidence Score: 99.4%",
       brand_title: "METAPREVENT™",
@@ -475,10 +462,6 @@
       nav_tool_habits: "Metabolic Habit Tracker",
       nav_tool_habits_desc: "7 daily health routines & consistency streak",
       nav_passport_btn: "Doctor Passport",
-      nav_assessment: "Risk Assessment",
-      nav_prescription: "Lifestyle Rx",
-      nav_reversal: "Disease Prevention",
-      nav_authority: "Clinical Authority",
       aeo_badge: "Clinical Direct Answer",
       aeo_time: "30-Second Summary",
       direct_answer_content: "Chronic non-communicable diseases—type-2 diabetes, hypertension, dyslipidemia, and atherosclerosis—stem from hyperinsulinemia, industrial seed oils, sedentary lifestyles, and chronic distress. Whole-food nutrition, 14–16 hour intermittent fasting, 45 minutes brisk walking, and mindfulness reverse this metabolic damage.",
@@ -616,15 +599,11 @@
       title_faq: "Frequently Asked Questions on Lifestyle Medicine",
       faq_q1: "Why are 99% of modern individuals at chronic health risk?",
       faq_a1: "According to metabolic lifestyle research, modern industrial diets high in refined carbs and seed oils, coupled with sedentary desk hours, late-night sleep disruptions, and unrelenting mental tension, dismantle the body's innate self-healing mechanisms.",
-      faq_a2: "Can chronic non-communicable diseases truly be reversed without lifelong medication?",
+      faq_q2: "Can chronic non-communicable diseases truly be reversed without lifelong medication?",
       faq_a2: "Yes. Lifestyle medicine addresses the root metabolic defect. Eliminating refined dietary triggers, adopting 14-16 hours of daily digestive rest, and daily aerobic movement have allowed thousands of patients to safely taper off hypertension and glycemic drugs under medical supervision.",
       faq_q3: "What can be consumed during the intermittent fasting window?",
       faq_a3: "During the fasting or digestive rest window, plain water, lemon-infused water, or unsweetened green tea are permissible. Any caloric beverages or foods that trigger insulin release must be strictly avoided.",
       footer_credits: "Evidence-informed digital public health initiative based on clinical preventive lifestyle medicine protocols.",
-      nav_oil: "Cooking Oil Matrix",
-      nav_egg: "Superfood Egg",
-      nav_heart_mind: "Heart & Mind",
-      nav_myths: "Mythbusters",
       tag_oil: "Cooking Oil Science",
       title_oil: "Which Cooking Oil is Truly Healthy? Comparative Matrix",
       desc_oil: "The type of culinary oil you consume determines arterial age and systemic inflammation. Understand the clinical difference between safe traditional fats and toxic industrial seed oils.",
@@ -705,14 +684,6 @@
       m4_a: "Lifestyle medicine disproves this fatalism. Medications merely suppress symptoms. Correcting dietary triggers, incorporating 14-16 hours of daily autophagy, and daily walking allow patients to safely achieve disease remission under medical guidance.",
       m5_q: "Does skipping early breakfast cause gastric ulcers and slow metabolism?",
       m5_a: "Delaying breakfast until 9:30-10:00 AM activates cellular autophagy and intermittent lipid oxidation. The gastrointestinal tract receives restorative rest while insulin sensitivity sharpens.",
-
-      // New Modules English Translations
-      nav_fasting: "Fasting Timer",
-      nav_lab: "Lab Decoder",
-      nav_plate: "Desi Plate",
-      nav_vagus: "Breath Bubble",
-      nav_habits: "Daily Tracker",
-      nav_passport: "Doctor Passport",
 
       // Fasting Tracker
       tag_fasting: "Nobel Prize Cellular Science",
@@ -870,22 +841,150 @@
     }
   };
 
+  // Dev guard: the two locales must expose an identical key set.
+  (function assertLocaleParity() {
+    const bn = Object.keys(translations.bn);
+    const en = Object.keys(translations.en);
+    const missingInEn = bn.filter(k => !(k in translations.en));
+    const missingInBn = en.filter(k => !(k in translations.bn));
+    if (missingInEn.length || missingInBn.length) {
+      console.warn('[i18n] locale key mismatch', { missingInEn, missingInBn });
+    }
+  })();
+
   let currentLang = 'bn';
+
+  // --- Lightweight, accessible feedback: transient toast + inline field errors ---
+  let toastTimer = null;
+  function showToast(msg) {
+    let el = document.getElementById('app-toast');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'app-toast';
+      el.className = 'app-toast';
+      el.setAttribute('role', 'status');
+      el.setAttribute('aria-live', 'polite');
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    el.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove('is-visible'), 3200);
+  }
+
+  function showFieldError(id, msg) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = msg;
+    el.hidden = false;
+    if (typeof el.focus === 'function') el.focus();
+  }
+  function clearFieldError(id) {
+    const el = document.getElementById(id);
+    if (el) { el.hidden = true; el.textContent = ''; }
+  }
+  const t = (bn, en) => (currentLang === 'bn' ? bn : en);
+
+  // Push a milestone message to the polite live region (#sr-live).
+  let announceTimer = null;
+  function announce(msg) {
+    const el = document.getElementById('sr-live');
+    if (!el) return;
+    clearTimeout(announceTimer);
+    el.textContent = '';
+    announceTimer = setTimeout(() => { el.textContent = msg; }, 60);
+  }
+
+  // --- Session persistence (wrapped: private windows / disabled storage throw) ---
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    del(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  };
+  const LS_ASSESS = 'health_assessment_answers';
+  const LS_LAB = 'health_lab_inputs';
+  const LS_PLATE = 'health_plate_chips';
+
+  function persistAssessmentAnswers() {
+    const form = document.getElementById('health-assessment-form');
+    if (!form) return;
+    const data = {};
+    form.querySelectorAll('input[type="radio"]:checked').forEach(r => { data[r.name] = r.value; });
+    store.set(LS_ASSESS, JSON.stringify(data));
+  }
+  function restoreAssessmentAnswers() {
+    const raw = store.get(LS_ASSESS);
+    if (!raw) return;
+    let data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+    const form = document.getElementById('health-assessment-form');
+    if (!form) return;
+    let any = false;
+    Object.entries(data).forEach(([name, val]) => {
+      const input = form.querySelector(`input[name="${name}"][value="${val}"]`);
+      if (input) { input.checked = true; any = true; }
+    });
+    if (any) executeHealthRiskAssessment(false);
+  }
+
+  function persistLabInputs() {
+    const ids = ['input-waist', 'input-height', 'input-tg', 'input-hdl',
+      'bm-fbs', 'bm-hba1c', 'bm-insulin', 'bm-hscrp', 'bm-sgpt', 'bm-vitd', 'bm-uric'];
+    const data = {};
+    ids.forEach(id => { const el = document.getElementById(id); if (el && el.value) data[id] = el.value; });
+    store.set(LS_LAB, JSON.stringify(data));
+  }
+  function restoreLabInputs() {
+    const raw = store.get(LS_LAB);
+    if (!raw) return;
+    let data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+    Object.entries(data).forEach(([id, val]) => {
+      const el = document.getElementById(id);
+      if (el) el.value = val;
+    });
+  }
+
+  function persistPlateChips() {
+    const active = [...document.querySelectorAll('.chip-toggle.active')]
+      .map(c => c.getAttribute('data-name'));
+    store.set(LS_PLATE, JSON.stringify(active));
+  }
+  function restorePlateChips() {
+    const raw = store.get(LS_PLATE);
+    if (!raw) return;
+    let names;
+    try { names = JSON.parse(raw); } catch (e) { return; }
+    if (!Array.isArray(names) || !names.length) return;
+    const chips = document.querySelectorAll('.chip-toggle');
+    if (!chips.length) return;
+    chips.forEach(c => c.classList.toggle('active', names.includes(c.getAttribute('data-name'))));
+    if (typeof updatePlateMetrics === 'function') updatePlateMetrics();
+  }
+
+  function restoreSession() {
+    restoreAssessmentAnswers();
+    restoreLabInputs();
+    restorePlateChips();
+  }
 
   // --- WebMCP Global Action Registry ---
   window.WebMCP = {
     actions: {
-      calculate_health_risk: executeHealthRiskAssessment,
-      reset_assessment: resetAssessmentForm,
-      toggle_language: toggleLanguage,
-      toggle_theme: toggleTheme,
-      export_health_report: exportHealthReport,
-      filter_health_topics: filterHealthTopic,
-      filter_oil_type: filterOilType,
-      calculate_egg_protein: updateEggCalculator,
-      start_breathing_exercise: startBreathingExercise,
-      reset_breathing_exercise: resetBreathingExercise,
-      toggle_myth_item: toggleMythItem,
+      calculate_health_risk: () => executeHealthRiskAssessment(true),
+      reset_assessment: () => resetAssessmentForm(),
+      toggle_language: () => toggleLanguage(),
+      toggle_theme: () => toggleTheme(),
+      export_health_report: () => exportHealthReport(),
+      filter_health_topics: (topic) => filterHealthTopic(topic),
+      filter_oil_type: (cat) => filterOilType(cat),
+      calculate_egg_protein: (count) => {
+        const slider = document.getElementById('egg-range-slider');
+        updateEggCalculator(parseInt(count, 10) || (slider ? parseInt(slider.value, 10) : 2));
+      },
+      start_breathing_exercise: () => startBreathingExercise(),
+      reset_breathing_exercise: () => resetBreathingExercise(),
+      toggle_myth_item: (param, el) => toggleMythItem(param, el),
       // New Suite Actions
       set_fast_start_now: () => setFastingStartNow(),
       toggle_fasting_timer: () => toggleFastingTimer(),
@@ -898,9 +997,11 @@
       export_doctor_discussion_sheet: () => printDoctorPassport(),
       open_doctor_passport: () => scrollToPassport()
     },
-    dispatch: function(actionName, params) {
+    // sourceEl is the DOM element that triggered the action (when via a real click),
+    // so element-scoped actions (e.g. toggle_myth_item) know which node to act on.
+    dispatch: function(actionName, params, sourceEl) {
       if (typeof this.actions[actionName] === 'function') {
-        return this.actions[actionName](params);
+        return this.actions[actionName](params, sourceEl);
       } else {
         console.warn(`[WebMCP] Action "${actionName}" not found.`);
       }
@@ -926,24 +1027,88 @@
     initHabitTracker();
     initDoctorPassport();
     initWebMCPEvents();
+    initAnchorNavigation();
+    restoreSession();
   });
+
+  // --- In-page anchor navigation -------------------------------------------
+  // Offset is handled entirely by `scroll-padding-top` on <html>; this only
+  // opens the right tab/accordion when a deep link points inside one.
+  function revealTarget(id) {
+    const tabBtn = document.getElementById('tab-' + id) ||
+      document.querySelector(`.tab-btn[aria-controls="${id}"], .tab-btn[data-tab="${id}"]`);
+    if (tabBtn && typeof filterHealthTopic === 'function') {
+      filterHealthTopic(tabBtn.getAttribute('data-tab'));
+    }
+    const mythItem = document.getElementById(id)?.closest?.('.myth-item');
+    if (mythItem && !mythItem.classList.contains('active')) {
+      toggleMythItem(null, mythItem.querySelector('.myth-header'));
+    }
+  }
+
+  function initAnchorNavigation() {
+    // native smooth scroll + scroll-padding-top do the work; we just keep the
+    // hash in the URL and reveal collapsed targets
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link || link.getAttribute('href') === '#') return;
+      revealTarget(link.getAttribute('href').slice(1));
+    });
+    window.addEventListener('hashchange', () => revealTarget(location.hash.slice(1)));
+    if (location.hash && location.hash.length > 1) {
+      const id = location.hash.slice(1);
+      revealTarget(id);
+      // re-jump once webfonts have settled so the target isn't left mid-page by FOUT reflow
+      const jump = () => document.getElementById(id)?.scrollIntoView({ block: 'start' });
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => setTimeout(jump, 50));
+      } else {
+        setTimeout(jump, 300);
+      }
+    }
+  }
 
   // --- Professional Navigation System ---
   function initNavigationSystem() {
-    // 1. Dropdown Toggles (Click & Keyboard)
+    // 1. Dropdown disclosure (click + keyboard)
     const dropdowns = document.querySelectorAll('.nav-dropdown');
     dropdowns.forEach(drop => {
       const trigger = drop.querySelector('.nav-dropdown-trigger');
       if (!trigger) return;
+      const items = () => [...drop.querySelectorAll('.dropdown-item')];
+
+      const open = (focusFirst) => {
+        closeAllDropdowns();
+        drop.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        if (focusFirst) items()[0]?.focus();
+      };
+      const close = (focusTrigger) => {
+        drop.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        if (focusTrigger) trigger.focus();
+      };
 
       trigger.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isOpen = drop.classList.contains('is-open');
-        closeAllDropdowns();
-        if (!isOpen) {
-          drop.classList.add('is-open');
-          trigger.setAttribute('aria-expanded', 'true');
+        drop.classList.contains('is-open') ? close(false) : open(false);
+      });
+
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); open(true); }
+        else if (e.key === 'Escape') close(false);
+      });
+
+      drop.querySelector('.dropdown-flyout')?.addEventListener('keydown', (e) => {
+        const list = items();
+        const i = list.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') { e.preventDefault(); list[Math.min(i + 1, list.length - 1)]?.focus(); }
+        else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (i <= 0) close(true); else list[i - 1].focus();
         }
+        else if (e.key === 'Escape') { e.preventDefault(); close(true); }
+        else if (e.key === 'Tab') close(false);
       });
     });
 
@@ -954,7 +1119,7 @@
       }
     });
 
-    // Close on Escape key
+    // Close on Escape key (drawer + any stray dropdown)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeAllDropdowns();
@@ -989,17 +1154,76 @@
       });
     }
 
-    // 3. Header Elevate on Scroll
+    // 3. Header Elevate on Scroll (rAF-throttled)
     const header = document.getElementById('site-header');
     if (header) {
+      let ticking = false;
+      const syncHeader = () => {
+        header.classList.toggle('is-scrolled', window.scrollY > 20);
+        ticking = false;
+      };
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-          header.classList.add('is-scrolled');
-        } else {
-          header.classList.remove('is-scrolled');
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(syncHeader);
         }
       }, { passive: true });
+      syncHeader();
     }
+
+    // 4. Scroll-spy: mark the nav entry for the section currently in view
+    initScrollSpy();
+  }
+
+  // --- Scroll-spy — reflects the active section on desktop triggers + mobile links ---
+  function initScrollSpy() {
+    const sectionIds = [
+      'assessment-section', 'prescription-section', 'fasting-tracker', 'lab-decoder',
+      'disease-reversal', 'cooking-oil-section', 'egg-nutrition-section', 'plate-builder',
+      'heart-mind-section', 'vagus-pacer', 'mythbusters-section', 'habit-tracker', 'doctor-passport'
+    ];
+    const sections = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    let activeId = null;
+    const setActive = id => {
+      if (id === activeId) return;
+      activeId = id;
+      document.querySelectorAll('[aria-current="true"]').forEach(a => a.removeAttribute('aria-current'));
+      document.querySelectorAll('.nav-dropdown-trigger[data-section-active]')
+        .forEach(t => t.removeAttribute('data-section-active'));
+      document.querySelectorAll(
+        `.nav-clinical-menu a[href="#${id}"], .mobile-nav-drawer a[href="#${id}"], .nav-passport-pill[href="#${id}"]`
+      ).forEach(a => a.setAttribute('aria-current', 'true'));
+      document.querySelector(`.nav-dropdown a[href="#${id}"]`)
+        ?.closest('.nav-dropdown')
+        ?.querySelector('.nav-dropdown-trigger')
+        ?.setAttribute('data-section-active', 'true');
+    };
+
+    // "Active" = the last section whose top has scrolled above a line just below
+    // the sticky header. Recomputed on a rAF-throttled scroll (robust for tall
+    // sections where intersectionRatio is misleading).
+    let ticking = false;
+    const sync = () => {
+      ticking = false;
+      const line = 120; // just under the sticky header
+      let current = sections[0];
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top - line <= 0) current = s;
+      }
+      // near the very bottom, force the last section active
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+        current = sections[sections.length - 1];
+      }
+      if (current) setActive(current.id);
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(sync); }
+    }, { passive: true });
+    sync();
   }
 
   function closeAllDropdowns() {
@@ -1010,27 +1234,51 @@
     });
   }
 
+  let drawerTrapHandler = null;
+
   function openMobileDrawer() {
     const mobileToggle = document.getElementById('mobile-nav-toggle');
-    const mobileDrawer = document.getElementById('mobile-nav-drawer');
-    if (mobileDrawer) {
-      mobileDrawer.classList.add('is-open');
-      mobileDrawer.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
+    const drawer = document.getElementById('mobile-nav-drawer');
+    if (!drawer) return;
+
+    drawer.classList.add('is-open');
+    drawer.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
     if (mobileToggle) {
       mobileToggle.classList.add('is-active');
       mobileToggle.setAttribute('aria-expanded', 'true');
     }
+
+    const focusables = () => [...drawer.querySelectorAll('a[href], button:not([disabled])')];
+    // Let visibility flip before moving focus so .focus() actually lands
+    setTimeout(() => {
+      (document.getElementById('btn-close-drawer') || focusables()[0])?.focus();
+    }, 30);
+
+    drawerTrapHandler = (e) => {
+      if (e.key !== 'Tab') return;
+      const f = focusables();
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    drawer.addEventListener('keydown', drawerTrapHandler);
   }
 
   function closeMobileDrawer() {
     const mobileToggle = document.getElementById('mobile-nav-toggle');
-    const mobileDrawer = document.getElementById('mobile-nav-drawer');
-    if (mobileDrawer) {
-      mobileDrawer.classList.remove('is-open');
-      mobileDrawer.setAttribute('aria-hidden', 'true');
+    const drawer = document.getElementById('mobile-nav-drawer');
+    if (drawer) {
+      const wasOpen = drawer.classList.contains('is-open');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (drawerTrapHandler) {
+        drawer.removeEventListener('keydown', drawerTrapHandler);
+        drawerTrapHandler = null;
+      }
+      if (wasOpen && mobileToggle) mobileToggle.focus();
     }
     if (mobileToggle) {
       mobileToggle.classList.remove('is-active');
@@ -1042,13 +1290,7 @@
   function initLanguage() {
     const savedLang = localStorage.getItem('site_lang') || 'bn';
     setLanguage(savedLang);
-
-    const langBtn = document.getElementById('lang-toggle-btn');
-    if (langBtn) {
-      langBtn.addEventListener('click', () => {
-        window.WebMCP.dispatch('toggle_language');
-      });
-    }
+    // #lang-toggle-btn carries data-mcp-action="toggle_language" — dispatched by initWebMCPEvents()
   }
 
   function toggleLanguage() {
@@ -1056,10 +1298,25 @@
     setLanguage(newLang);
   }
 
+  const PAGE_META = {
+    bn: {
+      title: 'সুস্থ থাকার বৈজ্ঞানিক লাইফস্টাইল ও স্বাস্থ্যঝুঁকি মূল্যায়ন | Preventive Lifestyle Medicine',
+      desc: 'প্রিভেন্টিভ লাইফস্টাইল মেডিসিন ও মেটাবলিক স্বাস্থ্যবিজ্ঞানের আলোকে আপনার স্বাস্থ্যঝুঁকি নির্ণয় করুন এবং ডায়াবেটিস, প্রেশার ও হৃদরোগ প্রতিরোধে সঠিক জীবনযাত্রা গ্রহণ করুন।'
+    },
+    en: {
+      title: 'Preventive Lifestyle Medicine & Metabolic Health Risk Assessment',
+      desc: 'Assess your metabolic health risk with evidence-informed preventive cardiology and lifestyle medicine tools — interactive risk score, autophagy fasting tracker, and clinical lab decoder.'
+    }
+  };
+
   function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('site_lang', lang);
     document.documentElement.lang = lang;
+
+    const meta = PAGE_META[lang] || PAGE_META.bn;
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', meta.desc);
 
     const langLabel = document.getElementById('lang-label');
     if (langLabel) {
@@ -1091,16 +1348,10 @@
 
   // --- Theme Management ---
   function initTheme() {
-    const savedTheme = localStorage.getItem('site_theme') || 
+    const savedTheme = localStorage.getItem('site_theme') ||
       (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     setTheme(savedTheme);
-
-    const themeBtn = document.getElementById('theme-toggle-btn');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', () => {
-        window.WebMCP.dispatch('toggle_theme');
-      });
-    }
+    // #theme-toggle-btn carries data-mcp-action="toggle_theme" — dispatched by initWebMCPEvents()
   }
 
   function toggleTheme() {
@@ -1123,32 +1374,14 @@
 
   function initAssessmentEvents() {
     const form = document.getElementById('health-assessment-form');
-    const submitBtn = document.getElementById('submit-assessment-btn');
-    const resetBtn = document.getElementById('reset-assessment-btn');
-    const printBtn = document.getElementById('print-presc-btn');
+    // #submit-assessment-btn / #reset-assessment-btn / #print-presc-btn carry data-mcp-action
+    // attributes and are dispatched by initWebMCPEvents().
 
-    if (submitBtn) {
-      submitBtn.addEventListener('click', () => {
-        window.WebMCP.dispatch('calculate_health_risk');
-      });
-    }
-
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        window.WebMCP.dispatch('reset_assessment');
-      });
-    }
-
-    if (printBtn) {
-      printBtn.addEventListener('click', () => {
-        window.WebMCP.dispatch('export_health_report');
-      });
-    }
-
-    // Dynamic update when any radio button changes
+    // Dynamic update + persistence when any radio button changes
     if (form) {
       form.addEventListener('change', () => {
         executeHealthRiskAssessment(false); // soft calculate without scroll
+        if (typeof persistAssessmentAnswers === 'function') persistAssessmentAnswers();
       });
     }
   }
@@ -1175,7 +1408,7 @@
     });
 
     if (answeredCount === 0) {
-      alert(currentLang === 'bn' ? 'অনুগ্রহ করে অন্তত কয়েকটি প্রশ্নের উত্তর নির্বাচন করুন।' : 'Please select answers for the assessment.');
+      if (shouldScroll) showFieldError('assessment-error', t('অনুগ্রহ করে অন্তত কয়েকটি প্রশ্নের উত্তর নির্বাচন করুন।', 'Please answer at least a few questions to run the analysis.'));
       return;
     }
 
@@ -1192,10 +1425,16 @@
 
     updateCalculatedDisplay();
 
-    if (shouldScroll && answeredCount >= 4) {
-      const jumpBtn = document.getElementById('jump-to-plan-btn');
-      if (jumpBtn) {
-        jumpBtn.style.display = 'inline-flex';
+    if (shouldScroll) {
+      const badge = document.getElementById('risk-badge');
+      const tier = document.getElementById('score-tier-text');
+      announce(t(
+        `আপনার মেটাবলিক রেজিলিয়েন্স স্কোর ${convertToBanglaNumber(resilienceScore)}। ${badge ? badge.textContent : ''}. ${tier ? tier.textContent : ''}`,
+        `Your metabolic resilience score is ${resilienceScore}. ${badge ? badge.textContent : ''}. ${tier ? tier.textContent : ''}`
+      ));
+      if (answeredCount >= 4) {
+        const jumpBtn = document.getElementById('jump-to-plan-btn');
+        if (jumpBtn) jumpBtn.style.display = 'inline-flex';
       }
     }
 
@@ -1302,6 +1541,8 @@
   function resetAssessmentForm() {
     const form = document.getElementById('health-assessment-form');
     if (form) form.reset();
+    store.del(LS_ASSESS);
+    clearFieldError('assessment-error');
 
     lastScoreData = null;
 
@@ -1338,40 +1579,63 @@
     if (jumpBtn) jumpBtn.style.display = 'none';
   }
 
-  // --- Disease Reversal Tab Switcher ---
+  // --- Disease Reversal Tab Switcher (ARIA tablist + keyboard) ---
   function initDiseaseReversalTabs() {
-    const tabs = document.querySelectorAll('.tab-btn');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const topic = tab.getAttribute('data-tab');
-        filterHealthTopic(topic);
-      });
-    });
+    const tablist = document.querySelector('.reversal-tabs');
+    if (tablist) enableTablistKeys(tablist, topic => filterHealthTopic(topic), 'data-tab');
+    // Click routes through data-mcp-action="filter_health_topics" -> filterHealthTopic()
   }
 
   function filterHealthTopic(topic) {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.reversal-tab-content');
-
-    tabs.forEach(t => {
-      if (t.getAttribute('data-tab') === topic) {
-        t.classList.add('active');
-      } else {
-        t.classList.remove('active');
-      }
+    document.querySelectorAll('.tab-btn').forEach(t => {
+      const on = t.getAttribute('data-tab') === topic;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
     });
+    document.querySelectorAll('.reversal-tab-content').forEach(c => {
+      const on = c.id === `tab-content-${topic}`;
+      c.classList.toggle('active', on);
+      c.hidden = !on;
+    });
+  }
 
-    contents.forEach(c => {
-      if (c.id === `tab-content-${topic}`) {
-        c.classList.add('active');
-      } else {
-        c.classList.remove('active');
-      }
+  /* Arrow-key navigation for a role="tablist". `select` receives the value of
+     `attr` on the focused tab; tabs are the direct role="tab" children. */
+  function enableTablistKeys(tablist, select, attr) {
+    const tabs = () => [...tablist.querySelectorAll('[role="tab"]')];
+    tablist.addEventListener('keydown', (e) => {
+      const list = tabs();
+      const i = list.indexOf(document.activeElement);
+      if (i < 0) return;
+      let next = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = list[(i + 1) % list.length];
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = list[(i - 1 + list.length) % list.length];
+      else if (e.key === 'Home') next = list[0];
+      else if (e.key === 'End') next = list[list.length - 1];
+      if (!next) return;
+      e.preventDefault();
+      next.focus();
+      select(next.getAttribute(attr));
     });
   }
 
   // --- Print / Export Action ---
   function exportHealthReport() {
+    printScoped('printing-rx');
+  }
+
+  // Print one card cleanly: scope the print stylesheet with a body class, then clear it.
+  function printScoped(mode) {
+    const body = document.body;
+    body.classList.add(mode);
+    const cleanup = () => {
+      body.classList.remove('printing-rx', 'printing-passport');
+      window.removeEventListener('afterprint', cleanup);
+    };
+    window.addEventListener('afterprint', cleanup);
+    // Fallback for browsers that never fire afterprint
+    setTimeout(cleanup, 1000);
     window.print();
   }
 
@@ -1383,36 +1647,35 @@
 
   // --- Module 1: Oil Matrix Filter Controller ---
   function initOilFilters() {
-    const chips = document.querySelectorAll('.filter-chip');
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const filter = chip.getAttribute('data-oil-filter');
-        filterOilType(filter);
-      });
-    });
+    // .filter-chip buttons carry data-mcp-action="filter_oil_type" -> filterOilType()
+    const bar = document.querySelector('.filter-controls-bar');
+    if (bar) {
+      bar.setAttribute('role', 'group');
+      bar.setAttribute('aria-label', currentLang === 'bn' ? 'ভোজ্যতেল ফিল্টার' : 'Cooking oil filter');
+    }
   }
 
   function filterOilType(category) {
     if (!category) return;
     const chips = document.querySelectorAll('.filter-chip');
     chips.forEach(c => {
-      if (c.getAttribute('data-oil-filter') === category) {
-        c.classList.add('active');
-      } else {
-        c.classList.remove('active');
-      }
+      const on = c.getAttribute('data-oil-filter') === category;
+      c.classList.toggle('active', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
 
     const cards = document.querySelectorAll('.oil-card');
+    let shown = 0;
     cards.forEach(card => {
       const cardCat = card.getAttribute('data-category');
-      if (category === 'all' || cardCat === category) {
-        card.style.display = 'flex';
+      const on = category === 'all' || cardCat === category;
+      card.style.display = on ? 'flex' : 'none';
+      if (on) {
         card.style.animation = 'fadeIn 0.35s ease';
-      } else {
-        card.style.display = 'none';
+        shown++;
       }
     });
+    announce(t(`${convertToBanglaNumber(shown)}টি ভোজ্যতেল দেখানো হচ্ছে।`, `Showing ${shown} cooking oils.`));
   }
 
   // --- Module 2: Egg Nutrition Calculator ---
@@ -1581,24 +1844,32 @@
 
   // --- Module 4: Mythbusters Accordion ---
   function initMythbustersAccordion() {
-    const mythHeaders = document.querySelectorAll('.myth-header');
-    mythHeaders.forEach(header => {
-      header.addEventListener('click', (e) => {
-        toggleMythItem(e.currentTarget);
-      });
+    // Click routes through data-mcp-action="toggle_myth_item" on each .myth-header button.
+    document.querySelectorAll('.myth-header').forEach(btn => {
+      const open = btn.closest('.myth-item').classList.contains('active');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
 
-  function toggleMythItem(target) {
-    const item = target ? target.closest('.myth-item') : null;
+  function toggleMythItem(param, sourceEl) {
+    // sourceEl set when triggered by a real click; param ('1'..'5') when called programmatically
+    let btn = sourceEl && sourceEl.closest('.myth-header');
+    if (!btn && param != null) {
+      btn = document.getElementById('myth-header-' + param) ||
+            document.querySelectorAll('.myth-header')[parseInt(param, 10) - 1];
+    }
+    const item = btn ? btn.closest('.myth-item') : null;
     if (!item) return;
 
-    const wasActive = item.classList.contains('active');
-    // Close other myth items for clean accordion experience
-    document.querySelectorAll('.myth-item').forEach(i => i.classList.remove('active'));
-
-    if (!wasActive) {
+    const willOpen = !item.classList.contains('active');
+    // Single-open accordion
+    document.querySelectorAll('.myth-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.myth-header')?.setAttribute('aria-expanded', 'false');
+    });
+    if (willOpen) {
       item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
     }
   }
 
@@ -1621,6 +1892,7 @@
   let fastingInterval = null;
   let fastingStartTime = null;
   let fastingIsRunning = false;
+  let lastFastingStage = 0;
   const FASTING_TARGET_HOURS = 16;
   const FASTING_GAUGE_CIRCUMFERENCE = 565.48; // 2 * PI * 90
 
@@ -1833,6 +2105,16 @@
       stagePill.textContent = pillText;
     }
 
+    // Announce only when the biological stage actually changes
+    if (currentStage !== lastFastingStage) {
+      if (lastFastingStage !== 0) {
+        announce(t(
+          `উপবাসের নতুন পর্যায়: ${pillText}। ${convertToBanglaNumber(hours)} ঘণ্টা অতিবাহিত।`,
+          `Fasting stage changed: ${pillText}. ${hours} hours elapsed.`));
+      }
+      lastFastingStage = currentStage;
+    }
+
     // Update timeline step highlights
     document.querySelectorAll('.stage-step').forEach(step => {
       const stageNum = parseInt(step.getAttribute('data-stage'), 10);
@@ -1883,9 +2165,10 @@
     const isBn = currentLang === 'bn';
 
     if (!waistIn || !heightIn || waistIn <= 0 || heightIn <= 0) {
-      alert(isBn ? 'অনুগ্রহ করে কোমর ও উচ্চতার সঠিক মাপ (ইঞ্চিতে) প্রদান করুন।' : 'Please enter valid waist and height measurements in inches.');
+      showFieldError('tofi-error', t('অনুগ্রহ করে কোমর ও উচ্চতার সঠিক মাপ (ইঞ্চিতে) প্রদান করুন।', 'Please enter valid waist and height measurements in inches.'));
       return;
     }
+    clearFieldError('tofi-error');
 
     // 1. Waist-to-Height Ratio (WHtR)
     const whtr = parseFloat((waistIn / heightIn).toFixed(2));
@@ -1991,6 +2274,8 @@
       resultBox.style.display = 'block';
       resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+    persistLabInputs();
+    announce(t('ভিসেরাল ফ্যাট ও ইনসুলিন রেজিস্ট্যান্স ফলাফল প্রস্তুত।', 'Visceral fat and insulin resistance results are ready.'));
 
     // Sync to Health Passport
     const ppWhtrEl = document.getElementById('pp-whtr');
@@ -2214,9 +2499,10 @@
     const cardsList = document.getElementById('biomarker-cards-list');
 
     if (cards.length === 0) {
-      alert(isBn ? 'অনুগ্রহ করে অন্তত একটি রক্ত পরীক্ষার মান লিখুন।' : 'Please enter at least one biomarker value to analyze.');
+      showFieldError('biomarker-error', t('অনুগ্রহ করে অন্তত একটি রক্ত পরীক্ষার মান লিখুন।', 'Please enter at least one blood biomarker value.'));
       return;
     }
+    clearFieldError('biomarker-error');
 
     if (cardsList) {
       cardsList.innerHTML = cards.map(c => `
@@ -2235,6 +2521,10 @@
       resultsBox.style.display = 'block';
       resultsBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+    persistLabInputs();
+    announce(t(
+      `${convertToBanglaNumber(cards.length)}টি বায়োমার্কারের বিশ্লেষণ ও লাইফস্টাইল প্রতিকার প্রস্তুত।`,
+      `Analysis and lifestyle advice ready for ${cards.length} biomarkers.`));
   }
 
   // =========================================================================
@@ -2368,18 +2658,25 @@
           btn.classList.toggle('active');
         }
         updatePlateMetrics();
+        persistPlateChips();
       });
     });
 
+    const mealTabList = document.querySelector('.meal-tabs');
     const mealTabs = document.querySelectorAll('.m-tab[data-plan]');
-    mealTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        mealTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const plan = tab.getAttribute('data-plan') || 'village';
-        renderMealPlan(plan);
+    const selectMealTab = (plan) => {
+      mealTabs.forEach(tb => {
+        const on = tb.getAttribute('data-plan') === plan;
+        tb.classList.toggle('active', on);
+        tb.setAttribute('aria-selected', on ? 'true' : 'false');
+        tb.tabIndex = on ? 0 : -1;
       });
+      renderMealPlan(plan);
+    };
+    mealTabs.forEach(tab => {
+      tab.addEventListener('click', () => selectMealTab(tab.getAttribute('data-plan') || 'village'));
     });
+    if (mealTabList) enableTablistKeys(mealTabList, selectMealTab, 'data-plan');
 
     updatePlateMetrics();
     renderMealPlan('village');
@@ -2860,8 +3157,7 @@
     render7DayDots();
     updateHabitProgress();
 
-    const isBn = currentLang === 'bn';
-    alert(isBn ? 'আপনার আজকের স্বাস্থ্য অভ্যাসগুলো নিরাপদে সংরক্ষিত হয়েছে!' : 'Today\'s health habits have been saved successfully!');
+    showToast(t('আজকের স্বাস্থ্য অভ্যাসগুলো সংরক্ষিত হয়েছে।', 'Today’s habits have been saved.'));
   }
 
   function render7DayDots() {
@@ -2982,7 +3278,7 @@
   }
 
   function printDoctorPassport() {
-    window.print();
+    printScoped('printing-passport');
   }
 
   function scrollToPassport() {
@@ -3042,7 +3338,7 @@ Source: Preventive Lifestyle Medicine Platform
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(summaryText).then(() => {
-        alert(isBn ? 'ডক্টর সামারি সফলভাবে ক্লিপবোর্ডে কপি করা হয়েছে!' : 'Doctor discussion summary copied to clipboard!');
+        showToast(t('ডক্টর সামারি ক্লিপবোর্ডে কপি করা হয়েছে।', 'Doctor summary copied to clipboard.'));
       }).catch(() => {
         fallbackCopyText(summaryText);
       });
@@ -3052,32 +3348,31 @@ Source: Preventive Lifestyle Medicine Platform
   }
 
   function fallbackCopyText(text) {
-    const isBn = currentLang === 'bn';
     const ta = document.createElement('textarea');
     ta.value = text;
     document.body.appendChild(ta);
     ta.select();
     try {
       document.execCommand('copy');
-      alert(isBn ? 'ডক্টর সামারি ক্লিপবোর্ডে কপি করা হয়েছে!' : 'Doctor summary copied to clipboard!');
+      showToast(t('ডক্টর সামারি ক্লিপবোর্ডে কপি করা হয়েছে।', 'Doctor summary copied to clipboard.'));
     } catch (err) {
-      alert(isBn ? 'কপি করা সম্ভব হয়নি।' : 'Failed to copy text.');
+      showToast(t('কপি করা সম্ভব হয়নি।', 'Could not copy the text.'));
     }
     document.body.removeChild(ta);
   }
 
   // --- WebMCP Generic Listener ---
+  // Single delegated handler: every [data-mcp-action] click (button, link, form) routes
+  // through window.WebMCP.dispatch() exactly once. No element wires its own listener.
   function initWebMCPEvents() {
     document.addEventListener('click', (e) => {
       const target = e.target.closest('[data-mcp-action]');
       if (!target) return;
 
       const action = target.getAttribute('data-mcp-action');
+      if (!action) return;
       const param = target.getAttribute('data-mcp-param') || null;
-
-      if (action && action !== 'calculate_health_risk' && action !== 'reset_assessment' && action !== 'toggle_language' && action !== 'toggle_theme' && action !== 'export_health_report') {
-        window.WebMCP.dispatch(action, param);
-      }
+      window.WebMCP.dispatch(action, param, target);
     });
   }
 

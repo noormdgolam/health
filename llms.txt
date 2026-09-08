@@ -28,17 +28,24 @@ This platform exposes machine-readable WebMCP actions accessible via standard DO
 
 - `calculate_health_risk`: Calculates metabolic risk tier and resilience score.
 - `reset_assessment`: Resets the primary risk evaluation form.
+- `export_health_report`: Opens the print dialog scoped to the personalized lifestyle prescription card.
 - `toggle_language`: Toggles between Bengali (`bn`) and English (`en`).
 - `toggle_theme`: Toggles between Light and Dark mode.
+- `filter_health_topics`: Switches the disease-reversal explorer tab (`diabetes`, `hypertension`, `fattyliver`, `stress`).
+- `filter_oil_type`: Filters the cooking-oil matrix (`all`, `safe`, `danger`).
+- `calculate_egg_protein`: Recomputes the whole-egg nutrition calculator for the selected egg count.
+- `toggle_myth_item`: Expands or collapses a health-mythbuster accordion entry.
 - `set_fast_start_now`: Sets fasting start timestamp to current time and initializes timer.
 - `toggle_fasting_timer`: Toggles active timer execution for intermittent fasting.
 - `reset_fasting_timer`: Resets the fasting timer to initial state.
 - `calculate_insulin_resistance`: Calculates WHtR, TG/HDL ratio, and TyG index with clinical verdict.
 - `decode_biomarkers`: Analyzes the 7 critical blood biomarkers with green/yellow/red traffic light advice.
+- `start_breathing_exercise`: Starts the 2-minute cardiac-coherence breathing timer in the Heart-Mind module.
+- `reset_breathing_exercise`: Resets that 2-minute breathing timer.
 - `trigger_breathing_session`: Starts or pauses the vagus pacer breathing session.
 - `toggle_breathing_chime`: Toggles Web Audio API chime sound on phase transitions.
 - `log_daily_habits`: Saves daily 6-pillar habit completion and increments unbroken streak.
-- `export_doctor_discussion_sheet`: Triggers print dialog formatted for single-page clinical review.
+- `export_doctor_discussion_sheet`: Triggers print dialog scoped to the single-page doctor discussion sheet.
 - `open_doctor_passport`: Smoothly scrolls to the Health Passport section.
 
 ## Clinical Authority & Authorship
@@ -46,4 +53,5 @@ This platform exposes machine-readable WebMCP actions accessible via standard DO
 - **Author**: Preventive Cardiology & Lifestyle Medicine Research Initiative
 - **Focus**: Metabolic Cardiology, Cellular Autophagy, Insulin Resistance Reversal, Endothelial Protection
 - **Evidence Base**: Nobel Prize in Physiology or Medicine (Autophagy, 2016), ACC/AHA Prevention Guidelines, South Asian Cardiovascular Epidemiology
-- **Last Updated**: September 2026
+- **Last Updated**: 2026-09-08
+- **Canonical URL**: https://health.bongshai.com/

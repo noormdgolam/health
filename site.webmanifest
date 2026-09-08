@@ -1,0 +1,21 @@
+{
+  "name": "MetaPrevent — Preventive Lifestyle Medicine Platform",
+  "short_name": "MetaPrevent",
+  "description": "Evidence-informed preventive cardiology, metabolic health, and lifestyle medicine platform with interactive risk assessment, autophagy fasting tracker, and lab decoder.",
+  "lang": "bn",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#059669",
+  "categories": ["health", "medical", "lifestyle", "education"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

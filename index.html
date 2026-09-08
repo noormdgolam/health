@@ -1,87 +1,304 @@
 <!DOCTYPE html>
-<html lang="bn" data-theme="light">
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Set the colour theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('site_theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
   <title>সুস্থ থাকার বৈজ্ঞানিক লাইফস্টাইল ও স্বাস্থ্যঝুঁকি মূল্যায়ন | Preventive Lifestyle Medicine</title>
   <meta name="description" content="প্রিভেন্টিভ লাইফস্টাইল মেডিসিন ও মেটাবলিক স্বাস্থ্যবিজ্ঞানের আলোকে আপনার স্বাস্থ্যঝুঁকি নির্ণয় করুন এবং ডায়াবেটিস, প্রেশার ও হৃদরোগ প্রতিরোধে সঠিক জীবনযাত্রা গ্রহণ করুন।">
-  <meta name="author" content="Preventive Lifestyle Medicine Council">
+  <meta name="author" content="Preventive Cardiology & Lifestyle Medicine Research Initiative">
   <meta name="keywords" content="Lifestyle Medicine, Metabolic Health, Diabetes Reversal, Hypertension, Autophagy, Intermittent Fasting, স্বাস্থ্যঝুঁকি">
-  
-  <!-- Fonts -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://health.bongshai.com/">
+
+  <!-- Colour of the browser UI -->
+  <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#060c14" media="(prefers-color-scheme: dark)">
+
+  <!-- Icons & PWA -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23059669'/%3E%3Cpath d='M7 21h5l3-7 5 13 3-9 2 3h5' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23059669'/%3E%3Cpath d='M7 21h5l3-7 5 13 3-9 2 3h5' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MetaPrevent">
+  <meta property="og:locale" content="bn_BD">
+  <meta property="og:title" content="মেটাবলিক স্বাস্থ্যঝুঁকি ও রোগ নিরাময় লাইফস্টাইল প্রটোকল">
+  <meta property="og:description" content="ডায়াবেটিস, উচ্চ রক্তচাপ ও হৃদরোগ প্রতিরোধে বিজ্ঞানসম্মত লাইফস্টাইল মেডিসিন — ইন্টারেক্টিভ স্বাস্থ্যঝুঁকি মূল্যায়ন, অটোফেজি ফাস্টিং ট্র্যাকার ও ল্যাব ডিকোডার।">
+  <meta property="og:url" content="https://health.bongshai.com/">
+  <meta property="og:image" content="https://health.bongshai.com/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="মেটাবলিক স্বাস্থ্যঝুঁকি ও রোগ নিরাময় লাইফস্টাইল প্রটোকল">
+  <meta name="twitter:description" content="বিজ্ঞানসম্মত প্রিভেন্টিভ লাইফস্টাইল মেডিসিন প্ল্যাটফর্ম — ইন্টারেক্টিভ স্বাস্থ্যঝুঁকি মূল্যায়ন ও রোগ নিরাময় প্রোটোকল।">
+  <meta name="twitter:image" content="https://health.bongshai.com/og-cover.png">
+
+  <!-- Fonts: Hind Siliguri (Bengali) + Outfit (Latin display); Latin body uses the system stack -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Outfit:wght@400;600;700;800&display=swap">
 
-  <!-- JSON-LD Entity & FAQ Schema -->
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+
+  <!-- Structured data: Organization, WebSite, MedicalWebPage, Breadcrumb, FAQ, HowTo -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalWebPage",
-        "@id": "https://health.local/#medicalpage",
-        "name": "সুস্থ থাকার বৈজ্ঞানিক লাইফস্টাইল ও স্বাস্থ্যঝুঁকি মূল্যায়ন",
-        "description": "Evidence-informed assessment and practical lifestyle intervention protocols developed from clinical research in preventive cardiology and lifestyle medicine.",
-        "author": {
-          "@type": "Organization",
-          "name": "Preventive Cardiology & Lifestyle Medicine Initiative",
-          "url": "https://health.local"
-        },
-        "datePublished": "2026-09-06",
-        "dateModified": "2026-09-06"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://health.local/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "৯৯ শতাংশ আধুনিক মানুষ স্বাস্থ্যঝুঁকিতে পড়ার মূল কারণ",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "অতিরিক্ত চিনি ও পরিশোধিত শস্য গ্রহণ, বিষাক্ত রিফাইন্ড ভেজিটেবল অয়েল, দীর্ঘক্ষণ বসে থাকার অভ্যাস, অপর্যাপ্ত ঘুম এবং ক্রনিক মানসিক চাপই আধুনিক মানুষের ক্রনিক মেটাবলিক অসুস্থতার প্রধান নিয়ামক।"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "অটোফেজি এবং ইন্টারমিটেন্ট ফাস্টিং কীভাবে রোগ নিরাময়ে সহায়তা করে",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "১৪ থেকে ১৬ ঘণ্টা পরিপাকতন্ত্রকে খাবার থেকে বিরত রাখলে শরীর অপ্রয়োজনীয় ও ক্ষতিগ্রস্ত কোষ অপসারিত করে সুস্থ কোষ পুনরুৎপাদন করে, যা ইনসুলিন সংবেদনশীলতা বৃদ্ধি করে এবং ডায়াবেটিস প্রতিরোধ করে।"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "হৃদরোগ ও রক্তচাপ নিয়ন্ত্রণে প্রাকৃতিক খাদ্যাভ্যাসের ভূমিকা",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "প্রক্রিয়াজাত প্যাকেটজাত খাদ্য এবং সয়াবিন/পাম তেল বর্জন করে সবুজ শাকসবজি, কাঁচা সালাদ, খাঁটি সরিষা বা এক্সট্রা ভার্জিন অলিভ অয়েল ও পর্যাপ্ত পানি গ্রহণ রক্তনালীর প্রদাহ দূর করে হৃদযন্ত্র সুস্থ রাখে।"
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://health.bongshai.com/#org",
+      "name": "MetaPrevent — Preventive Lifestyle Medicine Platform",
+      "url": "https://health.bongshai.com/",
+      "logo": "https://health.bongshai.com/icon.svg",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://health.bongshai.com/#website",
+      "url": "https://health.bongshai.com/",
+      "name": "MetaPrevent",
+      "inLanguage": "bn",
+      "publisher": {
+        "@id": "https://health.bongshai.com/#org"
       }
-    ]
-  }
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://health.bongshai.com/#webpage",
+      "url": "https://health.bongshai.com/",
+      "name": "মেটাবলিক স্বাস্থ্যঝুঁকি ও রোগ নিরাময় লাইফস্টাইল প্রটোকল",
+      "description": "চিকিৎসাবিজ্ঞান ও মেটাবলিক বিশ্লেষণ অনুযায়ী, প্রক্রিয়াজাত অস্বাস্থ্যকর খাবার, রিফাইন্ড তেল, শারীরিক নিষ্ক্রিয়তা, দেরিতে ঘুমানো এবং অবিরত মানসিক চাপের কারণে মানুষের রোগ প্রতিরোধ ক্ষমতা ও কোষের স্ব-নিরাময় ক্ষমতা নষ্ট হয়ে যায়।",
+      "inLanguage": "bn",
+      "isPartOf": {
+        "@id": "https://health.bongshai.com/#website"
+      },
+      "about": [
+        {
+          "@type": "MedicalCondition",
+          "name": "Type 2 Diabetes Mellitus"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "Hypertension"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "Non-alcoholic fatty liver disease"
+        },
+        {
+          "@type": "MedicalCondition",
+          "name": "Insulin resistance"
+        }
+      ],
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Patient"
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "Preventive Cardiology & Lifestyle Medicine Research Initiative"
+      },
+      "lastReviewed": "2026-09-08",
+      "datePublished": "2026-09-06",
+      "dateModified": "2026-09-08",
+      "author": {
+        "@type": "Organization",
+        "name": "Preventive Cardiology & Lifestyle Medicine Research Initiative",
+        "url": "https://health.bongshai.com/"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://health.bongshai.com/og-cover.png"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://health.bongshai.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "হোম",
+          "item": "https://health.bongshai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "স্বাস্থ্যঝুঁকি মূল্যায়ন",
+          "item": "https://health.bongshai.com/#assessment-section"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "লাইফস্টাইল প্রেসক্রিপশন",
+          "item": "https://health.bongshai.com/#prescription-section"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://health.bongshai.com/#faq",
+      "inLanguage": "bn",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "৯৯ শতাংশ মানুষ স্বাস্থ্যঝুঁকিতে থাকার কারণ কী",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "চিকিৎসাবিজ্ঞান ও মেটাবলিক বিশ্লেষণ অনুযায়ী, প্রক্রিয়াজাত অস্বাস্থ্যকর খাবার, রিফাইন্ড তেল, শারীরিক নিষ্ক্রিয়তা, দেরিতে ঘুমানো এবং অবিরত মানসিক চাপের কারণে মানুষের রোগ প্রতিরোধ ক্ষমতা ও কোষের স্ব-নিরাময় ক্ষমতা নষ্ট হয়ে যায়।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ওষুধ ছাড়া কি দীর্ঘস্থায়ী রোগ নিরাময় সম্ভব",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "হ্যাঁ, লাইফস্টাইল মেডিসিনের মূল ভিত্তি হলো রোগের মূল কারণ দূর করা। খাদ্যাভ্যাস থেকে বিষাক্ত উপাদান বর্জন, ১৪-১৬ ঘণ্টার অটোফেজি এবং নিয়মিত হাঁটার মাধ্যমে হাজার হাজার মানুষ প্রেশার ও সুগারের ওষুধ থেকে মুক্ত হয়েছেন।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ইন্টারমিটেন্ট ফাস্টিংয়ের সময় কী খাওয়া যাবে",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "উপবাস বা পরিপাক বিরতির সময়ে পর্যাপ্ত সাধারণ পানি, হালকা লেবু-পানি বা চিনি ছাড়া গ্রিন টি পান করা যাবে। তবে কোনো ক্যালরিবহুল খাবার বা পানীয় গ্রহণ করা যাবে না।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ডিমের কুসুম খেলে রক্তনালী ব্লক হয়ে হার্ট অ্যাটাক হয়?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "সম্পূর্ণ ভিত্তিহীন। গবেষণায় প্রমাণিত হয়েছে ডিমের কুসুমে থাকা স্বাস্থ্যকর ফ্যাট রক্তে ভালো কোলেস্টেরল (HDL) বাড়ায়। রক্তনালীর আসল ক্ষতি করে পরিশোধিত চিনি, ময়দা ও সয়াবিন তেল দ্বারা সৃষ্ট প্রদাহ।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ভেজিটেবল অয়েল (সয়াবিন/পাম তেল) উদ্ভিজ্জ ও হার্টের জন্য উপকারী?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "মার্কেটিং প্রোপাগান্ডা। সয়াবিন ও পাম তেল কোনো তাজা উদ্ভিজ্জ রস নয়; এগুলোকে রাসায়নিক দ্রাবক ও অত্যন্ত উচ্চতাপে পরিশোধন করা হয়, যার ফলে বিষাক্ত ওমেগা-৬ ফ্রি রেডিক্যাল তৈরি হয় যা ধমনীতে প্রদাহ বাড়ায়। খাঁটি সরিষা বা নারকেল তেলই প্রকৃত স্বাস্থ্যকর।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ফ্যাট বা চর্বিজাতীয় খাবার খেলেই মানুষ মোটা হয়?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ভুল ধারণা। চর্বি ইনসুলিন হরমোন বৃদ্ধি করে না। স্থূলতার আসল চাবিকাঠি হলো উচ্চ শর্করা ও চিনিযুক্ত খাবার, যা ইনসুলিন স্পাইক করিয়ে অতিরিক্ত ক্যালরি চর্বি হিসেবে কোষে লক করে রাখে। প্রাকৃতিক ভালো ফ্যাট খেলে ক্ষুধা কমে ও মেটাবলিজম চাঙ্গা হয়।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "উচ্চ রক্তচাপ বা ডায়াবেটিসের ওষুধ একবার শুরু করলে কি সারা জীবন খেতে হবে?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "লাইফস্টাইল চিকিৎসায় এটি ভুল প্রমাণিত। ওষুধ কেবল উপসর্গ কৃত্রিমভাবে দমিয়ে রাখে। খাদ্যাভ্যাস থেকে চিনি ও প্রক্রিয়াজাত খাবার বাদ দিয়ে, ১৪-১৬ ঘণ্টার অটোফেজি ফাস্টিং ও দৈনিক ৪৫ মিনিট হাঁটলে হাজারো মানুষ সম্পূর্ণ প্রাকৃতিকভাবে রক্তচাপ ও সুগার নিয়ন্ত্রণে আনতে সক্ষম হয়েছেন।"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "সকালের নাস্তা বাদ দিলে কি গ্যাস্ট্রিক ও মেটাবলিজম নষ্ট হয়?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "সকাল ৯টা-১০টা পর্যন্ত নাস্তা বিলম্বিত করা প্রকৃতপক্ষে ইন্টারমিটেন্ট ফাস্টিং বা অটোফেজি তৈরি করে। এতে পরিপাকতন্ত্র পূর্ণ বিশ্রাম পায়, ইনসুলিন লেভেল সর্বনিম্ন থাকে এবং শরীর সঞ্চিত চর্বি বার্ন করে মেটাবলিক নমনীয়তা অর্জন করে। গ্যাস্ট্রিক দূর করতে প্রয়োজন প্রক্রিয়াজাত খাবার বন্ধ করা।"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://health.bongshai.com/#daily-protocol",
+      "inLanguage": "bn",
+      "name": "৬ স্তম্ভের দৈনিক মেটাবলিক সুস্থতা প্রোটোকল",
+      "description": "হ্যাঁ, লাইফস্টাইল মেডিসিনের মূল ভিত্তি হলো রোগের মূল কারণ দূর করা। খাদ্যাভ্যাস থেকে বিষাক্ত উপাদান বর্জন, ১৪-১৬ ঘণ্টার অটোফেজি এবং নিয়মিত হাঁটার মাধ্যমে হাজার হাজার মানুষ প্রেশার ও সুগারের ওষুধ থেকে মুক্ত হয়েছেন।",
+      "totalTime": "P1D",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "১. ১৪–১৬ ঘণ্টার ইন্টারমিটেন্ট ফাস্টিং সম্পন্ন",
+          "text": "রাত ৮টার মধ্যে রাতের খাবার শেষ করে সকাল ১০টা পর্যন্ত পরিপাক বিরতি।",
+          "url": "https://health.bongshai.com/#habit-tracker"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "২. ৪৫ মিনিট রোদে দ্রুত হাঁটা ও শারীরিক ঘাম ঝরানো",
+          "text": "সকালের প্রাকৃতিক রোদে দ্রুত হাঁটা ও ইনসুলিন সংবেদনশীলতা বৃদ্ধি।",
+          "url": "https://health.bongshai.com/#habit-tracker"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "৩. চিনি, মিষ্টি ও সয়াবিন/পাম তেল সম্পূর্ণ বর্জন",
+          "text": "শুধুমাত্র সবুজ শাকসবজি, খাঁটি সরিষার তেল ও পুষ্টিকর প্রাকৃতিক খাবার গ্রহণ।",
+          "url": "https://health.bongshai.com/#habit-tracker"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "৪. ২.৫ থেকে ৩ লিটার বিশুদ্ধ পানি ও লেবুপানি",
+          "text": "পর্যাপ্ত সেলুলার হাইড্রেশন ও লিভার-কিডনির বিষাক্ত বর্জ্য নিষ্কাশন।",
+          "url": "https://health.bongshai.com/#habit-tracker"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "৫. ১০–১৫ মিনিট শ্বাসক্রিয়া বা ধ্যান (মেডিটেশন)",
+          "text": "ভ্যাগাস নার্ভ সক্রিয়করণ, মানসিক চাপ ও কর্টিসোল হরমোন হ্রাস।",
+          "url": "https://health.bongshai.com/#habit-tracker"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "৬. রাত ১১:০০ টার পূর্বেই শান্ত পরিবেশে বিছানায় ঘুমানো",
+          "text": "সার্কাডিয়ান ছন্দে মেলাটোনিন বৃদ্ধি ও ৭-৮ ঘণ্টার গভীর আরামদায়ক ঘুম।",
+          "url": "https://health.bongshai.com/#habit-tracker"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main-content" data-i18n="skip_to_content">মূল বিষয়বস্তুতে যান</a>
+
+  <!-- Polite live region for milestone announcements (score ready, fasting stage change, etc.) -->
+  <div id="sr-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <!-- Ambient Glassmorphism Glow Engine -->
   <div class="ambient-glow-container" aria-hidden="true">
     <div class="ambient-orb orb-emerald"></div>
     <div class="ambient-orb orb-sky"></div>
     <div class="ambient-orb orb-amber"></div>
-    <div class="ambient-orb orb-violet"></div>
   </div>
 
   <!-- Top Clinical Accreditation & Trust Ribbon -->
   <div class="header-top-ribbon" id="top-ribbon">
     <div class="top-ribbon-container">
       <div class="ribbon-left">
-        <span class="ribbon-icon">🛡️</span>
+        <span class="ribbon-icon" aria-hidden="true">🛡️</span>
         <span class="ribbon-text" data-i18n="topbar_accreditation">আমেরিকান কলেজ অব লাইফস্টাইল মেডিসিন (ACLM) ও নোবেল বিজয়ী অটোফেজি গবেষণা সমর্থিত</span>
       </div>
       <div class="ribbon-right">
@@ -102,7 +319,7 @@
             <path d="M20 5C11.716 5 5 11.716 5 20C5 28.284 11.716 35 20 35C28.284 35 35 28.284 35 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
             <path d="M10 20.5H14.5L17 14.5L21 26.5L24 17.5L26 20.5H30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span class="pulse-dot"></span>
+          <span class="pulse-dot" aria-hidden="true"></span>
         </div>
         <div class="brand-titles">
           <div class="brand-name-row">
@@ -118,39 +335,39 @@
         
         <!-- Dropdown 1: Diagnostics & Labs -->
         <div class="nav-dropdown" data-dropdown="diagnostics">
-          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-diag">
-            <span class="trigger-icon">🩺</span>
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="flyout-diag" id="trigger-diag">
+            <span class="trigger-icon" aria-hidden="true">🩺</span>
             <span class="trigger-text" data-i18n="nav_group_diagnostics">ডায়াগনস্টিকস ও ল্যাব</span>
             <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
           </button>
-          <div class="dropdown-flyout" role="menu" aria-labelledby="trigger-diag">
+          <div class="dropdown-flyout" id="flyout-diag" aria-labelledby="trigger-diag">
             <div class="dropdown-flyout-header">
               <span class="flyout-title" data-i18n="nav_group_diagnostics_sub">ক্লিনিক্যাল মূল্যায়ন ও বায়োমার্কার টুলস</span>
             </div>
             <div class="dropdown-grid">
-              <a href="#assessment-section" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🎯</span>
+              <a href="#assessment-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🎯</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_diag_risk">মেটাবলিক ঝুঁকি মূল্যায়ন</span>
                   <span class="item-desc" data-i18n="nav_diag_risk_desc">৬টি ক্লিনিক্যাল স্তম্ভের আলোকে ব্যক্তিগত স্কোর</span>
                 </div>
               </a>
-              <a href="#lab-decoder" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🧪</span>
+              <a href="#lab-decoder" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🧪</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_diag_lab">ল্যাব বায়োমার্কার ডিকোডার</span>
                   <span class="item-desc" data-i18n="nav_diag_lab_desc">HbA1c, ইনসুলিন, TG/HDL ও ভিসেরাল ফ্যাট (TOFI)</span>
                 </div>
               </a>
-              <a href="#cooking-oil-section" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🫒</span>
+              <a href="#cooking-oil-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🫒</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_diag_oil">ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স</span>
                   <span class="item-desc" data-i18n="nav_diag_oil_desc">নিরাপদ প্রাকৃতিক ফ্যাট বনাম ক্ষতিকর ইন্ডাস্ট্রিয়াল তেল</span>
                 </div>
               </a>
-              <a href="#egg-nutrition-section" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🍳</span>
+              <a href="#egg-nutrition-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🍳</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_diag_egg">ডিম ও কোলেস্টেরল বিজ্ঞান</span>
                   <span class="item-desc" data-i18n="nav_diag_egg_desc">কুসুমের পূর্ণাঙ্গ পুষ্টি ও দৈনিক ক্যালকুলেটর</span>
@@ -162,46 +379,46 @@
 
         <!-- Dropdown 2: Protocols & Reversal -->
         <div class="nav-dropdown" data-dropdown="protocols">
-          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-prot">
-            <span class="trigger-icon">📋</span>
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="flyout-prot" id="trigger-prot">
+            <span class="trigger-icon" aria-hidden="true">📋</span>
             <span class="trigger-text" data-i18n="nav_group_protocols">ক্লিনিক্যাল প্রোটোকল</span>
             <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
           </button>
-          <div class="dropdown-flyout" role="menu" aria-labelledby="trigger-prot">
+          <div class="dropdown-flyout" id="flyout-prot" aria-labelledby="trigger-prot">
             <div class="dropdown-flyout-header">
               <span class="flyout-title" data-i18n="nav_group_protocols_sub">বিজ্ঞানভিত্তিক নিরাময় ও প্রতিরোধ নির্দেশিকা</span>
             </div>
             <div class="dropdown-grid">
-              <a href="#prescription-section" class="dropdown-item" role="menuitem">
-                <span class="item-icon">📜</span>
+              <a href="#prescription-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">📜</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_prot_rx">ব্যক্তিগত লাইফস্টাইল প্রেসক্রিপশন</span>
                   <span class="item-desc" data-i18n="nav_prot_rx_desc">সম্পূর্ণ দৈনিক রুটিন, ডায়েট ও স্লিপ গাইড</span>
                 </div>
               </a>
-              <a href="#disease-reversal" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🔄</span>
+              <a href="#disease-reversal" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🔄</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_prot_reversal">রোগ নিরাময় জ্ঞানভাণ্ডার</span>
                   <span class="item-desc" data-i18n="nav_prot_reversal_desc">ডায়াবেটিস, প্রেশার ও ফ্যাটি লিভার রিভার্সাল</span>
                 </div>
               </a>
-              <a href="#vagus-pacer" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🫁</span>
+              <a href="#vagus-pacer" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🫁</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_prot_vagus">ভ্যাগাস নার্ভ ব্রিদিং পেসার</span>
                   <span class="item-desc" data-i18n="nav_prot_vagus_desc">৪-৭-৮, বক্স ব্রিদিং ও কার্ডিয়াক কোহেরেন্স বাবল</span>
                 </div>
               </a>
-              <a href="#heart-mind-section" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🧠</span>
+              <a href="#heart-mind-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🧠</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_prot_heart_mind">হার্ট-মাইন্ড সাইকোলজি</span>
                   <span class="item-desc" data-i18n="nav_prot_heart_mind_desc">স্ট্রেস ডিটক্স ও নিউরো-ইমিউনোলজি ব্যালেন্স</span>
                 </div>
               </a>
-              <a href="#mythbusters-section" class="dropdown-item" role="menuitem">
-                <span class="item-icon">💡</span>
+              <a href="#mythbusters-section" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">💡</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_prot_myths">মেডিকেল মিথ বাস্টার্স</span>
                   <span class="item-desc" data-i18n="nav_prot_myths_desc">কোলেস্টেরল ও ক্যালোরি গণনা সংক্রান্ত বিভ্রান্তি নিরসন</span>
@@ -213,32 +430,32 @@
 
         <!-- Dropdown 3: Daily Tools -->
         <div class="nav-dropdown" data-dropdown="tools">
-          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-tools">
-            <span class="trigger-icon">⏱️</span>
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-controls="flyout-tools" id="trigger-tools">
+            <span class="trigger-icon" aria-hidden="true">⏱️</span>
             <span class="trigger-text" data-i18n="nav_group_tools">দৈনিক টুলস</span>
             <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
           </button>
-          <div class="dropdown-flyout" role="menu" aria-labelledby="trigger-tools">
+          <div class="dropdown-flyout" id="flyout-tools" aria-labelledby="trigger-tools">
             <div class="dropdown-flyout-header">
               <span class="flyout-title" data-i18n="nav_group_tools_sub">দৈনিক মনিটরিং ও সুস্থতার অভ্যাস</span>
             </div>
             <div class="dropdown-grid">
-              <a href="#fasting-tracker" class="dropdown-item" role="menuitem">
-                <span class="item-icon">⏳</span>
+              <a href="#fasting-tracker" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">⏳</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_tool_fasting">ইন্টারমিটেন্ট ফাস্টিং টাইমার</span>
                   <span class="item-desc" data-i18n="nav_tool_fasting_desc">১৪-১৬ ঘণ্টার লাইভ অটোফেজি স্টেজ মনিটর</span>
                 </div>
               </a>
-              <a href="#plate-builder" class="dropdown-item" role="menuitem">
-                <span class="item-icon">🥗</span>
+              <a href="#plate-builder" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">🥗</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_tool_plate">দেশি পুষ্টি প্লেট বিল্ডার</span>
                   <span class="item-desc" data-i18n="nav_tool_plate_desc">৫০% শাকসবজি অনুপাত ও বাজেট ডায়েট প্ল্যান</span>
                 </div>
               </a>
-              <a href="#habit-tracker" class="dropdown-item" role="menuitem">
-                <span class="item-icon">📅</span>
+              <a href="#habit-tracker" class="dropdown-item">
+                <span class="item-icon" aria-hidden="true">📅</span>
                 <div class="item-info">
                   <span class="item-title" data-i18n="nav_tool_habits">মেটাবলিক অভ্যাস ট্র্যাকার</span>
                   <span class="item-desc" data-i18n="nav_tool_habits_desc">৭টি মেটাবলিক রুটিনের ধারাবাহিকতা স্কোর</span>
@@ -251,7 +468,7 @@
         <!-- Standalone Doctor Passport Quick Action -->
         <a href="#doctor-passport" class="nav-passport-pill" aria-label="Doctor Health Passport" data-mcp-action="open_doctor_passport">
           <span class="passport-pulse-ring"></span>
-          <span class="passport-icon">📋</span>
+          <span class="passport-icon" aria-hidden="true">📋</span>
           <span class="passport-text" data-i18n="nav_passport_btn">ডক্টর পাসপোর্ট</span>
           <span class="passport-tag">PDF</span>
         </a>
@@ -285,11 +502,13 @@
 
     </div>
 
+  </header>
+
     <!-- Mobile Fullscreen Glassmorphic Drawer -->
     <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
       <div class="mobile-drawer-header">
         <div class="mobile-brand">
-          <span class="pulse-dot"></span>
+          <span class="pulse-dot" aria-hidden="true"></span>
           <span class="mobile-brand-name" data-i18n="brand_title">মেটাপ্রিভেন্ট™</span>
         </div>
         <button class="btn-close-drawer" id="btn-close-drawer" aria-label="Close Menu">✕</button>
@@ -303,10 +522,10 @@
             <span>🩺</span> <span data-i18n="nav_group_diagnostics">ডায়াগনস্টিকস ও ল্যাব</span>
           </div>
           <div class="mobile-links">
-            <a href="#assessment-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_risk">মেটাবলিক ঝুঁকি মূল্যায়ন</span></a>
-            <a href="#lab-decoder" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_lab">ল্যাব বায়োমার্কার ডিকোডার</span></a>
-            <a href="#cooking-oil-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_oil">ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স</span></a>
-            <a href="#egg-nutrition-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_diag_egg">ডিম ও কোলেস্টেরল বিজ্ঞান</span></a>
+            <a href="#assessment-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_risk">মেটাবলিক ঝুঁকি মূল্যায়ন</span></a>
+            <a href="#lab-decoder" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_lab">ল্যাব বায়োমার্কার ডিকোডার</span></a>
+            <a href="#cooking-oil-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_oil">ভোজ্যতেল তুলনামূলক ম্যাট্রিক্স</span></a>
+            <a href="#egg-nutrition-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_diag_egg">ডিম ও কোলেস্টেরল বিজ্ঞান</span></a>
           </div>
         </div>
 
@@ -316,11 +535,11 @@
             <span>📋</span> <span data-i18n="nav_group_protocols">ক্লিনিক্যাল প্রোটোকল</span>
           </div>
           <div class="mobile-links">
-            <a href="#prescription-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_rx">লাইফস্টাইল প্রেসক্রিপশন</span></a>
-            <a href="#disease-reversal" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_reversal">রোগ নিরাময় জ্ঞানভাণ্ডার</span></a>
-            <a href="#vagus-pacer" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_vagus">ভ্যাগাস নার্ভ ব্রিদিং পেসার</span></a>
-            <a href="#heart-mind-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_heart_mind">হার্ট-মাইন্ড সাইকোলজি</span></a>
-            <a href="#mythbusters-section" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_prot_myths">মেডিকেল মিথ বাস্টার্স</span></a>
+            <a href="#prescription-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_rx">লাইফস্টাইল প্রেসক্রিপশন</span></a>
+            <a href="#disease-reversal" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_reversal">রোগ নিরাময় জ্ঞানভাণ্ডার</span></a>
+            <a href="#vagus-pacer" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_vagus">ভ্যাগাস নার্ভ ব্রিদিং পেসার</span></a>
+            <a href="#heart-mind-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_heart_mind">হার্ট-মাইন্ড সাইকোলজি</span></a>
+            <a href="#mythbusters-section" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_prot_myths">মেডিকেল মিথ বাস্টার্স</span></a>
           </div>
         </div>
 
@@ -330,24 +549,23 @@
             <span>⏱️</span> <span data-i18n="nav_group_tools">দৈনিক টুলস</span>
           </div>
           <div class="mobile-links">
-            <a href="#fasting-tracker" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_tool_fasting">ইন্টারমিটেন্ট ফাস্টিং টাইমার</span></a>
-            <a href="#plate-builder" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_tool_plate">দেশি পুষ্টি প্লেট বিল্ডার</span></a>
-            <a href="#habit-tracker" class="mobile-link"><span class="link-bullet">▸</span> <span data-i18n="nav_tool_habits">মেটাবলিক অভ্যাস ট্র্যাকার</span></a>
+            <a href="#fasting-tracker" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_tool_fasting">ইন্টারমিটেন্ট ফাস্টিং টাইমার</span></a>
+            <a href="#plate-builder" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_tool_plate">দেশি পুষ্টি প্লেট বিল্ডার</span></a>
+            <a href="#habit-tracker" class="mobile-link"><span class="link-bullet" aria-hidden="true">▸</span> <span data-i18n="nav_tool_habits">মেটাবলিক অভ্যাস ট্র্যাকার</span></a>
           </div>
         </div>
 
         <!-- Mobile Passport CTA -->
         <div class="mobile-cta-box">
           <a href="#doctor-passport" class="mobile-passport-btn">
-            <span>📋</span> <span data-i18n="nav_passport_btn">ডক্টর পাসপোর্ট প্রিন্ট / এক্সপোর্ট</span>
+            <span aria-hidden="true">📋</span> <span data-i18n="nav_passport_btn">ডক্টর পাসপোর্ট প্রিন্ট / এক্সপোর্ট</span>
           </a>
         </div>
 
       </div>
     </div>
-  </header>
 
-  <main class="main-content">
+  <main class="main-content" id="main-content" tabindex="-1">
 
     <!-- Answer-First Executive Summary Section (Strictly <45 words rule) -->
     <section class="answer-first-container" id="answer-first">
@@ -369,7 +587,7 @@
       <div class="authority-content">
         <div class="expert-profile">
           <div class="avatar-ring">
-            <span class="avatar-icon">👨‍⚕️</span>
+            <span class="avatar-icon" aria-hidden="true">👨‍⚕️</span>
           </div>
           <div class="profile-details">
             <h1 class="hero-heading" data-i18n="hero_title">মেটাবলিক স্বাস্থ্যঝুঁকি ও রোগ নিরাময় লাইফস্টাইল প্রটোকল</h1>
@@ -586,13 +804,14 @@
 
             <div class="form-cta-bar">
               <button type="button" id="submit-assessment-btn" class="btn btn-primary" data-mcp-action="calculate_health_risk">
-                <span class="btn-icon">⚡</span>
+                <span class="btn-icon" aria-hidden="true">⚡</span>
                 <span data-i18n="btn_calc_risk">আমার স্বাস্থ্যঝুঁকি বিশ্লেষণ করুন</span>
               </button>
               <button type="button" id="reset-assessment-btn" class="btn btn-secondary" data-mcp-action="reset_assessment">
                 <span data-i18n="btn_reset">পুনরায় শুরু</span>
               </button>
             </div>
+            <p class="form-error" id="assessment-error" role="alert" tabindex="-1" hidden></p>
           </form>
         </div>
 
@@ -666,7 +885,7 @@
           <!-- Pillar 1: Diet Plan -->
           <div class="presc-card">
             <div class="p-card-header">
-              <span class="p-icon">🥗</span>
+              <span class="p-icon" aria-hidden="true">🥗</span>
               <h4 data-i18n="rx_diet_title">১. খাদ্যাভ্যাস ও পুষ্টির পরিবর্তন</h4>
             </div>
             <ul class="p-list" id="rx-diet-list">
@@ -679,7 +898,7 @@
           <!-- Pillar 2: Fasting Plan -->
           <div class="presc-card">
             <div class="p-card-header">
-              <span class="p-icon">⏱️</span>
+              <span class="p-icon" aria-hidden="true">⏱️</span>
               <h4 data-i18n="rx_fasting_title">২. ইন্টারমিটেন্ট ফাস্টিং ও পরিপাক বিরতি</h4>
             </div>
             <ul class="p-list" id="rx-fasting-list">
@@ -692,7 +911,7 @@
           <!-- Pillar 3: Movement Plan -->
           <div class="presc-card">
             <div class="p-card-header">
-              <span class="p-icon">🚶</span>
+              <span class="p-icon" aria-hidden="true">🚶</span>
               <h4 data-i18n="rx_movement_title">৩. গতিময় জীবন ও সক্রিয় হাঁটা</h4>
             </div>
             <ul class="p-list" id="rx-movement-list">
@@ -705,7 +924,7 @@
           <!-- Pillar 4: Sleep & Mind Plan -->
           <div class="presc-card">
             <div class="p-card-header">
-              <span class="p-icon">🧘</span>
+              <span class="p-icon" aria-hidden="true">🧘</span>
               <h4 data-i18n="rx_mind_title">৪. ঘুম ও মানসিক প্রশান্তি (স্ট্রেস ডিটক্স)</h4>
             </div>
             <ul class="p-list" id="rx-mind-list">
@@ -903,6 +1122,7 @@
             </div>
 
             <button id="btn-calc-tofi" class="btn btn-primary btn-block" data-mcp-action="calculate_insulin_resistance" data-i18n="btn_calc_tofi">ভিসেরাল ফ্যাট ও ইনসুলিন রেজিস্ট্যান্স গণনা করুন</button>
+            <p class="form-error" id="tofi-error" role="alert" tabindex="-1" hidden></p>
 
             <!-- TOFI Output display -->
             <div id="tofi-result-box" class="tofi-result-box" style="display: none;">
@@ -971,6 +1191,7 @@
 
           <div class="biomarker-actions">
             <button id="btn-decode-biomarkers" class="btn btn-secondary btn-block" data-mcp-action="decode_biomarkers" data-i18n="btn_decode_biomarkers">ল্যাব রিপোর্ট বিশ্লেষণ ও প্রতিকার দেখুন</button>
+            <p class="form-error" id="biomarker-error" role="alert" tabindex="-1" hidden></p>
           </div>
 
           <!-- Biomarker Results Output -->
@@ -992,22 +1213,22 @@
         <p class="section-desc" data-i18n="desc_reversal">মেটাবলিক বিজ্ঞানীদের বিশ্লেষণ: ওষুধ দিয়ে শুধু লক্ষণ চাপা দেওয়া হয়, সঠিক লাইফস্টাইলে রোগ গোড়া থেকে দূর হয়।</p>
       </div>
 
-      <div class="reversal-tabs">
-        <button class="tab-btn active" data-tab="diabetes" data-mcp-action="filter_health_topics" data-mcp-param="diabetes">
-          <span>🩸</span> <span data-i18n="tab_diabetes">টাইপ-২ ডায়াবেটিস নিরাময়</span>
+      <div class="reversal-tabs" role="tablist" aria-label="Disease reversal topics">
+        <button class="tab-btn active" role="tab" id="tab-diabetes" aria-controls="tab-content-diabetes" aria-selected="true" data-tab="diabetes" data-mcp-action="filter_health_topics" data-mcp-param="diabetes">
+          <span aria-hidden="true">🩸</span> <span data-i18n="tab_diabetes">টাইপ-২ ডায়াবেটিস নিরাময়</span>
         </button>
-        <button class="tab-btn" data-tab="hypertension" data-mcp-action="filter_health_topics" data-mcp-param="hypertension">
-          <span>💓</span> <span data-i18n="tab_hypertension">রক্তচাপ ও হৃদরোগ প্রতিরোধ</span>
+        <button class="tab-btn" role="tab" id="tab-hypertension" aria-controls="tab-content-hypertension" aria-selected="false" tabindex="-1" data-tab="hypertension" data-mcp-action="filter_health_topics" data-mcp-param="hypertension">
+          <span aria-hidden="true">💓</span> <span data-i18n="tab_hypertension">রক্তচাপ ও হৃদরোগ প্রতিরোধ</span>
         </button>
-        <button class="tab-btn" data-tab="fattyliver" data-mcp-action="filter_health_topics" data-mcp-param="fattyliver">
-          <span>🫀</span> <span data-i18n="tab_fattyliver">ফ্যাটি লিভার ও স্থূলতা</span>
+        <button class="tab-btn" role="tab" id="tab-fattyliver" aria-controls="tab-content-fattyliver" aria-selected="false" tabindex="-1" data-tab="fattyliver" data-mcp-action="filter_health_topics" data-mcp-param="fattyliver">
+          <span aria-hidden="true">🫀</span> <span data-i18n="tab_fattyliver">ফ্যাটি লিভার ও স্থূলতা</span>
         </button>
-        <button class="tab-btn" data-tab="stress" data-mcp-action="filter_health_topics" data-mcp-param="stress">
-          <span>🧠</span> <span data-i18n="tab_stress">মানসিক চাপ ও স্নায়ুতন্ত্রের সুস্থতা</span>
+        <button class="tab-btn" role="tab" id="tab-stress" aria-controls="tab-content-stress" aria-selected="false" tabindex="-1" data-tab="stress" data-mcp-action="filter_health_topics" data-mcp-param="stress">
+          <span aria-hidden="true">🧠</span> <span data-i18n="tab_stress">মানসিক চাপ ও স্নায়ুতন্ত্রের সুস্থতা</span>
         </button>
       </div>
 
-      <div class="reversal-tab-content active" id="tab-content-diabetes">
+      <div class="reversal-tab-content active" id="tab-content-diabetes" role="tabpanel" aria-labelledby="tab-diabetes" tabindex="0">
         <div class="tab-card card glass-card">
           <div class="tab-grid">
             <div class="tab-info">
@@ -1038,7 +1259,7 @@
         </div>
       </div>
 
-      <div class="reversal-tab-content" id="tab-content-hypertension">
+      <div class="reversal-tab-content" id="tab-content-hypertension" role="tabpanel" aria-labelledby="tab-hypertension" tabindex="0" hidden>
         <div class="tab-card card glass-card">
           <div class="tab-grid">
             <div class="tab-info">
@@ -1069,7 +1290,7 @@
         </div>
       </div>
 
-      <div class="reversal-tab-content" id="tab-content-fattyliver">
+      <div class="reversal-tab-content" id="tab-content-fattyliver" role="tabpanel" aria-labelledby="tab-fattyliver" tabindex="0" hidden>
         <div class="tab-card card glass-card">
           <div class="tab-grid">
             <div class="tab-info">
@@ -1100,7 +1321,7 @@
         </div>
       </div>
 
-      <div class="reversal-tab-content" id="tab-content-stress">
+      <div class="reversal-tab-content" id="tab-content-stress" role="tabpanel" aria-labelledby="tab-stress" tabindex="0" hidden>
         <div class="tab-card card glass-card">
           <div class="tab-grid">
             <div class="tab-info">
@@ -1133,7 +1354,7 @@
     </section>
 
     <!-- Module 1: Cooking Oil & Fat Selection Matrix -->
-    <section class="oil-matrix-wrapper" id="oil-matrix">
+    <section class="oil-matrix-wrapper" id="cooking-oil-section">
       <div class="section-headline">
         <span class="section-tag" data-i18n="tag_oil">ভোজ্যতেল বিজ্ঞান ও বিশ্লেষণ</span>
         <h2 class="section-title" data-i18n="title_oil">কোন তেল স্বাস্থ্যসম্মত? ভোজ্যতেলের তুলনামূলক বিজ্ঞান</h2>
@@ -1142,9 +1363,9 @@
 
       <!-- Oil Filter Controls -->
       <div class="filter-controls-bar">
-        <button class="filter-chip active" data-oil-filter="all" data-mcp-action="filter_oil_type" data-mcp-param="all" data-i18n="filter_oil_all">সকল ভোজ্যতেল</button>
-        <button class="filter-chip" data-oil-filter="safe" data-mcp-action="filter_oil_type" data-mcp-param="safe" data-i18n="filter_oil_safe">নিরাপদ ও স্বাস্থ্যকর তেল</button>
-        <button class="filter-chip" data-oil-filter="danger" data-mcp-action="filter_oil_type" data-mcp-param="danger" data-i18n="filter_oil_danger">বর্জনীয় শিল্পজাত তেল</button>
+        <button class="filter-chip active" aria-pressed="true" data-oil-filter="all" data-mcp-action="filter_oil_type" data-mcp-param="all" data-i18n="filter_oil_all">সকল ভোজ্যতেল</button>
+        <button class="filter-chip" aria-pressed="false" data-oil-filter="safe" data-mcp-action="filter_oil_type" data-mcp-param="safe" data-i18n="filter_oil_safe">নিরাপদ ও স্বাস্থ্যকর তেল</button>
+        <button class="filter-chip" aria-pressed="false" data-oil-filter="danger" data-mcp-action="filter_oil_type" data-mcp-param="danger" data-i18n="filter_oil_danger">বর্জনীয় শিল্পজাত তেল</button>
       </div>
 
       <div class="oil-card-grid">
@@ -1152,7 +1373,7 @@
         <div class="oil-card card glass-card" data-category="safe">
           <div class="oil-card-top">
             <span class="badge-tag safe-badge" data-i18n="oil_badge_optimal">সর্বোৎকৃষ্ট ও নিরাপদ</span>
-            <span class="oil-icon">🥥</span>
+            <span class="oil-icon" aria-hidden="true">🥥</span>
           </div>
           <h3 class="oil-name" data-i18n="oil1_name">খাঁটি নারকেল তেল (Cold-Pressed)</h3>
           <p class="oil-summary" data-i18n="oil1_desc">মাঝারি চেইনের ট্রাইগ্লিসারাইড (MCT) ও লরিক এসিডসমৃদ্ধ। উচ্চ তাপে জারিত হয় না এবং সরাসরি লিভারে গিয়ে শক্তি উৎপন্ন করে।</p>
@@ -1176,7 +1397,7 @@
         <div class="oil-card card glass-card" data-category="safe">
           <div class="oil-card-top">
             <span class="badge-tag safe-badge" data-i18n="oil_badge_traditional">ঐতিহ্যবাহী ও নিরাপদ</span>
-            <span class="oil-icon">🌾</span>
+            <span class="oil-icon" aria-hidden="true">🌾</span>
           </div>
           <h3 class="oil-name" data-i18n="oil2_name">ঘানিভাঙ্গা খাঁটি সরিষার তেল</h3>
           <p class="oil-summary" data-i18n="oil2_desc">প্রাকৃতিক মনো-আনস্যাচুরেটেড ফ্যাট (MUFA) ও ওমেগা-৩ যুক্ত। বাঙালির দৈনন্দিন রান্নার উচ্চ তাপে সম্পূর্ণ স্থিতিশীল ও নিরাপদ।</p>
@@ -1200,7 +1421,7 @@
         <div class="oil-card card glass-card" data-category="safe">
           <div class="oil-card-top">
             <span class="badge-tag safe-badge" data-i18n="oil_badge_protective">কার্ডিও-প্রটেক্টিভ</span>
-            <span class="oil-icon">🫒</span>
+            <span class="oil-icon" aria-hidden="true">🫒</span>
           </div>
           <h3 class="oil-name" data-i18n="oil3_name">এক্সট্রা ভার্জিন অলিভ অয়েল</h3>
           <p class="oil-summary" data-i18n="oil3_desc">শক্তিশালী অ্যান্টিঅক্সিডেন্ট পলিফেনল ও ওলিক এসিডে সমৃদ্ধ। কাঁচা সালাদ ও হালকা তাপমাত্রার রান্নায় রক্তনালীর প্রদাহ প্রশমন করে।</p>
@@ -1224,7 +1445,7 @@
         <div class="oil-card card glass-card danger-card" data-category="danger">
           <div class="oil-card-top">
             <span class="badge-tag danger-badge" data-i18n="oil_badge_avoid">বর্জনীয় ও ক্ষতিকর</span>
-            <span class="oil-icon">⚠️</span>
+            <span class="oil-icon" aria-hidden="true">⚠️</span>
           </div>
           <h3 class="oil-name" data-i18n="oil4_name">শিল্পজাত রিফাইন্ড সয়াবিন / পাম / ক্যানোলা</h3>
           <p class="oil-summary" data-i18n="oil4_desc">উচ্চ তাপ ও রাসায়নিক দ্রাবকে নিষ্কাশিত। অতিরিক্ত ওমেগা-৬ লিনোলিক এসিড ধমনীর দেয়ালে অক্সিডেটিভ ক্ষতি ও দীর্ঘস্থায়ী প্রদাহ সৃষ্টি করে।</p>
@@ -1247,7 +1468,7 @@
     </section>
 
     <!-- Module 2: Superfood Whole Egg & Cholesterol Science -->
-    <section class="egg-guide-wrapper" id="egg-guide">
+    <section class="egg-guide-wrapper" id="egg-nutrition-section">
       <div class="section-headline">
         <span class="section-tag" data-i18n="tag_egg">সুপারফুড পুষ্টি বিজ্ঞান</span>
         <h2 class="section-title" data-i18n="title_egg">সম্পূর্ণ ডিমের সুপারফুড ক্ষমতা ও কোলেস্টেরলের বিজ্ঞান</h2>
@@ -1315,7 +1536,7 @@
           </div>
 
           <div class="egg-cooking-tip">
-            <span class="tip-icon">💡</span>
+            <span class="tip-icon" aria-hidden="true">💡</span>
             <span data-i18n="egg_cooking_tip">পরামর্শ: ডিম পোচ বা হাফ-বয়েল করে খান। ভাজতে চাইলে অবশ্যই খাঁটি সরিষার তেল বা নারকেল তেল ব্যবহার করুন, কখনোই সয়াবিন তেল নয়।</span>
           </div>
         </div>
@@ -1350,7 +1571,7 @@
                 <span class="selected-items" id="selected-carb-text">১ কাপ লাল চালের ভাত</span>
               </div>
               <div class="plate-center-fat">
-                <span class="fat-icon">🫒</span>
+                <span class="fat-icon" aria-hidden="true">🫒</span>
                 <span class="fat-label" data-i18n="zone_fat">ঘানিভাঙ্গা সরিষা / খাঁটি ঘি</span>
               </div>
             </div>
@@ -1422,13 +1643,13 @@
           <!-- 7-Day Budget-Tiered Meal Plan -->
           <div class="meal-plan-tabs-wrap">
             <h4 class="box-title" data-i18n="title_7day">📅 ৭ দিনের বাজেট মেটাবলিক রিসেট ডায়েট চার্ট</h4>
-            <div class="meal-tabs">
-              <button type="button" class="m-tab active" data-plan="village" data-i18n="tab_plan_village">১. স্বল্পবাজেট / গ্রামীন স্তর</button>
-              <button type="button" class="m-tab" data-plan="family" data-i18n="tab_plan_family">২. পারিবারিক স্ট্যান্ডার্ড</button>
-              <button type="button" class="m-tab" data-plan="executive" data-i18n="tab_plan_executive">৩. এক্সিকিউটিভ স্তর</button>
+            <div class="meal-tabs" role="tablist" aria-label="7-day meal plan budget tier">
+              <button type="button" class="m-tab active" role="tab" id="mtab-village" aria-controls="meal-plan-content" aria-selected="true" data-plan="village" data-i18n="tab_plan_village">১. স্বল্পবাজেট / গ্রামীন স্তর</button>
+              <button type="button" class="m-tab" role="tab" id="mtab-family" aria-controls="meal-plan-content" aria-selected="false" tabindex="-1" data-plan="family" data-i18n="tab_plan_family">২. পারিবারিক স্ট্যান্ডার্ড</button>
+              <button type="button" class="m-tab" role="tab" id="mtab-executive" aria-controls="meal-plan-content" aria-selected="false" tabindex="-1" data-plan="executive" data-i18n="tab_plan_executive">৩. এক্সিকিউটিভ স্তর</button>
             </div>
 
-            <div class="meal-plan-content" id="meal-plan-content">
+            <div class="meal-plan-content" id="meal-plan-content" role="tabpanel" tabindex="0">
               <!-- Dynamically populated based on active tab -->
             </div>
           </div>
@@ -1437,7 +1658,7 @@
     </section>
 
     <!-- Module 3: Heart Protection & Meditation Protocol -->
-    <section class="heart-mind-wrapper" id="heart-mind">
+    <section class="heart-mind-wrapper" id="heart-mind-section">
       <div class="section-headline">
         <span class="section-tag" data-i18n="tag_heart_mind">কার্ডিও-নিউরো বিজ্ঞান</span>
         <h2 class="section-title" data-i18n="title_heart_mind">হৃদযন্ত্রের দীর্ঘায়ু, মেডিটেশন ও মানসিক প্রশান্তি</h2>
@@ -1488,7 +1709,7 @@
 
           <div class="breath-action-bar">
             <button class="btn btn-primary" id="start-breath-btn" data-mcp-action="start_breathing_exercise">
-              <span class="btn-icon">▶</span>
+              <span class="btn-icon" aria-hidden="true">▶</span>
               <span data-i18n="btn_start_breath">দমচর্চা শুরু করুন</span>
             </button>
             <button class="btn btn-secondary" id="reset-breath-btn" data-mcp-action="reset_breathing_exercise">
@@ -1557,7 +1778,7 @@
     </section>
 
     <!-- Module 4: Total Fitness Q&A & Health Mythbusters -->
-    <section class="mythbusters-wrapper" id="mythbusters">
+    <section class="mythbusters-wrapper" id="mythbusters-section">
       <div class="section-headline">
         <span class="section-tag" data-i18n="tag_myths">টোটাল ফিটনেস ও সত্য উন্মোচন</span>
         <h2 class="section-title" data-i18n="title_myths">সাধারণ স্বাস্থ্যভ্রান্তি নিরসন ও ফিটনেস প্রশ্নোত্তর</h2>
@@ -1567,14 +1788,14 @@
       <div class="myths-accordion-container">
         <!-- Myth 1 -->
         <div class="myth-item card glass-card">
-          <div class="myth-header" data-mcp-action="toggle_myth_item">
-            <div class="myth-tag-box">
+          <h3 class="myth-question-heading"><button type="button" class="myth-header" id="myth-header-1" data-mcp-action="toggle_myth_item" aria-expanded="false" aria-controls="myth-answer-1">
+            <span class="myth-tag-box">
               <span class="tag-myth" data-i18n="tag_myth_label">ভ্রান্ত ধারণা ১</span>
-              <h4 class="myth-question" data-i18n="m1_q">ডিমের কুসুম খেলে রক্তনালী ব্লক হয়ে হার্ট অ্যাটাক হয়?</h4>
-            </div>
-            <span class="accordion-arrow">▼</span>
-          </div>
-          <div class="myth-answer">
+              <span class="myth-question" data-i18n="m1_q">ডিমের কুসুম খেলে রক্তনালী ব্লক হয়ে হার্ট অ্যাটাক হয়?</span>
+            </span>
+            <span class="accordion-arrow" aria-hidden="true">▼</span>
+          </button></h3>
+          <div class="myth-answer" id="myth-answer-1" role="region" aria-labelledby="myth-header-1">
             <div class="answer-badge-row">
               <span class="badge-truth" data-i18n="badge_science_fact">বৈজ্ঞানিক সত্য</span>
             </div>
@@ -1584,14 +1805,14 @@
 
         <!-- Myth 2 -->
         <div class="myth-item card glass-card">
-          <div class="myth-header" data-mcp-action="toggle_myth_item">
-            <div class="myth-tag-box">
+          <h3 class="myth-question-heading"><button type="button" class="myth-header" id="myth-header-2" data-mcp-action="toggle_myth_item" aria-expanded="false" aria-controls="myth-answer-2">
+            <span class="myth-tag-box">
               <span class="tag-myth" data-i18n="tag_myth_label">ভ্রান্ত ধারণা ২</span>
-              <h4 class="myth-question" data-i18n="m2_q">ভেজিটেবল অয়েল (সয়াবিন/পাম তেল) উদ্ভিজ্জ ও হার্টের জন্য উপকারী?</h4>
-            </div>
-            <span class="accordion-arrow">▼</span>
-          </div>
-          <div class="myth-answer">
+              <span class="myth-question" data-i18n="m2_q">ভেজিটেবল অয়েল (সয়াবিন/পাম তেল) উদ্ভিজ্জ ও হার্টের জন্য উপকারী?</span>
+            </span>
+            <span class="accordion-arrow" aria-hidden="true">▼</span>
+          </button></h3>
+          <div class="myth-answer" id="myth-answer-2" role="region" aria-labelledby="myth-header-2">
             <div class="answer-badge-row">
               <span class="badge-truth" data-i18n="badge_science_fact">বৈজ্ঞানিক সত্য</span>
             </div>
@@ -1601,14 +1822,14 @@
 
         <!-- Myth 3 -->
         <div class="myth-item card glass-card">
-          <div class="myth-header" data-mcp-action="toggle_myth_item">
-            <div class="myth-tag-box">
+          <h3 class="myth-question-heading"><button type="button" class="myth-header" id="myth-header-3" data-mcp-action="toggle_myth_item" aria-expanded="false" aria-controls="myth-answer-3">
+            <span class="myth-tag-box">
               <span class="tag-myth" data-i18n="tag_myth_label">ভ্রান্ত ধারণা ৩</span>
-              <h4 class="myth-question" data-i18n="m3_q">ফ্যাট বা চর্বিজাতীয় খাবার খেলেই মানুষ মোটা হয়?</h4>
-            </div>
-            <span class="accordion-arrow">▼</span>
-          </div>
-          <div class="myth-answer">
+              <span class="myth-question" data-i18n="m3_q">ফ্যাট বা চর্বিজাতীয় খাবার খেলেই মানুষ মোটা হয়?</span>
+            </span>
+            <span class="accordion-arrow" aria-hidden="true">▼</span>
+          </button></h3>
+          <div class="myth-answer" id="myth-answer-3" role="region" aria-labelledby="myth-header-3">
             <div class="answer-badge-row">
               <span class="badge-truth" data-i18n="badge_science_fact">বৈজ্ঞানিক সত্য</span>
             </div>
@@ -1618,14 +1839,14 @@
 
         <!-- Myth 4 -->
         <div class="myth-item card glass-card">
-          <div class="myth-header" data-mcp-action="toggle_myth_item">
-            <div class="myth-tag-box">
+          <h3 class="myth-question-heading"><button type="button" class="myth-header" id="myth-header-4" data-mcp-action="toggle_myth_item" aria-expanded="false" aria-controls="myth-answer-4">
+            <span class="myth-tag-box">
               <span class="tag-myth" data-i18n="tag_myth_label">ভ্রান্ত ধারণা ৪</span>
-              <h4 class="myth-question" data-i18n="m4_q">উচ্চ রক্তচাপ বা ডায়াবেটিসের ওষুধ একবার শুরু করলে কি সারা জীবন খেতে হবে?</h4>
-            </div>
-            <span class="accordion-arrow">▼</span>
-          </div>
-          <div class="myth-answer">
+              <span class="myth-question" data-i18n="m4_q">উচ্চ রক্তচাপ বা ডায়াবেটিসের ওষুধ একবার শুরু করলে কি সারা জীবন খেতে হবে?</span>
+            </span>
+            <span class="accordion-arrow" aria-hidden="true">▼</span>
+          </button></h3>
+          <div class="myth-answer" id="myth-answer-4" role="region" aria-labelledby="myth-header-4">
             <div class="answer-badge-row">
               <span class="badge-truth" data-i18n="badge_science_fact">বৈজ্ঞানিক সত্য</span>
             </div>
@@ -1635,14 +1856,14 @@
 
         <!-- Myth 5 -->
         <div class="myth-item card glass-card">
-          <div class="myth-header" data-mcp-action="toggle_myth_item">
-            <div class="myth-tag-box">
+          <h3 class="myth-question-heading"><button type="button" class="myth-header" id="myth-header-5" data-mcp-action="toggle_myth_item" aria-expanded="false" aria-controls="myth-answer-5">
+            <span class="myth-tag-box">
               <span class="tag-myth" data-i18n="tag_myth_label">ভ্রান্ত ধারণা ৫</span>
-              <h4 class="myth-question" data-i18n="m5_q">সকালের নাস্তা বাদ দিলে কি গ্যাস্ট্রিক ও মেটাবলিজম নষ্ট হয়?</h4>
-            </div>
-            <span class="accordion-arrow">▼</span>
-          </div>
-          <div class="myth-answer">
+              <span class="myth-question" data-i18n="m5_q">সকালের নাস্তা বাদ দিলে কি গ্যাস্ট্রিক ও মেটাবলিজম নষ্ট হয়?</span>
+            </span>
+            <span class="accordion-arrow" aria-hidden="true">▼</span>
+          </button></h3>
+          <div class="myth-answer" id="myth-answer-5" role="region" aria-labelledby="myth-header-5">
             <div class="answer-badge-row">
               <span class="badge-truth" data-i18n="badge_science_fact">বৈজ্ঞানিক সত্য</span>
             </div>
@@ -1668,7 +1889,7 @@
           </div>
           <div class="streak-badge-wrap">
             <div class="streak-chip">
-              <span class="streak-flame">🔥</span>
+              <span class="streak-flame" aria-hidden="true">🔥</span>
               <span class="streak-count" id="habit-streak-count">০</span>
               <span class="streak-text" data-i18n="lbl_streak_days">দিনের অবিচ্ছিন্ন স্ট্রিক</span>
             </div>
@@ -1772,7 +1993,7 @@
       <div class="passport-card glass-card printable-card" id="printable-passport-card">
         <div class="passport-header">
           <div class="passport-branding">
-            <span class="passport-logo-icon">🩺</span>
+            <span class="passport-logo-icon" aria-hidden="true">🩺</span>
             <div>
               <h3 class="passport-main-title" data-i18n="passport_card_title">মেটাবলিক স্বাস্থ্য পাসপোর্ট ও ক্লিনিক্যাল রিভিউ সামারি</h3>
               <p class="passport-sub" data-i18n="passport_card_sub">প্রিভেন্টিভ লাইফস্টাইল মেডিসিন ও রোগীর স্ব-মূল্যায়ন প্রতিবেদন</p>
@@ -1863,7 +2084,5 @@
       </div>
     </div>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>

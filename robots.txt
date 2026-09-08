@@ -1,6 +1,6 @@
 # AI Crawler Access Policy & Discovery
 # Site: Preventive Lifestyle Medicine & Health Assessment Platform
-# Last Updated: 2026-09-07
+# Last Updated: 2026-09-08
 
 User-agent: *
 Allow: /
@@ -32,5 +32,5 @@ User-agent: CCBot
 Allow: /
 
 # Discovery Files
-Sitemap: /sitemap.xml
-# LLM context documentation: /llms.txt
+Sitemap: https://health.bongshai.com/sitemap.xml
+# LLM context documentation: https://health.bongshai.com/llms.txt
